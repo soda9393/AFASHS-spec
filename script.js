@@ -758,6 +758,24 @@
                 }, { passive: true });
             }
 
+            // 모바일 전공 찾기 시작 버튼 터치/클릭 기능 바인딩
+            const startBtn = document.getElementById('quiz-start-btn') || document.querySelector('.quiz-start-btn');
+            if (startBtn) {
+                let startHandled = false;
+                const handleStart = (e) => {
+                    if (e) {
+                        e.stopPropagation();
+                        if (e.cancelable) e.preventDefault();
+                    }
+                    if (startHandled) return;
+                    startHandled = true;
+                    setTimeout(() => { startHandled = false; }, 400);
+                    startQuiz();
+                };
+                startBtn.onclick = handleStart;
+                startBtn.ontouchend = handleStart;
+            }
+
             // 해시 값 확인하여 적절한 전공 페이지로 책 넘겨주기
             const hash = window.location.hash;
             if (hash === '#control') {

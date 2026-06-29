@@ -943,6 +943,9 @@
             touch-action: manipulation;
             user-select: none;
             -webkit-user-select: none;
+            position: relative;
+            z-index: 20;
+            pointer-events: auto !important;
         }
 
         .quiz-start-btn:hover {
