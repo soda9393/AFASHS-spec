@@ -991,12 +991,12 @@
         <!-- 모바일 상단 미니 헤더 & 슬라이드 카운터 -->
         <header class="mobile-top-bar">
             <span class="m-bar-title">공군항공과학고 전공소개</span>
-            <span class="m-page-counter" id="m-page-counter">1 / 10 Page</span>
+            <span class="m-page-counter" id="m-page-counter">1 / 9 Page</span>
         </header>
 
         <!-- 좌우 스크롤 스냅 래퍼 -->
         <div class="mobile-slides-container" id="mobile-slides-container">
-            <!-- Slide 0: 표지 및 개요 -->
+            <!-- Slide 0: 표지, 전공 찾기 진단 및 개요 -->
             <section class="mobile-slide-page" id="m-slide-0">
                 <div class="mobile-hero">
                     <div class="mobile-hero-badge">✨ 공군 기술 부사관의 요람</div>
@@ -1004,24 +1004,24 @@
                     <p class="mobile-hero-desc">하늘을 지키는 가장 높은 힘, 대한민국 공군의 최정예 항공 기술 마이스터를 육성합니다.</p>
 
                     <div class="mobile-quick-actions">
-                        <button type="button" onclick="goToMobileSlide(3)" class="mobile-btn primary">🎯 나의 전공 찾기 (진단)</button>
-                        <button type="button" onclick="goToMobileSlide(4)" class="mobile-btn secondary">📚 4대 전공 둘러보기</button>
+                        <button type="button" onclick="startQuizOnMain()" class="mobile-btn primary">🎯 나의 전공 찾기 (진단)</button>
+                        <button type="button" onclick="goToMobileSlide(3)" class="mobile-btn secondary">📚 4대 전공 둘러보기</button>
                         
                         <!-- 4대 전공 바로가기 목록 -->
                         <div class="m-major-sub-buttons">
-                            <button type="button" onclick="goToMobileSlide(4)" class="m-major-sub-btn control">
+                            <button type="button" onclick="goToMobileSlide(3)" class="m-major-sub-btn control">
                                 <span>📡 항공통제과</span>
                                 <span class="arr">➔</span>
                             </button>
-                            <button type="button" onclick="goToMobileSlide(5)" class="m-major-sub-btn electronics">
+                            <button type="button" onclick="goToMobileSlide(4)" class="m-major-sub-btn electronics">
                                 <span>⚡ 항공전자과</span>
                                 <span class="arr">➔</span>
                             </button>
-                            <button type="button" onclick="goToMobileSlide(6)" class="m-major-sub-btn telecom">
+                            <button type="button" onclick="goToMobileSlide(5)" class="m-major-sub-btn telecom">
                                 <span>🔒 정보통신과</span>
                                 <span class="arr">➔</span>
                             </button>
-                            <button type="button" onclick="goToMobileSlide(7)" class="m-major-sub-btn mechanic">
+                            <button type="button" onclick="goToMobileSlide(6)" class="m-major-sub-btn mechanic">
                                 <span>⚙️ 항공기계과</span>
                                 <span class="arr">➔</span>
                             </button>
@@ -1046,74 +1046,11 @@
                         </div>
                     </div>
                 </div>
-            </section>
 
-            <!-- Slide 2: 나. 학교 교육과정 -->
-            <section class="mobile-slide-page" id="m-slide-2">
-                <div class="mobile-section">
-                    <h2 class="mobile-section-title">나. 학교 교육과정</h2>
-                    <p class="m-section-desc">체계화된 교육과정을 통해 기초 전공 지식부터 전문 분야 지식까지 완성도 높게 이수합니다.</p>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-badge">1학년</div>
-                            <div class="timeline-content">
-                                <h3>기초 전공 및 소양 교육</h3>
-                                <p>항공기 일반, 정보 등 전문 교과와 국어, 수학 등 보통 교과를 이수하여 전공 기초를 닦습니다.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-badge">2학년</div>
-                            <div class="timeline-content">
-                                <h3>전공 기초 교육</h3>
-                                <p>4개의 전공(항공통제, 항공전자, 정보통신, 항공기계) 이론과 실습을 실질적으로 진행합니다.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-badge">3학년</div>
-                            <div class="timeline-content">
-                                <h3>전공 심화 교육</h3>
-                                <p>부사관 전문성 함양을 위한 군사학과 현장 실무 교육을 통해 임관 후 즉시 실무가 가능한 역량을 기릅니다.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Slide 3: 다. 학교 시설 소개 -->
-            <section class="mobile-slide-page" id="m-slide-3">
-                <div class="mobile-section">
-                    <h2 class="mobile-section-title">다. 학교 시설 소개</h2>
-                    <p class="m-section-desc">오직 학업과 생활에만 온전히 몰입할 수 있도록 교육·생활 전반에 시설을 구비하고 있습니다.</p>
-                    <div class="facilities-list">
-                        <div class="facility-item">
-                            <h3>지학관 / 기예관</h3>
-                            <p>교과 수업을 위한 교실과 실습장, 휴게실이 있습니다.</p>
-                        </div>
-                        <div class="facility-item">
-                            <h3>종합정비 실습장</h3>
-                            <p>기체, 기관, 용접, 판금 실습을 위한 최신 장비를 갖추고 있습니다.</p>
-                        </div>
-                        <div class="facility-item">
-                            <h3>정보화 실습장</h3>
-                            <p>인공지능과 정보화 소양 교육을 위한 최신 컴퓨터 실습장입니다.</p>
-                        </div>
-                        <div class="facility-item">
-                            <h3>항공 통제/관제 실습장</h3>
-                            <p>시뮬레이션 장비를 통한 현장을 느낄 수 있는 실습장입니다.</p>
-                        </div>
-                        <div class="facility-item">
-                            <h3>항공 전자 실습장</h3>
-                            <p>숄더링, 회로 분석 등 전자 분야 실습장입니다.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Slide 4: 라. 전공 매칭 테스트 -->
-            <section class="mobile-slide-page" id="m-slide-4">
-                <div class="mobile-section">
-                    <h2 class="mobile-section-title">라. 전공 매칭 테스트</h2>
-                    <div class="mobile-quiz-wrapper">
+                <!-- 메인 페이지 통합 전공 매칭 테스트 -->
+                <div class="mobile-section" id="mobile-quiz-section" style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem;">
+                    <h2 class="mobile-section-title">🎯 나의 전공 찾기 테스트</h2>
+                    <div class="mobile-quiz-wrapper" id="mobile-quiz-wrapper">
                         <p class="m-quiz-intro-desc">10가지 간단한 문항을 통해 당신의 소질과 적성에 가장 잘 맞는 전공을 분석해 드립니다.</p>
 
                         <div class="quiz-container">
