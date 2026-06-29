@@ -606,12 +606,12 @@
         function goToRecommendedDept() {
             if (window.innerWidth <= 768) {
                 const mobileSlideMap = {
-                    'dept-control': 3,
-                    'dept-electronics': 4,
-                    'dept-telecom': 5,
-                    'dept-mechanic': 6
+                    'dept-control': 4,
+                    'dept-electronics': 5,
+                    'dept-telecom': 6,
+                    'dept-mechanic': 7
                 };
-                const slideIdx = mobileSlideMap[recommendedDeptId] || 3;
+                const slideIdx = mobileSlideMap[recommendedDeptId] || 4;
                 if (window.goToMobileSlide) {
                     window.goToMobileSlide(slideIdx);
                 }
