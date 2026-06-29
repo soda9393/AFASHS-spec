@@ -2369,6 +2369,44 @@
                 border: 1px solid rgba(255, 255, 255, 0.18);
             }
 
+            /* 4대 전공 바로가기 그리드 서브 버튼 */
+            .m-major-sub-buttons {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+                margin-top: 0.3rem;
+            }
+
+            .m-major-sub-btn {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0.65rem 0.8rem;
+                background: rgba(255, 255, 255, 0.06);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                border-radius: 10px;
+                color: #ffffff;
+                font-size: 0.8rem;
+                font-weight: 700;
+                cursor: pointer;
+                transition: all 0.2s ease;
+            }
+
+            .m-major-sub-btn:active {
+                transform: scale(0.97);
+                background: rgba(255, 255, 255, 0.12);
+            }
+
+            .m-major-sub-btn.control { border-left: 4px solid #007D88; }
+            .m-major-sub-btn.electronics { border-left: 4px solid #3B82F6; }
+            .m-major-sub-btn.telecom { border-left: 4px solid #10B981; }
+            .m-major-sub-btn.mechanic { border-left: 4px solid #F59E0B; }
+
+            .m-major-sub-btn .arr {
+                font-size: 0.75rem;
+                color: #ffc947;
+            }
+
             .mobile-stats-grid {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
