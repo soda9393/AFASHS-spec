@@ -89,12 +89,15 @@
                     const sheet = sheets[i];
                     if (i < currentSheet) {
                         sheet.classList.add('flipped');
+                        sheet.classList.remove('active-sheet');
                         sheet.style.zIndex = i;
                     } else if (i === currentSheet) {
                         sheet.classList.remove('flipped');
-                        sheet.style.zIndex = totalSheets;
+                        sheet.classList.add('active-sheet');
+                        sheet.style.zIndex = 100;
                     } else {
                         sheet.classList.remove('flipped');
+                        sheet.classList.remove('active-sheet');
                         sheet.style.zIndex = totalSheets - i;
                     }
                 }
@@ -155,6 +158,7 @@
 
                 for (let i = 0; i < totalSheets; i++) {
                     const sheet = sheets[i];
+                    sheet.classList.remove('active-sheet');
                     if (i < currentSheet) {
                         sheet.classList.add('flipped');
                         sheet.style.zIndex = i;
@@ -321,18 +325,31 @@
 
 
         // 3. 아코디언 FAQ 기능
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                question.classList.toggle('active');
-                const answer = question.nextElementSibling;
-                if (answer.style.maxHeight) {
-                    answer.style.maxHeight = null;
-                } else {
-                    answer.style.maxHeight = answer.scrollHeight + "px";
-                }
+        function initFAQ() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                let faqHandled = false;
+                const toggleFAQ = (e) => {
+                    if (e) e.stopPropagation();
+                    if (faqHandled) return;
+                    faqHandled = true;
+                    setTimeout(() => { faqHandled = false; }, 200);
+
+                    question.classList.toggle('active');
+                    const answer = question.nextElementSibling;
+                    if (answer) {
+                        if (answer.style.maxHeight) {
+                            answer.style.maxHeight = null;
+                        } else {
+                            answer.style.maxHeight = answer.scrollHeight + "px";
+                        }
+                    }
+                };
+                question.onclick = toggleFAQ;
+                question.ontouchend = toggleFAQ;
             });
-        });
+        }
+        initFAQ();
 
 
         // 4. 전공 매칭 테스트 (Quiz) 데이터 및 로직
@@ -705,6 +722,7 @@
             // 초기 렌더링
             checkResponsiveView();
             updateBookState();
+            initFAQ();
 
             // 키보드 좌우 화살표 키로 페이지 탐색 기능
             window.addEventListener('keydown', function (e) {

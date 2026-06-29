@@ -1640,7 +1640,13 @@
             position: absolute !important;
             transform: none !important;
             transform-style: flat !important;
-            z-index: 1 !important;
+            z-index: 1;
+            pointer-events: none !important;
+        }
+
+        #book-container.single-page-mode .sheet.active-sheet {
+            z-index: 100 !important;
+            pointer-events: auto !important;
         }
 
         /* 1면 보기 시 개별 페이지 카드화 */
