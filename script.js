@@ -463,9 +463,17 @@
         let currentQuizIndex = 0;
         let quizScores = { control: 0, electronics: 0, telecom: 0, mechanic: 0 };
 
+        let lastQuizAction = 0;
+
         function startQuiz() {
-            document.getElementById('quiz-start').classList.remove('active');
-            document.getElementById('quiz-question').classList.add('active');
+            const now = Date.now();
+            if (now - lastQuizAction < 250) return;
+            lastQuizAction = now;
+
+            const quizStartEl = document.getElementById('quiz-start');
+            const quizQuestionEl = document.getElementById('quiz-question');
+            if (quizStartEl) quizStartEl.classList.remove('active');
+            if (quizQuestionEl) quizQuestionEl.classList.add('active');
             currentQuizIndex = 0;
             quizScores = { control: 0, electronics: 0, telecom: 0, mechanic: 0 };
             const p5 = document.getElementById('page-5');
@@ -489,14 +497,8 @@
                 btn.className = 'quiz-option-btn';
                 btn.innerHTML = `<span class="option-indicator">${alphas[idx]}</span> <span>${opt.text}</span>`;
                 
-                let handled = false;
                 const handleSelect = (e) => {
-                    if (e) {
-                        e.stopPropagation();
-                        if (e.cancelable) e.preventDefault();
-                    }
-                    if (handled) return;
-                    handled = true;
+                    if (e) e.stopPropagation();
                     selectOption(opt.score);
                 };
 
@@ -507,6 +509,10 @@
         }
 
         function selectOption(score) {
+            const now = Date.now();
+            if (now - lastQuizAction < 250) return;
+            lastQuizAction = now;
+
             for (const [major, val] of Object.entries(score)) {
                 quizScores[major] += val;
             }
@@ -758,22 +764,11 @@
                 }, { passive: true });
             }
 
-            // 모바일 전공 찾기 시작 버튼 터치/클릭 기능 바인딩
+            // 모바일 전공 찾기 시작 버튼 클릭/터치 바인딩
             const startBtn = document.getElementById('quiz-start-btn') || document.querySelector('.quiz-start-btn');
             if (startBtn) {
-                let startHandled = false;
-                const handleStart = (e) => {
-                    if (e) {
-                        e.stopPropagation();
-                        if (e.cancelable) e.preventDefault();
-                    }
-                    if (startHandled) return;
-                    startHandled = true;
-                    setTimeout(() => { startHandled = false; }, 400);
-                    startQuiz();
-                };
-                startBtn.onclick = handleStart;
-                startBtn.ontouchend = handleStart;
+                startBtn.onclick = (e) => { if (e) e.stopPropagation(); startQuiz(); };
+                startBtn.ontouchend = (e) => { if (e) e.stopPropagation(); startQuiz(); };
             }
 
             // 해시 값 확인하여 적절한 전공 페이지로 책 넘겨주기
