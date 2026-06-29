@@ -606,12 +606,12 @@
         function goToRecommendedDept() {
             if (window.innerWidth <= 768) {
                 const mobileSlideMap = {
-                    'dept-control': 4,
-                    'dept-electronics': 5,
-                    'dept-telecom': 6,
-                    'dept-mechanic': 7
+                    'dept-control': 3,
+                    'dept-electronics': 4,
+                    'dept-telecom': 5,
+                    'dept-mechanic': 6
                 };
-                const slideIdx = mobileSlideMap[recommendedDeptId] || 4;
+                const slideIdx = mobileSlideMap[recommendedDeptId] || 3;
                 if (window.goToMobileSlide) {
                     window.goToMobileSlide(slideIdx);
                 }
@@ -919,4 +919,13 @@
             if (quizEl) {
                 quizEl.scrollIntoView({ behavior: 'smooth' });
             }
+        };
+
+        window.openMobileQuiz = function() {
+            const container = document.getElementById('m-main-quiz-container');
+            if (container) {
+                container.style.display = 'block';
+                container.scrollIntoView({ behavior: 'smooth' });
+            }
+            startQuiz();
         };
