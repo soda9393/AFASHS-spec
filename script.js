@@ -468,6 +468,8 @@
             document.getElementById('quiz-question').classList.add('active');
             currentQuizIndex = 0;
             quizScores = { control: 0, electronics: 0, telecom: 0, mechanic: 0 };
+            const p5 = document.getElementById('page-5');
+            if (p5) p5.scrollTop = 0;
             showQuestion();
         }
 
@@ -483,9 +485,23 @@
             const alphas = ['A', 'B', 'C', 'D'];
             currentQ.options.forEach((opt, idx) => {
                 const btn = document.createElement('button');
+                btn.type = 'button';
                 btn.className = 'quiz-option-btn';
                 btn.innerHTML = `<span class="option-indicator">${alphas[idx]}</span> <span>${opt.text}</span>`;
-                btn.onclick = () => selectOption(opt.score);
+                
+                let handled = false;
+                const handleSelect = (e) => {
+                    if (e) {
+                        e.stopPropagation();
+                        if (e.cancelable) e.preventDefault();
+                    }
+                    if (handled) return;
+                    handled = true;
+                    selectOption(opt.score);
+                };
+
+                btn.onclick = handleSelect;
+                btn.ontouchend = handleSelect;
                 optionsContainer.appendChild(btn);
             });
         }
@@ -494,6 +510,9 @@
             for (const [major, val] of Object.entries(score)) {
                 quizScores[major] += val;
             }
+
+            const p5 = document.getElementById('page-5');
+            if (p5) p5.scrollTop = 0;
 
             if (currentQuizIndex < quizQuestions.length - 1) {
                 currentQuizIndex++;
@@ -506,6 +525,8 @@
         function showResult() {
             document.getElementById('quiz-question').classList.remove('active');
             document.getElementById('quiz-result').classList.add('active');
+            const p5 = document.getElementById('page-5');
+            if (p5) p5.scrollTop = 0;
 
             // 가장 점수가 높은 전공 선출
             let recommendedMajor = 'control';
@@ -533,8 +554,19 @@
 
         function goToRecommendedDept() {
             if (recommendedSheetIndex !== null && recommendedDeptId !== null) {
-                // 페이지 넘기기
-                goToSheet(recommendedSheetIndex);
+                if (viewMode === 'single') {
+                    const targetEl = document.getElementById(recommendedDeptId);
+                    if (targetEl) {
+                        const allPageSides = Array.from(document.querySelectorAll('.sheet .page-side'));
+                        const pageIdx = allPageSides.indexOf(targetEl);
+                        if (pageIdx !== -1) {
+                            currentPage = pageIdx + 1;
+                            updateBookState();
+                        }
+                    }
+                } else {
+                    goToSheet(recommendedSheetIndex);
+                }
 
                 // 골드 테두리 반짝거리는 하이라이트 애니메이션 주기
                 const targetDeptCard = document.getElementById(recommendedDeptId);
@@ -555,6 +587,8 @@
             const emblemImg = document.getElementById('result-emblem');
             if (emblemImg) emblemImg.style.display = 'none';
             recommendedDeptId = null;
+            const p5 = document.getElementById('page-5');
+            if (p5) p5.scrollTop = 0;
         }
 
         // 4.1 글자 크기 조절 (Zoom) 기능
@@ -679,7 +713,7 @@
             const bookElement = document.getElementById('book');
             if (bookElement) {
                 bookElement.addEventListener('click', function (e) {
-                    if (e.target.closest('button, a, input, select, textarea, .quiz-option-btn, .faq-question, .story-item, .features-list, .timeline, .facilities-list, .major-grid, .dept-fac-list, .career-list, .curriculum-table')) {
+                    if (e.target.closest('button, a, input, select, textarea, .quiz-container, .quiz-screen, .quiz-option-btn, .quiz-start-btn, .faq-question, .story-item, .features-list, .timeline, .facilities-list, .major-grid, .dept-fac-list, .career-list, .curriculum-table')) {
                         return;
                     }
 
@@ -695,7 +729,7 @@
                 });
             }
 
-            // 모바일 스와이프 터치 터치 스와이프 구현 (좌/우 슬라이드)
+            // 모바일 스와이프 터치 스와이프 구현 (좌/우 슬라이드)
             const viewportEl = document.querySelector('.book-viewport') || document.getElementById('book-container');
             if (viewportEl) {
                 let touchStartX = 0;
@@ -706,7 +740,7 @@
                 }, { passive: true });
 
                 viewportEl.addEventListener('touchend', (e) => {
-                    if (e.target.closest('button, a, input, select, textarea, .quiz-option-btn, .faq-question, input[type=range]')) {
+                    if (e.target.closest('button, a, input, select, textarea, .quiz-container, .quiz-screen, .quiz-option-btn, .quiz-start-btn, .faq-question, input[type=range]')) {
                         return;
                     }
                     const touchEndX = e.changedTouches[0].clientX;
