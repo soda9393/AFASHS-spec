@@ -1810,6 +1810,12 @@
                 box-shadow: none !important;
                 border: none !important;
                 overflow-y: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
+
+            .page-side img {
+                max-width: 100% !important;
+                height: auto !important;
             }
 
             .page-side h2 {

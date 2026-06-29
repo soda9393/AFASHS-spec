@@ -518,7 +518,11 @@
             }
 
             const resultData = majorResultData[recommendedMajor];
-            document.getElementById('result-emblem').src = resultData.emblem;
+            const emblemImg = document.getElementById('result-emblem');
+            if (emblemImg) {
+                emblemImg.src = resultData.emblem;
+                emblemImg.style.display = 'inline-block';
+            }
             document.getElementById('result-major-name').innerText = resultData.name;
             document.getElementById('result-major-desc').innerText = resultData.desc;
 
@@ -548,6 +552,8 @@
         function resetQuiz() {
             document.getElementById('quiz-result').classList.remove('active');
             document.getElementById('quiz-start').classList.add('active');
+            const emblemImg = document.getElementById('result-emblem');
+            if (emblemImg) emblemImg.style.display = 'none';
             recommendedDeptId = null;
         }
 
@@ -618,9 +624,14 @@
 
         function checkResponsiveView() {
             const doubleBtn = document.getElementById('view-double-btn');
+            const slider = document.getElementById('page-slider');
             if (window.innerWidth <= 768) {
                 if (viewMode !== 'single') {
                     viewMode = 'single';
+                }
+                if (slider) {
+                    slider.min = 1;
+                    slider.max = totalSheets * 2;
                 }
                 const activeBtn = document.querySelector('.view-mode-controls .header-btn.active');
                 if (activeBtn) activeBtn.classList.remove('active');
@@ -630,6 +641,10 @@
                     doubleBtn.style.display = 'none';
                 }
             } else {
+                if (slider && viewMode === 'double') {
+                    slider.min = 0;
+                    slider.max = totalSheets;
+                }
                 if (doubleBtn) {
                     doubleBtn.style.display = 'inline-flex';
                 }
@@ -660,13 +675,10 @@
                 }
             });
 
-            // 책자 클릭하여 페이지 넘기기 (왼쪽 클릭 -> 이전, 오른쪽 클릭 -> 다음)
+            // 책자 클릭/터치하여 페이지 넘기기
             const bookElement = document.getElementById('book');
             if (bookElement) {
                 bookElement.addEventListener('click', function (e) {
-                    if (window.innerWidth <= 768) {
-                        return;
-                    }
                     if (e.target.closest('button, a, input, select, textarea, .quiz-option-btn, .faq-question, .story-item, .features-list, .timeline, .facilities-list, .major-grid, .dept-fac-list, .career-list, .curriculum-table')) {
                         return;
                     }
@@ -681,6 +693,35 @@
                         nextPage();
                     }
                 });
+            }
+
+            // 모바일 스와이프 터치 터치 스와이프 구현 (좌/우 슬라이드)
+            const viewportEl = document.querySelector('.book-viewport') || document.getElementById('book-container');
+            if (viewportEl) {
+                let touchStartX = 0;
+                let touchStartY = 0;
+                viewportEl.addEventListener('touchstart', (e) => {
+                    touchStartX = e.changedTouches[0].clientX;
+                    touchStartY = e.changedTouches[0].clientY;
+                }, { passive: true });
+
+                viewportEl.addEventListener('touchend', (e) => {
+                    if (e.target.closest('button, a, input, select, textarea, .quiz-option-btn, .faq-question, input[type=range]')) {
+                        return;
+                    }
+                    const touchEndX = e.changedTouches[0].clientX;
+                    const touchEndY = e.changedTouches[0].clientY;
+                    const diffX = touchStartX - touchEndX;
+                    const diffY = touchStartY - touchEndY;
+
+                    if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
+                        if (diffX > 0) {
+                            nextPage();
+                        } else {
+                            prevPage();
+                        }
+                    }
+                }, { passive: true });
             }
 
             // 해시 값 확인하여 적절한 전공 페이지로 책 넘겨주기
