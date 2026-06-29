@@ -2458,6 +2458,79 @@
                 margin-bottom: 1rem;
             }
 
+            .m-section-desc {
+                font-size: 0.8rem;
+                color: #94a3b8;
+                line-height: 1.5;
+                margin-bottom: 1.2rem;
+            }
+
+            .m-dept-subtitle {
+                font-size: 0.82rem;
+                font-weight: 700;
+                color: #ffc947;
+                margin-bottom: 1rem;
+                line-height: 1.4;
+            }
+
+            .m-full-card {
+                background: rgba(255, 255, 255, 0.04);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                border-radius: 12px;
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .m-full-card h4 {
+                font-size: 0.9rem;
+                font-weight: 800;
+                color: #64ffda;
+                margin: 0 0 0.6rem 0;
+            }
+
+            .m-full-card p {
+                font-size: 0.78rem;
+                color: #cbd5e1;
+                line-height: 1.55;
+                margin: 0;
+            }
+
+            .mobile-future-banner {
+                text-align: center;
+                background: linear-gradient(135deg, #051622 0%, #0d2840 100%);
+                padding: 2.5rem 1.2rem;
+            }
+
+            .m-future-logo {
+                width: 70px;
+                height: 70px;
+                object-fit: contain;
+                margin-bottom: 1rem;
+            }
+
+            .mobile-future-banner h3 {
+                font-size: 1.25rem;
+                font-weight: 800;
+                color: #ffc947;
+                margin-bottom: 0.6rem;
+            }
+
+            .m-future-quote {
+                font-size: 0.82rem;
+                color: #ffffff;
+                font-weight: 600;
+                line-height: 1.5;
+                margin-bottom: 1rem;
+            }
+
+            .m-future-desc {
+                font-size: 0.75rem;
+                color: #cbd5e1;
+                line-height: 1.5;
+                margin: 0 auto;
+                max-width: 90%;
+            }
+
             .mobile-footer {
                 padding: 2.5rem 1.2rem;
                 background: #040d16;
