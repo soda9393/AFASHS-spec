@@ -2759,4 +2759,65 @@
                 color: #475569;
                 margin: 0;
             }
+
+            /* 모바일 뒷표지 (Back Cover Slide) */
+            .mobile-backcover {
+                min-height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: linear-gradient(180deg, #040d16 0%, #08192b 100%);
+                padding: 2.5rem 1.5rem;
+                box-sizing: border-box;
+                text-align: center;
+            }
+
+            .m-backcover-content {
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .m-backcover-logo {
+                width: 75px;
+                height: 75px;
+                object-fit: contain;
+                margin-bottom: 0.8rem;
+            }
+
+            .m-backcover-title {
+                font-size: 1.3rem;
+                font-weight: 800;
+                color: #ffffff;
+                margin: 0 0 0.3rem 0;
+                letter-spacing: -0.5px;
+            }
+
+            .m-backcover-subtitle {
+                font-size: 0.72rem;
+                font-weight: 700;
+                color: #64ffda;
+                letter-spacing: 0.5px;
+                margin: 0 0 1.8rem 0;
+            }
+
+            .m-backcover-info-box {
+                background: rgba(255, 255, 255, 0.04);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 12px;
+                padding: 1.2rem 1.1rem;
+                text-align: left;
+                font-size: 0.8rem;
+                color: #cbd5e1;
+                line-height: 1.7;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            }
+
+            .m-backcover-info-box p {
+                margin: 0 0 0.6rem 0;
+            }
+
+            .m-backcover-info-box p:last-child {
+                margin-bottom: 0;
+            }
         }
