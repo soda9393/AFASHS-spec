@@ -2462,10 +2462,21 @@
                 border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             }
 
-            .m-dept-header.control { border-left: 5px solid #007D88; }
-            .m-dept-header.electronics { border-left: 5px solid #3B82F6; }
-            .m-dept-header.telecom { border-left: 5px solid #10B981; }
-            .m-dept-header.mechanic { border-left: 5px solid #F59E0B; }
+            .m-dept-header.control {
+                border-left: 5px solid #007D88;
+            }
+
+            .m-dept-header.electronics {
+                border-left: 5px solid #3B82F6;
+            }
+
+            .m-dept-header.telecom {
+                border-left: 5px solid #10B981;
+            }
+
+            .m-dept-header.mechanic {
+                border-left: 5px solid #F59E0B;
+            }
 
             .m-dept-emblem {
                 width: 48px;
@@ -2584,9 +2595,38 @@
 
             .m-full-card p {
                 font-size: 0.78rem;
-                color: #cbd5e1;
+                color: #ffffff !important;
                 line-height: 1.55;
                 margin: 0;
+            }
+
+            /* 모바일 전공 소개 페이지 글씨 흰색 처리 */
+            .mobile-dept-card,
+            .mobile-dept-card p,
+            .mobile-dept-card li,
+            .mobile-dept-card td,
+            .mobile-dept-card .specialty-list li p,
+            .mobile-dept-card .dept-fac-text p,
+            .mobile-dept-card .curriculum-table td {
+                color: #ffffff !important;
+            }
+
+            .mobile-dept-card .specialty-list li strong {
+                color: #ffc947 !important;
+            }
+
+            .mobile-dept-card .curriculum-table th {
+                color: #ffffff !important;
+                background: rgba(255, 255, 255, 0.1) !important;
+            }
+
+            .mobile-dept-card .grade-badge {
+                color: #64ffda !important;
+                background: rgba(100, 255, 218, 0.15) !important;
+            }
+
+            .mobile-dept-card .dept-fac-text h4 {
+                color: #64ffda !important;
             }
 
             .mobile-future-banner {
