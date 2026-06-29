@@ -719,6 +719,9 @@
             const bookElement = document.getElementById('book');
             if (bookElement) {
                 bookElement.addEventListener('click', function (e) {
+                    if (window.innerWidth <= 768) {
+                        return;
+                    }
                     if (e.target.closest('button, a, input, select, textarea, .quiz-container, .quiz-screen, .quiz-option-btn, .quiz-start-btn, .faq-question, .story-item, .features-list, .timeline, .facilities-list, .major-grid, .dept-fac-list, .career-list, .curriculum-table')) {
                         return;
                     }

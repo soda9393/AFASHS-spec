@@ -886,6 +886,8 @@
             color: white;
             box-shadow: var(--shadow-lg);
             position: relative;
+            z-index: 100 !important;
+            pointer-events: auto !important;
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -944,7 +946,7 @@
             user-select: none;
             -webkit-user-select: none;
             position: relative;
-            z-index: 20;
+            z-index: 9999 !important;
             pointer-events: auto !important;
         }
 
@@ -1011,6 +1013,9 @@
             touch-action: manipulation;
             user-select: none;
             -webkit-user-select: none;
+            position: relative;
+            z-index: 9999 !important;
+            pointer-events: auto !important;
         }
 
         .quiz-option-btn:hover {
