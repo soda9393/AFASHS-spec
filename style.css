@@ -2397,10 +2397,21 @@
                 background: rgba(255, 255, 255, 0.12);
             }
 
-            .m-major-sub-btn.control { border-left: 4px solid #007D88; }
-            .m-major-sub-btn.electronics { border-left: 4px solid #3B82F6; }
-            .m-major-sub-btn.telecom { border-left: 4px solid #10B981; }
-            .m-major-sub-btn.mechanic { border-left: 4px solid #F59E0B; }
+            .m-major-sub-btn.control {
+                border-left: 4px solid #007D88;
+            }
+
+            .m-major-sub-btn.electronics {
+                border-left: 4px solid #3B82F6;
+            }
+
+            .m-major-sub-btn.telecom {
+                border-left: 4px solid #10B981;
+            }
+
+            .m-major-sub-btn.mechanic {
+                border-left: 4px solid #F59E0B;
+            }
 
             .m-major-sub-btn .arr {
                 font-size: 0.75rem;
@@ -2810,7 +2821,7 @@
                 font-size: 0.8rem;
                 color: #cbd5e1;
                 line-height: 1.7;
-                box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             }
 
             .m-backcover-info-box p {
@@ -2819,5 +2830,90 @@
 
             .m-backcover-info-box p:last-child {
                 margin-bottom: 0;
+            }
+
+            /* 취득 가능 자격증 뱃지 스타일 */
+            .m-cert-tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                margin-top: 0.5rem;
+            }
+
+            .m-cert-badge {
+                display: inline-block;
+                padding: 0.4rem 0.8rem;
+                background: linear-gradient(135deg, rgba(100, 255, 218, 0.15) 0%, rgba(0, 125, 136, 0.2) 100%);
+                border: 1px solid rgba(100, 255, 218, 0.4);
+                border-radius: 20px;
+                color: #64ffda !important;
+                font-size: 0.78rem;
+                font-weight: 700;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            /* 클릭 가능한 특기 리스트 스타일 */
+            .specialty-list .m-specialty-item {
+                cursor: pointer;
+                padding: 0.8rem 1rem;
+                margin-bottom: 0.6rem;
+                background: rgba(255, 255, 255, 0.04);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                border-radius: 10px;
+                transition: all 0.2s ease;
+            }
+
+            .specialty-list .m-specialty-item:hover,
+            .specialty-list .m-specialty-item.active {
+                background: rgba(255, 255, 255, 0.08);
+                border-color: rgba(100, 255, 218, 0.4);
+            }
+
+            .m-spec-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 0.3rem;
+            }
+
+            .m-spec-header strong {
+                font-size: 0.92rem;
+                color: #ffc947 !important;
+            }
+
+            .m-spec-arrow {
+                font-size: 0.75rem;
+                color: #64ffda;
+                transition: transform 0.2s ease;
+            }
+
+            .m-spec-summary {
+                font-size: 0.78rem;
+                color: #e2e8f0 !important;
+                margin: 0 !important;
+                line-height: 1.4;
+            }
+
+            .m-spec-detail {
+                margin-top: 0.8rem;
+                padding-top: 0.8rem;
+                border-top: 1px dashed rgba(255, 255, 255, 0.15);
+            }
+
+            .m-spec-detail-box {
+                background: rgba(0, 0, 0, 0.25);
+                border-radius: 8px;
+                padding: 0.75rem;
+            }
+
+            .m-spec-detail-box p {
+                font-size: 0.76rem !important;
+                color: #cbd5e1 !important;
+                line-height: 1.55 !important;
+                margin: 0 !important;
+            }
+
+            .m-spec-detail-box strong {
+                color: #64ffda !important;
             }
         }
