@@ -2155,3 +2155,17 @@
             word-break: keep-all;
             z-index: 2;
         }
+
+        /* Global Button Priority & Touch Action Rules */
+        .cover-start-btn,
+        .detail-btn,
+        .faq-question,
+        .result-btn,
+        .header-btn,
+        .nav-btn {
+            position: relative !important;
+            z-index: 9999 !important;
+            pointer-events: auto !important;
+            touch-action: manipulation !important;
+            -webkit-tap-highlight-color: transparent !important;
+        }

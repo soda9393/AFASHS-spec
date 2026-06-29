@@ -44,11 +44,7 @@
                 } else if (currentPage === totalSheets * 2) {
                     currentSheet = totalSheets;
                 } else {
-                    if (currentPage % 2 === 0) {
-                        currentSheet = currentPage / 2;
-                    } else {
-                        currentSheet = (currentPage - 1) / 2;
-                    }
+                    currentSheet = Math.floor((currentPage - 1) / 2);
                 }
 
                 slider.min = 0;
@@ -74,12 +70,7 @@
             }
 
             if (effectiveMode === 'single') {
-                let isRightPage = (currentPage % 2 !== 0);
-                if (isRightPage) {
-                    currentSheet = (currentPage - 1) / 2;
-                } else {
-                    currentSheet = currentPage / 2;
-                }
+                currentSheet = Math.floor((currentPage - 1) / 2);
 
                 // 1면 보기 시 정렬 클래스 세팅
                 bookContainer.className = 'single-page-mode';
@@ -275,6 +266,22 @@
         }
 
         function jumpToChapter(sheetIndex) {
+            if (viewMode === 'single') {
+                const deptMap = { 3: 'dept-control', 4: 'dept-electronics', 5: 'dept-telecom', 7: 'dept-mechanic' };
+                if (deptMap[sheetIndex]) {
+                    const targetEl = document.getElementById(deptMap[sheetIndex]);
+                    if (targetEl) {
+                        const allPageSides = Array.from(document.querySelectorAll('.sheet .page-side'));
+                        const pageIdx = allPageSides.indexOf(targetEl);
+                        if (pageIdx !== -1) {
+                            currentPage = pageIdx + 1;
+                            updateBookState();
+                            toggleTOC(false);
+                            return;
+                        }
+                    }
+                }
+            }
             goToSheet(sheetIndex);
             toggleTOC(false);
         }
@@ -767,7 +774,7 @@
                 }, { passive: true });
 
                 viewportEl.addEventListener('touchend', (e) => {
-                    if (e.target.closest('button, a, input, select, textarea, .quiz-container, .quiz-screen, .quiz-option-btn, .quiz-start-btn, .faq-question, input[type=range]')) {
+                    if (e.target.closest('button, a, input, select, textarea, .quiz-container, .quiz-screen, .quiz-option-btn, .quiz-start-btn, .faq-question, .story-item, .features-list, .timeline, .facilities-list, .major-grid, .dept-fac-list, .career-list, .curriculum-table, input[type=range]')) {
                         return;
                     }
                     const touchEndX = e.changedTouches[0].clientX;
