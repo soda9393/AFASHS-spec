@@ -494,10 +494,15 @@
             if (now - lastQuizAction < 250) return;
             lastQuizAction = now;
 
-            const quizStartEl = document.getElementById('quiz-start');
-            const quizQuestionEl = document.getElementById('quiz-question');
-            if (quizStartEl) quizStartEl.classList.remove('active');
-            if (quizQuestionEl) quizQuestionEl.classList.add('active');
+            ['quiz-start', 'quiz-start-m'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.classList.remove('active');
+            });
+            ['quiz-question', 'quiz-question-m'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.classList.add('active');
+            });
+
             currentQuizIndex = 0;
             quizScores = { control: 0, electronics: 0, telecom: 0, mechanic: 0 };
             const p5 = document.getElementById('page-5');
@@ -507,28 +512,36 @@
 
         function showQuestion() {
             const currentQ = quizQuestions[currentQuizIndex];
-            document.getElementById('quiz-current-step').innerText = currentQuizIndex + 1;
-            document.getElementById('quiz-progress').style.width = ((currentQuizIndex + 1) / quizQuestions.length) * 100 + '%';
-            document.getElementById('quiz-question-text').innerText = currentQ.q;
+            
+            document.querySelectorAll('#quiz-current-step, .m-current-step').forEach(el => {
+                el.innerText = currentQuizIndex + 1;
+            });
+            document.querySelectorAll('#quiz-progress, .m-progress-fill').forEach(el => {
+                el.style.width = ((currentQuizIndex + 1) / quizQuestions.length) * 100 + '%';
+            });
+            document.querySelectorAll('#quiz-question-text, .m-q-text').forEach(el => {
+                el.innerText = currentQ.q;
+            });
 
-            const optionsContainer = document.getElementById('quiz-options');
-            optionsContainer.innerHTML = '';
+            const containers = document.querySelectorAll('#quiz-options, .m-options-list');
+            containers.forEach(container => {
+                container.innerHTML = '';
+                const alphas = ['A', 'B', 'C', 'D'];
+                currentQ.options.forEach((opt, idx) => {
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'quiz-option-btn';
+                    btn.innerHTML = `<span class="option-indicator">${alphas[idx]}</span> <span>${opt.text}</span>`;
+                    
+                    const handleSelect = (e) => {
+                        if (e) e.stopPropagation();
+                        selectOption(opt.score);
+                    };
 
-            const alphas = ['A', 'B', 'C', 'D'];
-            currentQ.options.forEach((opt, idx) => {
-                const btn = document.createElement('button');
-                btn.type = 'button';
-                btn.className = 'quiz-option-btn';
-                btn.innerHTML = `<span class="option-indicator">${alphas[idx]}</span> <span>${opt.text}</span>`;
-                
-                const handleSelect = (e) => {
-                    if (e) e.stopPropagation();
-                    selectOption(opt.score);
-                };
-
-                btn.onclick = handleSelect;
-                btn.ontouchend = handleSelect;
-                optionsContainer.appendChild(btn);
+                    btn.onclick = handleSelect;
+                    btn.ontouchend = handleSelect;
+                    container.appendChild(btn);
+                });
             });
         }
 
@@ -553,12 +566,18 @@
         }
 
         function showResult() {
-            document.getElementById('quiz-question').classList.remove('active');
-            document.getElementById('quiz-result').classList.add('active');
+            ['quiz-question', 'quiz-question-m'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.classList.remove('active');
+            });
+            ['quiz-result', 'quiz-result-m'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.classList.add('active');
+            });
+
             const p5 = document.getElementById('page-5');
             if (p5) p5.scrollTop = 0;
 
-            // 가장 점수가 높은 전공 선출
             let recommendedMajor = 'control';
             let maxScore = -1;
             for (const [major, val] of Object.entries(quizScores)) {
@@ -569,20 +588,29 @@
             }
 
             const resultData = majorResultData[recommendedMajor];
-            const emblemImg = document.getElementById('result-emblem');
-            if (emblemImg) {
-                emblemImg.src = resultData.emblem;
-                emblemImg.style.display = 'inline-block';
-            }
-            document.getElementById('result-major-name').innerText = resultData.name;
-            document.getElementById('result-major-desc').innerText = resultData.desc;
+            document.querySelectorAll('#result-emblem, .m-result-emblem').forEach(img => {
+                img.src = resultData.emblem;
+                img.style.display = 'inline-block';
+            });
+            document.querySelectorAll('#result-major-name, .m-result-name').forEach(el => {
+                el.innerText = resultData.name;
+            });
+            document.querySelectorAll('#result-major-desc, .m-result-desc').forEach(el => {
+                el.innerText = resultData.desc;
+            });
 
-            // 추천된 학과의 sheetIndex 및 elementId 저장
             recommendedDeptId = resultData.deptId;
             recommendedSheetIndex = resultData.sheetIndex;
         }
 
         function goToRecommendedDept() {
+            if (window.innerWidth <= 768) {
+                const mDepts = document.getElementById('mobile-depts');
+                if (mDepts) {
+                    mDepts.scrollIntoView({ behavior: 'smooth' });
+                }
+                return;
+            }
             if (recommendedSheetIndex !== null && recommendedDeptId !== null) {
                 if (viewMode === 'single') {
                     const targetEl = document.getElementById(recommendedDeptId);
@@ -598,12 +626,9 @@
                     goToSheet(recommendedSheetIndex);
                 }
 
-                // 골드 테두리 반짝거리는 하이라이트 애니메이션 주기
                 const targetDeptCard = document.getElementById(recommendedDeptId);
                 if (targetDeptCard) {
                     targetDeptCard.classList.add('glow-highlight');
-
-                    // 4초 후에 하이라이트 제거
                     setTimeout(() => {
                         targetDeptCard.classList.remove('glow-highlight');
                     }, 4000);
@@ -612,10 +637,17 @@
         }
 
         function resetQuiz() {
-            document.getElementById('quiz-result').classList.remove('active');
-            document.getElementById('quiz-start').classList.add('active');
-            const emblemImg = document.getElementById('result-emblem');
-            if (emblemImg) emblemImg.style.display = 'none';
+            ['quiz-result', 'quiz-result-m'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.classList.remove('active');
+            });
+            ['quiz-start', 'quiz-start-m'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.classList.add('active');
+            });
+            document.querySelectorAll('#result-emblem, .m-result-emblem').forEach(img => {
+                img.style.display = 'none';
+            });
             recommendedDeptId = null;
             const p5 = document.getElementById('page-5');
             if (p5) p5.scrollTop = 0;

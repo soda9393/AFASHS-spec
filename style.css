@@ -2169,3 +2169,349 @@
             touch-action: manipulation !important;
             -webkit-tap-highlight-color: transparent !important;
         }
+
+        /* -------------------------------------
+           Dedicated Mobile Web Application View Styles
+           ------------------------------------- */
+        @media (min-width: 769px) {
+            .mobile-app-view {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background-color: #08121e !important;
+            }
+
+            .main-header .view-mode-controls,
+            .main-header .zoom-controls,
+            .main-header #fullscreen-btn {
+                display: none !important;
+            }
+
+            .book-viewport,
+            .book-controls,
+            .toc-drawer,
+            .toc-overlay {
+                display: none !important;
+            }
+
+            .mobile-app-view {
+                display: block !important;
+                width: 100%;
+                background: linear-gradient(180deg, #0A2540 0%, #061524 100%);
+                color: #ffffff;
+                font-family: 'Pretendard', sans-serif;
+                padding-bottom: 3rem;
+            }
+
+            .mobile-hero {
+                padding: 2.5rem 1.2rem 2rem 1.2rem;
+                text-align: center;
+                background: radial-gradient(circle at top, rgba(0, 125, 136, 0.3) 0%, rgba(10, 37, 64, 0) 70%);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            }
+
+            .mobile-hero-badge {
+                display: inline-block;
+                padding: 0.35rem 0.9rem;
+                background: rgba(255, 201, 71, 0.15);
+                border: 1px solid rgba(255, 201, 71, 0.4);
+                color: #ffc947;
+                border-radius: 50px;
+                font-size: 0.78rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+            }
+
+            .mobile-hero-title {
+                font-size: 1.65rem;
+                font-weight: 800;
+                line-height: 1.35;
+                margin-bottom: 0.8rem;
+                color: #ffffff;
+            }
+
+            .mobile-hero-title .highlight {
+                color: #ffc947;
+            }
+
+            .mobile-hero-desc {
+                font-size: 0.82rem;
+                color: #94a3b8;
+                line-height: 1.55;
+                margin-bottom: 1.5rem;
+                word-break: keep-all;
+            }
+
+            .mobile-quick-actions {
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem;
+                margin-bottom: 2rem;
+            }
+
+            .mobile-btn {
+                display: block;
+                padding: 0.85rem 1.2rem;
+                border-radius: 12px;
+                font-size: 0.92rem;
+                font-weight: 800;
+                text-decoration: none;
+                text-align: center;
+                transition: all 0.2s ease;
+            }
+
+            .mobile-btn.primary {
+                background: linear-gradient(135deg, #ffc947 0%, #ffa800 100%);
+                color: #0a2540;
+                box-shadow: 0 4px 14px rgba(255, 201, 71, 0.3);
+            }
+
+            .mobile-btn.secondary {
+                background: rgba(255, 255, 255, 0.08);
+                color: #ffffff;
+                border: 1px solid rgba(255, 255, 255, 0.18);
+            }
+
+            .mobile-stats-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.6rem;
+            }
+
+            .mobile-stat-card {
+                background: rgba(255, 255, 255, 0.04);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                border-radius: 10px;
+                padding: 0.8rem 0.4rem;
+                text-align: center;
+            }
+
+            .mobile-stat-card .stat-icon {
+                font-size: 1.2rem;
+                display: block;
+                margin-bottom: 0.2rem;
+            }
+
+            .mobile-stat-card strong {
+                display: block;
+                font-size: 0.78rem;
+                color: #ffc947;
+                margin-bottom: 0.1rem;
+            }
+
+            .mobile-stat-card span {
+                font-size: 0.65rem;
+                color: #94a3b8;
+            }
+
+            .mobile-section {
+                padding: 2rem 1.2rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            }
+
+            .mobile-section-title {
+                font-size: 1.2rem;
+                font-weight: 800;
+                color: #ffffff;
+                margin-bottom: 1.2rem;
+                display: flex;
+                align-items: center;
+                gap: 0.4rem;
+            }
+
+            .mobile-card-list {
+                display: flex;
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .mobile-info-card {
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 12px;
+                padding: 1.1rem;
+            }
+
+            .mobile-info-card h3 {
+                font-size: 0.95rem;
+                font-weight: 700;
+                color: #64ffda;
+                margin-bottom: 0.4rem;
+            }
+
+            .mobile-info-card p {
+                font-size: 0.8rem;
+                color: #cbd5e1;
+                line-height: 1.5;
+                margin: 0;
+            }
+
+            /* 학과 카드리스트 */
+            .mobile-dept-card {
+                background: rgba(15, 23, 42, 0.8);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                border-radius: 16px;
+                overflow: hidden;
+                margin-bottom: 1.2rem;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            }
+
+            .m-dept-header {
+                padding: 1rem;
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
+                background: rgba(255, 255, 255, 0.03);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            }
+
+            .m-dept-header.control { border-left: 5px solid #007D88; }
+            .m-dept-header.electronics { border-left: 5px solid #3B82F6; }
+            .m-dept-header.telecom { border-left: 5px solid #10B981; }
+            .m-dept-header.mechanic { border-left: 5px solid #F59E0B; }
+
+            .m-dept-emblem {
+                width: 48px;
+                height: 48px;
+                object-fit: contain;
+            }
+
+            .m-dept-header h3 {
+                font-size: 1.1rem;
+                font-weight: 800;
+                margin: 0;
+                color: #ffffff;
+            }
+
+            .m-dept-header p {
+                font-size: 0.68rem;
+                color: #94a3b8;
+                margin: 0;
+            }
+
+            .m-dept-body {
+                padding: 1rem;
+            }
+
+            .m-dept-desc {
+                font-size: 0.82rem;
+                color: #cbd5e1;
+                line-height: 1.5;
+                margin-bottom: 0.8rem;
+            }
+
+            .m-dept-tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.4rem;
+                margin-bottom: 1rem;
+            }
+
+            .m-dept-tags span {
+                background: rgba(255, 255, 255, 0.08);
+                color: #ffc947;
+                padding: 0.2rem 0.5rem;
+                border-radius: 6px;
+                font-size: 0.7rem;
+                font-weight: 600;
+            }
+
+            .m-dept-details {
+                background: rgba(0, 0, 0, 0.2);
+                border-radius: 8px;
+                padding: 0.6rem 0.8rem;
+            }
+
+            .m-dept-details summary {
+                font-size: 0.78rem;
+                font-weight: 700;
+                color: #64ffda;
+                cursor: pointer;
+                outline: none;
+            }
+
+            .m-details-content {
+                margin-top: 0.6rem;
+                padding-top: 0.6rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .m-details-content h4 {
+                font-size: 0.75rem;
+                color: #ffc947;
+                margin: 0.4rem 0 0.2rem 0;
+            }
+
+            .m-details-content p {
+                font-size: 0.72rem;
+                color: #94a3b8;
+                margin: 0;
+                line-height: 1.4;
+            }
+
+            .m-quiz-intro-desc {
+                font-size: 0.8rem;
+                color: #94a3b8;
+                margin-bottom: 1rem;
+            }
+
+            .mobile-footer {
+                padding: 2.5rem 1.2rem;
+                background: #040d16;
+                text-align: center;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .m-footer-logo {
+                width: 60px;
+                height: 60px;
+                object-fit: contain;
+                margin-bottom: 0.8rem;
+            }
+
+            .mobile-footer h3 {
+                font-size: 1.1rem;
+                font-weight: 800;
+                color: #ffffff;
+                margin: 0 0 0.2rem 0;
+            }
+
+            .m-footer-sub {
+                font-size: 0.7rem;
+                color: #64ffda;
+                margin: 0 0 1.2rem 0;
+            }
+
+            .m-footer-info {
+                font-size: 0.75rem;
+                color: #94a3b8;
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+            }
+
+            .m-footer-info a {
+                color: #ffffff;
+                text-decoration: underline;
+            }
+
+            .m-footer-btn {
+                display: inline-block;
+                padding: 0.75rem 1.5rem;
+                background: linear-gradient(135deg, #007D88 0%, #005a62 100%);
+                color: #ffffff;
+                text-decoration: none;
+                border-radius: 50px;
+                font-size: 0.85rem;
+                font-weight: 700;
+                margin-bottom: 1.5rem;
+            }
+
+            .m-copyright {
+                font-size: 0.62rem;
+                color: #475569;
+                margin: 0;
+            }
+        }
