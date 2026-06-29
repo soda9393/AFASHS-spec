@@ -981,611 +981,652 @@
 
     <!-- 모바일 전용 프리미엄 웹 애플리케이션 뷰 (Mobile Dedicated Web App View) -->
     <div id="mobile-app-view" class="mobile-app-view">
-        <!-- 모바일 히어로 헤더 -->
-        <section class="mobile-hero">
-            <div class="mobile-hero-badge">✨ 공군 기술 부사관의 요람</div>
-            <h1 class="mobile-hero-title">공군항공과학고등학교<br><span class="highlight">전공 소개</span></h1>
-            <p class="mobile-hero-desc">하늘을 지키는 가장 높은 힘, 대한민국 공군의 최정예 항공 기술 마이스터를 육성합니다.</p>
-            
-            <div class="mobile-quick-actions">
-                <a href="#mobile-quiz" class="mobile-btn primary">🎯 나의 전공 찾기 (진단)</a>
-                <a href="#mobile-depts" class="mobile-btn secondary">📚 4대 전공 둘러보기</a>
-            </div>
+        <!-- 모바일 상단 미니 헤더 & 슬라이드 카운터 -->
+        <header class="mobile-top-bar">
+            <span class="m-bar-title">공군항공과학고 전공소개</span>
+            <span class="m-page-counter" id="m-page-counter">1 / 11 Page</span>
+        </header>
 
-            <!-- 하이라이트 그리드 -->
-            <div class="mobile-stats-grid">
-                <div class="mobile-stat-card">
-                    <span class="stat-icon">🎖️</span>
-                    <strong>100% 임관</strong>
-                    <span>공군 기술 부사관</span>
-                </div>
-                <div class="mobile-stat-card">
-                    <span class="stat-icon">💰</span>
-                    <strong>전액 국비 지원</strong>
-                    <span>수업료·기숙사 무료</span>
-                </div>
-                <div class="mobile-stat-card">
-                    <span class="stat-icon">✈️</span>
-                    <strong>최첨단 실습</strong>
-                    <span>전투기·MCRC·위성</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- 가. 학교 특성 -->
-        <section id="mobile-features" class="mobile-section">
-            <h2 class="mobile-section-title">가. 학교 특성</h2>
-            <div class="features-list">
-                <div class="feature-item">
-                    <span class="feature-icon">🎖️</span>
-                    <div class="feature-text">
-                        <h3>공군 정예 기술 부사관</h3>
-                        <p>졸업과 동시에 전원 공군 기술 부사관(하사)으로 임관합니다.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-icon">💰</span>
-                    <div class="feature-text">
-                        <h3>전액 국비 지원</h3>
-                        <p>입학금, 수업료, 기숙사비 등 생활비 전액 면제와 매월 소정의 월급이 지급됩니다.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-icon">✈️</span>
-                    <div class="feature-text">
-                        <h3>항공 우주 분야 기술</h3>
-                        <p>항공기 정비, 정보통신 등 공군 비행단의 시스템과 연계된 수준 높은 마이스터 교육을 받습니다.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 나. 학교 교육과정 -->
-        <section id="mobile-curriculum" class="mobile-section">
-            <h2 class="mobile-section-title">나. 학교 교육과정</h2>
-            <p class="m-section-desc">체계화된 교육과정을 통해 기초 전공 지식부터 전문 분야 지식까지 완성도 높게 이수합니다.</p>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-badge">1학년</div>
-                    <div class="timeline-content">
-                        <h3>기초 전공 및 소양 교육</h3>
-                        <p>항공기 일반, 정보 등 전문 교과와 국어, 수학 등 보통 교과를 이수하여 전공 기초를 닦습니다.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-badge">2학년</div>
-                    <div class="timeline-content">
-                        <h3>전공 기초 교육</h3>
-                        <p>4개의 전공(항공통제, 항공전자, 정보통신, 항공기계) 이론과 실습을 실질적으로 진행합니다.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-badge">3학년</div>
-                    <div class="timeline-content">
-                        <h3>전공 심화 교육</h3>
-                        <p>부사관 전문성 함양을 위한 군사학과 현장 실무 교육을 통해 임관 후 즉시 실무가 가능한 역량을 기릅니다.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 다. 학교 시설 소개 -->
-        <section id="mobile-facilities" class="mobile-section">
-            <h2 class="mobile-section-title">다. 학교 시설 소개</h2>
-            <p class="m-section-desc">오직 학업과 생활에만 온전히 몰입할 수 있도록 교육·생활 전반에 시설을 구비하고 있습니다.</p>
-            <div class="facilities-list">
-                <div class="facility-item">
-                    <h3>지학관 / 기예관</h3>
-                    <p>교과 수업을 위한 교실과 실습장, 휴게실이 있습니다.</p>
-                </div>
-                <div class="facility-item">
-                    <h3>종합정비 실습장</h3>
-                    <p>기체, 기관, 용접, 판금 실습을 위한 최신 장비를 갖추고 있습니다.</p>
-                </div>
-                <div class="facility-item">
-                    <h3>정보화 실습장</h3>
-                    <p>인공지능과 정보화 소양 교육을 위한 최신 컴퓨터 실습장입니다.</p>
-                </div>
-                <div class="facility-item">
-                    <h3>항공 통제/관제 실습장</h3>
-                    <p>시뮬레이션 장비를 통한 현장을 느낄 수 있는 실습장입니다.</p>
-                </div>
-                <div class="facility-item">
-                    <h3>항공 전자 실습장</h3>
-                    <p>숄더링, 회로 분석 등 전자 분야 실습장입니다.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 라. 전공 매칭 테스트 -->
-        <section id="mobile-quiz" class="mobile-section">
-            <h2 class="mobile-section-title">라. 전공 매칭 테스트</h2>
-            <div class="mobile-quiz-wrapper">
-                <p class="m-quiz-intro-desc">10가지 간단한 문항을 통해 당신의 소질과 적성에 가장 잘 맞는 전공을 분석해 드립니다.</p>
-                
-                <div class="quiz-container">
-                    <!-- 시작 화면 -->
-                    <div id="quiz-start-m" class="quiz-screen active">
-                        <div class="quiz-intro">
-                            <span class="quiz-badge">기본 진단</span>
-                            <h3>나의 전공 찾기</h3>
-                            <p>나의 소질과 흥미는 어떤 전공과 잘 맞을까요?<br>10가지 간단한 질문을 통해 분석해보세요.</p>
-                            <button type="button" class="quiz-start-btn" onclick="startQuiz()" ontouchend="startQuiz()">테스트 시작하기 ➔</button>
-                        </div>
-                    </div>
-
-                    <!-- 질문 화면 -->
-                    <div id="quiz-question-m" class="quiz-screen">
-                        <div class="quiz-progress-bar">
-                            <div class="quiz-progress-fill m-progress-fill"></div>
-                        </div>
-                        <div class="quiz-step-indicator">질문 <span class="m-current-step">1</span> / 10</div>
-                        <div class="quiz-q-text m-q-text">질문 내용</div>
-                        <div class="quiz-options-list m-options-list">
-                            <!-- 동적 옵션 생성 -->
-                        </div>
-                    </div>
-
-                    <!-- 결과 화면 -->
-                    <div id="quiz-result-m" class="quiz-screen">
-                        <div class="quiz-result-card">
-                            <span class="quiz-badge">🎉 분석 완료</span>
-                            <div class="result-emblem-container">
-                                <img src="" alt="추천 전공 마크" class="result-emblem-img m-result-emblem" style="display: none;">
-                            </div>
-                            <h3 class="result-major-title">추천 전공: <span class="highlight-text m-result-name">전공명</span></h3>
-                            <p class="result-major-description m-result-desc">추천 이유 설명</p>
-                            <div class="result-actions">
-                                <button class="result-btn detail m-result-detail-btn" onclick="goToRecommendedDept()">해당 전공 상세 정보 보기 ➔</button>
-                                <button class="result-btn restart" onclick="resetQuiz()">다시하기 🔄</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 마. 학교 전공 소개 (4대 전공 상세 안내) -->
-        <section id="mobile-depts" class="mobile-section">
-            <h2 class="mobile-section-title">마. 학교 전공 소개</h2>
-            <p class="m-section-desc">공군항공과학고등학교의 4대 전문 전공별 세부 소개 및 주요 교육과정, 배정 특기, 실습실 안내입니다.</p>
-            
-            <!-- 1. 항공통제전공 -->
-            <div class="mobile-dept-card">
-                <div class="m-dept-header control">
-                    <img src="images/control_emblem.png" alt="항공통제전공 마크" class="m-dept-emblem">
-                    <div>
-                        <h3>항공통제전공</h3>
-                        <p>Aviation Control</p>
-                    </div>
-                </div>
-                <div class="m-dept-body">
-                    <p class="m-dept-subtitle">"영공방위의 눈과 목소리, 완벽한 공중 작전 통제의 시작"</p>
+        <!-- 좌우 스크롤 스냅 래퍼 -->
+        <div class="mobile-slides-container" id="mobile-slides-container">
+            <!-- Slide 0: 표지 및 개요 -->
+            <section class="mobile-slide-page" id="m-slide-0">
+                <div class="mobile-hero">
+                    <div class="mobile-hero-badge">✨ 공군 기술 부사관의 요람</div>
+                    <h1 class="mobile-hero-title">공군항공과학고등학교<br><span class="highlight">전공 소개</span></h1>
+                    <p class="mobile-hero-desc">하늘을 지키는 가장 높은 힘, 대한민국 공군의 최정예 항공 기술 마이스터를 육성합니다.</p>
                     
-                    <div class="m-full-card">
-                        <h4>🌐 전공 소개</h4>
-                        <p>항공통제전공은 공군의 공중 작전을 완벽하게 통제하고 지원하는 항공관제 및 방공무기통제 전문 기술 부사관을 양성합니다. 영공을 비행하는 항공기의 안전을 보장하는 항공교통 관제 절차와 영공 침범에 실시간으로 대처하기 위한 레이더 정보 판독 및 공중 작전 통제 기술을 교육합니다.</p>
+                    <div class="mobile-quick-actions">
+                        <button type="button" onclick="goToMobileSlide(4)" class="mobile-btn primary">🎯 나의 전공 찾기 (진단)</button>
+                        <button type="button" onclick="goToMobileSlide(5)" class="mobile-btn secondary">📚 4대 전공 둘러보기</button>
                     </div>
 
-                    <div class="m-full-card">
-                        <h4>📖 주요 교육과정 (Curriculum)</h4>
-                        <table class="curriculum-table">
-                            <thead>
-                                <tr>
-                                    <th style="width: 30%">학년/학기</th>
-                                    <th style="width: 70%">교육 교과목</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="grade-badge">2학년 1학기</td>
-                                    <td>항공기운용일반, 항공교통업무, 사무행정, IT시스템관리</td>
-                                </tr>
-                                <tr>
-                                    <td class="grade-badge">2학년 2학기</td>
-                                    <td>비행안전일반, 데이터베이스공학, 공학실무 (사무자동화산업기사 연계)</td>
-                                </tr>
-                                <tr>
-                                    <td class="grade-badge">3학년 1학기</td>
-                                    <td>관제레이더실무, 모의관제이론, 항공통신절차, 비행정보업무</td>
-                                </tr>
-                                <tr>
-                                    <td class="grade-badge">3학년 2학기</td>
-                                    <td>방공작전통제, 공중항법학, 항공기상관측, 항행안전시설</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="mobile-stats-grid">
+                        <div class="mobile-stat-card">
+                            <span class="stat-icon">🎖️</span>
+                            <strong>100% 임관</strong>
+                            <span>공군 기술 부사관</span>
+                        </div>
+                        <div class="mobile-stat-card">
+                            <span class="stat-icon">💰</span>
+                            <strong>전액 국비 지원</strong>
+                            <span>수업료·기숙사 무료</span>
+                        </div>
+                        <div class="mobile-stat-card">
+                            <span class="stat-icon">✈️</span>
+                            <strong>최첨단 실습</strong>
+                            <span>전투기·MCRC·위성</span>
+                        </div>
                     </div>
+                </div>
+            </section>
 
-                    <div class="m-full-card">
-                        <h4>✈️ 졸업 후 배정 특기 (Specialty)</h4>
-                        <ul class="specialty-list">
-                            <li><strong>항공관제 (300X)</strong><p>비행단 관제탑 및 레이더 관제소(RAPCON)에서 항공기 이착륙 통제 및 안전 조율</p></li>
-                            <li><strong>방공무기통제 (311X)</strong><p>중앙방공통제소(MCRC)에서 영공 감시, 항적 식별 및 전투기 요격 관제 임무 수행</p></li>
-                            <li><strong>항공통제운용 (304X)</strong><p>전술 항공 통제 장비 운용 및 작전 통신망 지휘/통제</p></li>
-                            <li><strong>항공기상분석 (802X)</strong><p>기상 레이더 및 위성 정보를 분석하여 작전 비행 기상 예보 지원</p></li>
-                        </ul>
+            <!-- Slide 1: 가. 학교 특성 -->
+            <section class="mobile-slide-page" id="m-slide-1">
+                <div class="mobile-section">
+                    <h2 class="mobile-section-title">가. 학교 특성</h2>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <span class="feature-icon">🎖️</span>
+                            <div class="feature-text">
+                                <h3>공군 정예 기술 부사관</h3>
+                                <p>졸업과 동시에 전원 공군 기술 부사관(하사)으로 임관합니다.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">💰</span>
+                            <div class="feature-text">
+                                <h3>전액 국비 지원</h3>
+                                <p>입학금, 수업료, 기숙사비 등 생활비 전액 면제와 매월 소정의 월급이 지급됩니다.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✈️</span>
+                            <div class="feature-text">
+                                <h3>항공 우주 분야 기술</h3>
+                                <p>항공기 정비, 정보통신 등 공군 비행단의 시스템과 연계된 수준 높은 마이스터 교육을 받습니다.</p>
+                            </div>
+                        </div>
                     </div>
+                </div>
+            </section>
 
-                    <div class="m-full-card">
-                        <h4>🔬 실습실 및 특화 장비</h4>
-                        <div class="dept-fac-list">
-                            <div class="dept-fac-item">
-                                <div class="dept-fac-icon">📡</div>
-                                <div class="dept-fac-text">
-                                    <h4>3D 모의 관제 시뮬레이터실</h4>
-                                    <p>360도 전경의 가상 비행장을 화면으로 구현하여 다양한 기상 조건 및 돌발 비상 상황 이착륙 관제 모의 훈련을 진행합니다.</p>
+            <!-- Slide 2: 나. 학교 교육과정 -->
+            <section class="mobile-slide-page" id="m-slide-2">
+                <div class="mobile-section">
+                    <h2 class="mobile-section-title">나. 학교 교육과정</h2>
+                    <p class="m-section-desc">체계화된 교육과정을 통해 기초 전공 지식부터 전문 분야 지식까지 완성도 높게 이수합니다.</p>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-badge">1학년</div>
+                            <div class="timeline-content">
+                                <h3>기초 전공 및 소양 교육</h3>
+                                <p>항공기 일반, 정보 등 전문 교과와 국어, 수학 등 보통 교과를 이수하여 전공 기초를 닦습니다.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-badge">2학년</div>
+                            <div class="timeline-content">
+                                <h3>전공 기초 교육</h3>
+                                <p>4개의 전공(항공통제, 항공전자, 정보통신, 항공기계) 이론과 실습을 실질적으로 진행합니다.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-badge">3학년</div>
+                            <div class="timeline-content">
+                                <h3>전공 심화 교육</h3>
+                                <p>부사관 전문성 함양을 위한 군사학과 현장 실무 교육을 통해 임관 후 즉시 실무가 가능한 역량을 기릅니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 3: 다. 학교 시설 소개 -->
+            <section class="mobile-slide-page" id="m-slide-3">
+                <div class="mobile-section">
+                    <h2 class="mobile-section-title">다. 학교 시설 소개</h2>
+                    <p class="m-section-desc">오직 학업과 생활에만 온전히 몰입할 수 있도록 교육·생활 전반에 시설을 구비하고 있습니다.</p>
+                    <div class="facilities-list">
+                        <div class="facility-item">
+                            <h3>지학관 / 기예관</h3>
+                            <p>교과 수업을 위한 교실과 실습장, 휴게실이 있습니다.</p>
+                        </div>
+                        <div class="facility-item">
+                            <h3>종합정비 실습장</h3>
+                            <p>기체, 기관, 용접, 판금 실습을 위한 최신 장비를 갖추고 있습니다.</p>
+                        </div>
+                        <div class="facility-item">
+                            <h3>정보화 실습장</h3>
+                            <p>인공지능과 정보화 소양 교육을 위한 최신 컴퓨터 실습장입니다.</p>
+                        </div>
+                        <div class="facility-item">
+                            <h3>항공 통제/관제 실습장</h3>
+                            <p>시뮬레이션 장비를 통한 현장을 느낄 수 있는 실습장입니다.</p>
+                        </div>
+                        <div class="facility-item">
+                            <h3>항공 전자 실습장</h3>
+                            <p>숄더링, 회로 분석 등 전자 분야 실습장입니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 4: 라. 전공 매칭 테스트 -->
+            <section class="mobile-slide-page" id="m-slide-4">
+                <div class="mobile-section">
+                    <h2 class="mobile-section-title">라. 전공 매칭 테스트</h2>
+                    <div class="mobile-quiz-wrapper">
+                        <p class="m-quiz-intro-desc">10가지 간단한 문항을 통해 당신의 소질과 적성에 가장 잘 맞는 전공을 분석해 드립니다.</p>
+                        
+                        <div class="quiz-container">
+                            <!-- 시작 화면 -->
+                            <div id="quiz-start-m" class="quiz-screen active">
+                                <div class="quiz-intro">
+                                    <span class="quiz-badge">기본 진단</span>
+                                    <h3>나의 전공 찾기</h3>
+                                    <p>나의 소질과 흥미는 어떤 전공과 잘 맞을까요?<br>10가지 간단한 질문을 통해 분석해보세요.</p>
+                                    <button type="button" class="quiz-start-btn" onclick="startQuiz()" ontouchend="startQuiz()">테스트 시작하기 ➔</button>
                                 </div>
                             </div>
-                            <div class="dept-fac-item">
-                                <div class="dept-fac-icon">🖥️</div>
-                                <div class="dept-fac-text">
-                                    <h4>레이더 항적 판독 실습실</h4>
-                                    <p>MCRC 시뮬레이터 장비를 활용해 실시간으로 유입되는 가상의 항적 정보를 판독하고 전투기 유도 절차를 실습합니다.</p>
+
+                            <!-- 질문 화면 -->
+                            <div id="quiz-question-m" class="quiz-screen">
+                                <div class="quiz-progress-bar">
+                                    <div class="quiz-progress-fill m-progress-fill"></div>
+                                </div>
+                                <div class="quiz-step-indicator">질문 <span class="m-current-step">1</span> / 10</div>
+                                <div class="quiz-q-text m-q-text">질문 내용</div>
+                                <div class="quiz-options-list m-options-list">
+                                    <!-- 동적 옵션 생성 -->
                                 </div>
                             </div>
-                            <div class="dept-fac-item">
-                                <div class="dept-fac-icon">📻</div>
-                                <div class="dept-fac-text">
-                                    <h4>항공 무선 통신 실습실</h4>
-                                    <p>관제 표준 통화법 연습을 위한 오디오 매트릭스 시스템과 VHF/UHF 군용 무전 장비를 조작 실습합니다.</p>
+
+                            <!-- 결과 화면 -->
+                            <div id="quiz-result-m" class="quiz-screen">
+                                <div class="quiz-result-card">
+                                    <span class="quiz-badge">🎉 분석 완료</span>
+                                    <div class="result-emblem-container">
+                                        <img src="" alt="추천 전공 마크" class="result-emblem-img m-result-emblem" style="display: none;">
+                                    </div>
+                                    <h3 class="result-major-title">추천 전공: <span class="highlight-text m-result-name">전공명</span></h3>
+                                    <p class="result-major-description m-result-desc">추천 이유 설명</p>
+                                    <div class="result-actions">
+                                        <button class="result-btn detail m-result-detail-btn" onclick="goToRecommendedDept()">해당 전공 상세 정보 보기 ➔</button>
+                                        <button class="result-btn restart" onclick="resetQuiz()">다시하기 🔄</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <!-- 2. 항공전자전공 -->
-            <div class="mobile-dept-card">
-                <div class="m-dept-header electronics">
-                    <img src="images/electronics_emblem.png" alt="항공전자전공 마크" class="m-dept-emblem">
-                    <div>
-                        <h3>항공전자전공</h3>
-                        <p>Aviation Electronics</p>
-                    </div>
-                </div>
-                <div class="m-dept-body">
-                    <p class="m-dept-subtitle">"전투기의 잠재력을 깨우는 최고의 전자 계통 제어 전문가"</p>
-
-                    <div class="m-full-card">
-                        <h4>🌐 전공 소개</h4>
-                        <p>항공전자전공은 첨단 전투기(KF-21, F-15K 등)의 두뇌와 신경망을 이루는 항공 전자장비, 화력제어 시스템, 통신항법 장비를 정비 및 유지보수하는 정밀 전자 정비 부사관을 육성합니다. 디지털/아날로그 전자 회로 설계 및 분석 기술과 고도화된 계통 진단 절차를 교육합니다.</p>
-                    </div>
-
-                    <div class="m-full-card">
-                        <h4>📖 주요 교육과정 (Curriculum)</h4>
-                        <table class="curriculum-table">
-                            <thead>
-                                <tr>
-                                    <th style="width: 30%">학년/학기</th>
-                                    <th style="width: 70%">교육 교과목</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="grade-badge">2학년 1학기</td>
-                                    <td>전기전자일반, 기초전자회로, 사무행정, 정보처리기반</td>
-                                </tr>
-                                <tr>
-                                    <td class="grade-badge">2학년 2학기</td>
-                                    <td>디지털논리회로, 마이크로프로세서, 프로그래밍일반, 전자기기인증 (전자기기기능사 연계)</td>
-                                </tr>
-                                <tr>
-                                    <td class="grade-badge">3학년 1학기</td>
-                                    <td>항공전자장비정비, 통신항법시스템, 레이더공학 실무, 사격통제계통</td>
-                                </tr>
-                                <tr>
-                                    <td class="grade-badge">3학년 2학기</td>
-                                    <td>자동제어공학, 헬기전자계통, 계측공학, 항공계기정비 실무</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="m-full-card">
-                        <h4>✈️ 졸업 후 배정 특기 (Specialty)</h4>
-                        <ul class="specialty-list">
-                            <li><strong>항공전자장비정비 (222X)</strong><p>레이더, 항법 장치, 항공 컴퓨터 등 전자 계통 장비의 기지 및 야전 정비</p></li>
-                            <li><strong>항공무장정비 (221X)</strong><p>전투기 사격 통제 계통, 유도 무기 발사대 및 항공 무장 정비/유도 관리</p></li>
-                            <li><strong>항공기성능진단 (223X)</strong><p>정밀 부품 자동 시험 장비(ATE)를 가동하여 핵심 항전 전자모듈 정밀 분석 및 검사</p></li>
-                            <li><strong>항공정밀측정 (225X)</strong><p>항공 정밀 계측기의 오차를 보정하고 교정하는 검정 관리 업무</p></li>
-                        </ul>
-                    </div>
-
-                    <div class="m-full-card">
-                        <h4>🔬 실습실 및 특화 장비</h4>
-                        <div class="dept-fac-list">
-                            <div class="dept-fac-item">
-                                <div class="dept-fac-icon">⚡</div>
-                                <div class="dept-fac-text">
-                                    <h4>Avionics 통합 고장 진단 실습실</h4>
-                                    <p>실제 전투기 모형 테스트 벤치와 정밀 계측기(오실로스코프)를 연동하여 가상의 전자 고장 회로를 추적 복구합니다.</p>
-                                </div>
+            <!-- Slide 5: 마. 1) 항공통제전공 -->
+            <section class="mobile-slide-page" id="m-slide-5">
+                <div class="mobile-section">
+                    <h2 class="mobile-section-title">마. 학교 전공 소개 (1/4)</h2>
+                    <div class="mobile-dept-card">
+                        <div class="m-dept-header control">
+                            <img src="images/control_emblem.png" alt="항공통제전공 마크" class="m-dept-emblem">
+                            <div>
+                                <h3>항공통제전공</h3>
+                                <p>Aviation Control</p>
                             </div>
-                            <div class="dept-fac-item">
-                                <div class="dept-fac-icon">💻</div>
-                                <div class="dept-fac-text">
-                                    <h4>임베디드 회로 설계 실습실</h4>
-                                    <p>마이크로컨트롤러(MCU)와 FPGA 칩에 제어 펌웨어를 업로드하여 항공 센서 수집 및 모터 구동 실습을 진행합니다.</p>
-                                </div>
+                        </div>
+                        <div class="m-dept-body">
+                            <p class="m-dept-subtitle">"영공방위의 눈과 목소리, 완벽한 공중 작전 통제의 시작"</p>
+                            
+                            <div class="m-full-card">
+                                <h4>🌐 전공 소개</h4>
+                                <p>항공통제전공은 공군의 공중 작전을 완벽하게 통제하고 지원하는 항공관제 및 방공무기통제 전문 기술 부사관을 양성합니다. 영공을 비행하는 항공기의 안전을 보장하는 항공교통 관제 절차와 영공 침범에 실시간으로 대처하기 위한 레이더 정보 판독 및 공중 작전 통제 기술을 교육합니다.</p>
                             </div>
-                            <div class="dept-fac-item">
-                                <div class="dept-fac-icon">🛰️</div>
-                                <div class="dept-fac-text">
-                                    <h4>레이더 및 통신 항법 실습실</h4>
-                                    <p>전투기 무선 송수신 장치와 피아식별기(IFF), GPS 항법 유닛의 주파수 정합 및 안테나 출력을 검사합니다.</p>
+
+                            <div class="m-full-card">
+                                <h4>📖 주요 교육과정 (Curriculum)</h4>
+                                <table class="curriculum-table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 30%">학년/학기</th>
+                                            <th style="width: 70%">교육 교과목</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="grade-badge">2학년 1학기</td>
+                                            <td>항공기운용일반, 항공교통업무, 사무행정, IT시스템관리</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="grade-badge">2학년 2학기</td>
+                                            <td>비행안전일반, 데이터베이스공학, 공학실무 (사무자동화산업기사 연계)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="grade-badge">3학년 1학기</td>
+                                            <td>관제레이더실무, 모의관제이론, 항공통신절차, 비행정보업무</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="grade-badge">3학년 2학기</td>
+                                            <td>방공작전통제, 공중항법학, 항공기상관측, 항행안전시설</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="m-full-card">
+                                <h4>✈️ 졸업 후 배정 특기 (Specialty)</h4>
+                                <ul class="specialty-list">
+                                    <li><strong>항공관제 (300X)</strong><p>비행단 관제탑 및 레이더 관제소(RAPCON)에서 항공기 이착륙 통제 및 안전 조율</p></li>
+                                    <li><strong>방공무기통제 (311X)</strong><p>중앙방공통제소(MCRC)에서 영공 감시, 항적 식별 및 전투기 요격 관제 임무 수행</p></li>
+                                    <li><strong>항공통제운용 (304X)</strong><p>전술 항공 통제 장비 운용 및 작전 통신망 지휘/통제</p></li>
+                                    <li><strong>항공기상분석 (802X)</strong><p>기상 레이더 및 위성 정보를 분석하여 작전 비행 기상 예보 지원</p></li>
+                                </ul>
+                            </div>
+
+                            <div class="m-full-card">
+                                <h4>🔬 실습실 및 특화 장비</h4>
+                                <div class="dept-fac-list">
+                                    <div class="dept-fac-item">
+                                        <div class="dept-fac-icon">📡</div>
+                                        <div class="dept-fac-text">
+                                            <h4>3D 모의 관제 시뮬레이터실</h4>
+                                            <p>360도 전경의 가상 비행장을 화면으로 구현하여 다양한 기상 조건 및 돌발 비상 상황 이착륙 관제 모의 훈련을 진행합니다.</p>
+                                        </div>
+                                    </div>
+                                    <div class="dept-fac-item">
+                                        <div class="dept-fac-icon">🖥️</div>
+                                        <div class="dept-fac-text">
+                                            <h4>레이더 항적 판독 실습실</h4>
+                                            <p>MCRC 시뮬레이터 장비를 활용해 실시간으로 유입되는 가상의 항적 정보를 판독하고 전투기 유도 절차를 실습합니다.</p>
+                                        </div>
+                                    </div>
+                                    <div class="dept-fac-item">
+                                        <div class="dept-fac-icon">📻</div>
+                                        <div class="dept-fac-text">
+                                            <h4>항공 무선 통신 실습실</h4>
+                                            <p>관제 표준 통화법 연습을 위한 오디오 매트릭스 시스템과 VHF/UHF 군용 무전 장비를 조작 실습합니다.</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <!-- 3. 정보통신전공 -->
-            <div class="mobile-dept-card">
-                <div class="m-dept-header telecom">
-                    <img src="images/telecom_emblem.png" alt="정보통신전공 마크" class="m-dept-emblem">
-                    <div>
-                        <h3>정보통신전공</h3>
-                        <p>Telecommunications</p>
-                    </div>
-                </div>
-                <div class="m-dept-body">
-                    <p class="m-dept-subtitle">"전술 정보망과 군 네트워크망을 수호하는 사이버 방패"</p>
-
-                    <div class="m-full-card">
-                        <h4>🌐 전공 소개</h4>
-                        <p>정보통신전공은 초연결 네트워크 시대에 대응하여 공군의 정보통신체계 및 군 전술 네트워크망을 구축, 운용 및 보호하는 군사 IT 기술 부사관을 육성합니다. 소프트웨어 개발, 컴퓨터 네트워크 설계, 사물인터넷(IoT) 기술 및 최신 사이버 보안 위협에 맞서는 방어 전술을 교육합니다.</p>
-                    </div>
-
-                    <div class="m-full-card">
-                        <h4>📖 주요 교육과정 (Curriculum)</h4>
-                        <table class="curriculum-table">
-                            <thead>
-                                <tr>
-                                    <th style="width: 30%">학년/학기</th>
-                                    <th style="width: 70%">교육 교과목</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="grade-badge">2학년 1학기</td>
-                                    <td>전기전자일반, 통신시스템, 사무행정, IT시스템관리, 응용SW Engineering (NCS 및 사무자동화산업기사 연계)</td>
-                                </tr>
-                                <tr>
-                                    <td class="grade-badge">2학년 2학기</td>
-                                    <td>정보통신, DB Engineering, 사무행정, 총무 (NCS 및 사무자동화산업기사 연계)</td>
-                                </tr>
-                                <tr>
-                                    <td class="grade-badge">3학년 1학기</td>
-                                    <td>컴퓨터네트워크, 프로그래밍, 사물인터넷과 센서제어, 컴퓨터보안, 무선통신시스템</td>
-                                </tr>
-                                <tr>
-                                    <td class="grade-badge">3학년 2학기</td>
-                                    <td>컴퓨터시스템 일반, 무선통신 구축, 네트워크 구축, 정보보호 관리</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="m-full-card">
-                        <h4>✈️ 졸업 후 배정 특기 (Specialty)</h4>
-                        <ul class="specialty-list">
-                            <li><strong>사이버체계운용 (301X)</strong><p>운영체제, 프로그래밍, 정보보호, 인공지능 관련 업무</p></li>
-                            <li><strong>작전체계운용 (302X)</strong><p>Radio Wave, TACAN, Radar, 5G 관련 업무</p></li>
-                            <li><strong>기반체계운용 (303X)</strong><p>네트워크, 정보보호, 광케이블, 서버관제 관련 업무</p></li>
-                            <li><strong>항공정보운용 (801X)</strong><p>군사보안, 정보관리, 영상정보, 표적정보 관련 업무</p></li>
-                            <li><strong>기상장비정비 (252X)</strong><p>기상 장비 관련 정비 업무</p></li>
-                        </ul>
-                    </div>
-
-                    <div class="m-full-card">
-                        <h4>🔬 실습실 및 장비</h4>
-                        <div class="dept-fac-list">
-                            <div class="dept-fac-item">
-                                <div class="dept-fac-icon">💻</div>
-                                <div class="dept-fac-text">
-                                    <h4>네트워크 실습실</h4>
-                                    <p>실제 라우터/스위치로 VLAN을 설계하고 모의 침입 방지 테스트(IPS/Firewall)를 통제 실습합니다.</p>
-                                </div>
+            <!-- Slide 6: 마. 2) 항공전자전공 -->
+            <section class="mobile-slide-page" id="m-slide-6">
+                <div class="mobile-section">
+                    <h2 class="mobile-section-title">마. 학교 전공 소개 (2/4)</h2>
+                    <div class="mobile-dept-card">
+                        <div class="m-dept-header electronics">
+                            <img src="images/electronics_emblem.png" alt="항공전자전공 마크" class="m-dept-emblem">
+                            <div>
+                                <h3>항공전자전공</h3>
+                                <p>Aviation Electronics</p>
                             </div>
-                            <div class="dept-fac-item">
-                                <div class="dept-fac-icon">📡</div>
-                                <div class="dept-fac-text">
-                                    <h4>정보화 실습장</h4>
-                                    <p>공군에서 사용중인 DB와 SW 전반을 실습 및 학습합니다.</p>
-                                </div>
+                        </div>
+                        <div class="m-dept-body">
+                            <p class="m-dept-subtitle">"전투기의 잠재력을 깨우는 최고의 전자 계통 제어 전문가"</p>
+
+                            <div class="m-full-card">
+                                <h4>🌐 전공 소개</h4>
+                                <p>항공전자전공은 첨단 전투기(KF-21, F-15K 등)의 두뇌와 신경망을 이루는 항공 전자장비, 화력제어 시스템, 통신항법 장비를 정비 및 유지보수하는 정밀 전자 정비 부사관을 육성합니다. 디지털/아날로그 전자 회로 설계 및 분석 기술과 고도화된 계통 진단 절차를 교육합니다.</p>
                             </div>
-                            <div class="dept-fac-item">
-                                <div class="dept-fac-icon">🔌</div>
-                                <div class="dept-fac-text">
-                                    <h4>정보통신 실습실</h4>
-                                    <p>광섬유 융착 접속기 및 OTDR 계측 장비를 활용하여 군 지하 기반망 케이블 선로를 구축·정비합니다.</p>
-                                </div>
+
+                            <div class="m-full-card">
+                                <h4>📖 주요 교육과정 (Curriculum)</h4>
+                                <table class="curriculum-table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 30%">학년/학기</th>
+                                            <th style="width: 70%">교육 교과목</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="grade-badge">2학년 1학기</td>
+                                            <td>전기전자일반, 기초전자회로, 사무행정, 정보처리기반</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="grade-badge">2학년 2학기</td>
+                                            <td>디지털논리회로, 마이크로프로세서, 프로그래밍일반, 전자기기인증 (전자기기기능사 연계)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="grade-badge">3학년 1학기</td>
+                                            <td>항공전자장비정비, 통신항법시스템, 레이더공학 실무, 사격통제계통</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="grade-badge">3학년 2학기</td>
+                                            <td>자동제어공학, 헬기전자계통, 계측공학, 항공계기정비 실무</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
-                            <div class="dept-fac-item">
-                                <div class="dept-fac-icon">🔌</div>
-                                <div class="dept-fac-text">
-                                    <h4>전자 실습실</h4>
-                                    <p>레이더, 안테나에 사용하는 전자 회로를 분석 실습합니다.</p>
+
+                            <div class="m-full-card">
+                                <h4>✈️ 졸업 후 배정 특기 (Specialty)</h4>
+                                <ul class="specialty-list">
+                                    <li><strong>항공전자장비정비 (222X)</strong><p>레이더, 항법 장치, 항공 컴퓨터 등 전자 계통 장비의 기지 및 야전 정비</p></li>
+                                    <li><strong>항공무장정비 (221X)</strong><p>전투기 사격 통제 계통, 유도 무기 발사대 및 항공 무장 정비/유도 관리</p></li>
+                                    <li><strong>항공기성능진단 (223X)</strong><p>정밀 부품 자동 시험 장비(ATE)를 가동하여 핵심 항전 전자모듈 정밀 분석 및 검사</p></li>
+                                    <li><strong>항공정밀측정 (225X)</strong><p>항공 정밀 계측기의 오차를 보정하고 교정하는 검정 관리 업무</p></li>
+                                </ul>
+                            </div>
+
+                            <div class="m-full-card">
+                                <h4>🔬 실습실 및 특화 장비</h4>
+                                <div class="dept-fac-list">
+                                    <div class="dept-fac-item">
+                                        <div class="dept-fac-icon">⚡</div>
+                                        <div class="dept-fac-text">
+                                            <h4>Avionics 통합 고장 진단 실습실</h4>
+                                            <p>실제 전투기 모형 테스트 벤치와 정밀 계측기(오실로스코프)를 연동하여 가상의 전자 고장 회로를 추적 복구합니다.</p>
+                                        </div>
+                                    </div>
+                                    <div class="dept-fac-item">
+                                        <div class="dept-fac-icon">💻</div>
+                                        <div class="dept-fac-text">
+                                            <h4>임베디드 회로 설계 실습실</h4>
+                                            <p>마이크로컨트롤러(MCU)와 FPGA 칩에 제어 펌웨어를 업로드하여 항공 센서 수집 및 모터 구동 실습을 진행합니다.</p>
+                                        </div>
+                                    </div>
+                                    <div class="dept-fac-item">
+                                        <div class="dept-fac-icon">🛰️</div>
+                                        <div class="dept-fac-text">
+                                            <h4>레이더 및 통신 항법 실습실</h4>
+                                            <p>전투기 무선 송수신 장치와 피아식별기(IFF), GPS 항법 유닛의 주파수 정합 및 안테나 출력을 검사합니다.</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <!-- 4. 항공기계전공 -->
-            <div class="mobile-dept-card">
-                <div class="m-dept-header mechanic">
-                    <img src="images/mechanic_emblem.png" alt="항공기계전공 마크" class="m-dept-emblem">
-                    <div>
-                        <h3>항공기계전공</h3>
-                        <p>Aeronautical Mechanics</p>
-                    </div>
-                </div>
-                <div class="m-dept-body">
-                    <p class="m-dept-subtitle">"하늘을 나는 전투기의 강철 심장과 동체를 다루는 정비 명장"</p>
-
-                    <div class="m-full-card">
-                        <h4>🌐 전공 소개</h4>
-                        <p>항공기계전공은 대한민국 공군 영공 방위의 최일선 기체 정비 및 제트 엔진 정비 전문가를 육성합니다. 전투기 가스터빈 제트 엔진의 분해/조립 실무, 손상된 기체 구조물을 수리하는 판금 및 용접 설계, 그리고 복잡한 제동/랜딩기어 시스템을 수리하는 항공 유공압 제어 기술을 교육합니다.</p>
-                    </div>
-
-                    <div class="m-full-card">
-                        <h4>📖 주요 교육과정 (Curriculum)</h4>
-                        <table class="curriculum-table">
-                            <thead>
-                                <tr>
-                                    <th style="width: 30%">학년/학기</th>
-                                    <th style="width: 70%">교육 교과목</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="grade-badge">2학년 1학기</td>
-                                    <td>공업재료일반, 항공기일반, 기계도면작성, 사무행정</td>
-                                </tr>
-                                <tr>
-                                    <td class="grade-badge">2학년 2학기</td>
-                                    <td>가공학기초, 유공압제어일반, 수작업실무, 컴퓨터응용가공 (항공기체정비기능사 연계)</td>
-                                </tr>
-                                <tr>
-                                    <td class="grade-badge">3학년 1학기</td>
-                                    <td>항공기체정비실습, 가스터빈엔진분해, 헬리콥터정비실무, 비파괴검사기초</td>
-                                </tr>
-                                <tr>
-                                    <td class="grade-badge">3학년 2학기</td>
-                                    <td>기체구조물수리, 엔진성능시험실습, 유공압정비실무, 판금작업공학</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="m-full-card">
-                        <h4>✈️ 졸업 후 배정 특기 (Specialty)</h4>
-                        <ul class="specialty-list">
-                            <li><strong>항공기체정비 (201X)</strong><p>전투기 기체 외형, 도어, 랜딩기어, 유압 조종 계통 점검 및 정비</p></li>
-                            <li><strong>항공기관정비 (202X)</strong><p>가스터빈 제트 엔진 분해·조립, 압축기 및 터빈 부품 정비, 엔진 지상 시험 운용</p></li>
-                            <li><strong>항공유압정비 (203X)</strong><p>조종타 고장 진단, 유공압 계통 펌프 및 액추에이터 수리·검사</p></li>
-                            <li><strong>항공기제작지원 (204X)</strong><p>항공기 도금, 판금, 용접 및 특수 금속 기계 가공 지원</p></li>
-                        </ul>
-                    </div>
-
-                    <div class="m-full-card">
-                        <h4>🔬 실습실 및 특화 장비</h4>
-                        <div class="dept-fac-list">
-                            <div class="dept-fac-item">
-                                <div class="dept-fac-icon">⚙️</div>
-                                <div class="dept-fac-text">
-                                    <h4>가스터빈 제트 엔진 분해 실습실</h4>
-                                    <p>실제 전투기에 탑재되는 가스터빈 엔진 오버홀(정밀 분해/검사/재조립) 실무를 전용 지그와 공구를 이용해 수행합니다.</p>
-                                </div>
-                            </div>
-                            <div class="dept-fac-item">
-                                <div class="dept-fac-icon">🔨</div>
-                                <div class="dept-fac-text">
-                                    <h4>기체 구조 판금 및 비파괴 실습실</h4>
-                                    <p>알루미늄 스킨 리벳 접합 기법을 훈련하고, 초음파 및 자분 비파괴 탐상 장비로 미세 크랙을 진단합니다.</p>
-                                </div>
-                            </div>
-                            <div class="dept-fac-item">
-                                <div class="dept-fac-icon">🔌</div>
-                                <div class="dept-fac-text">
-                                    <h4>유공압 제어 시뮬레이션실</h4>
-                                    <p>3000psi 압력의 랜딩기어 가동 실습 벤치와 유압 밸브 블록 회로를 조작하여 이착륙 동작을 시뮬레이션합니다.</p>
-                                </div>
+            <!-- Slide 7: 마. 3) 정보통신전공 -->
+            <section class="mobile-slide-page" id="m-slide-7">
+                <div class="mobile-section">
+                    <h2 class="mobile-section-title">마. 학교 전공 소개 (3/4)</h2>
+                    <div class="mobile-dept-card">
+                        <div class="m-dept-header telecom">
+                            <img src="images/telecom_emblem.png" alt="정보통신전공 마크" class="m-dept-emblem">
+                            <div>
+                                <h3>정보통신전공</h3>
+                                <p>Telecommunications</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                        <div class="m-dept-body">
+                            <p class="m-dept-subtitle">"전술 정보망과 군 네트워크망을 수호하는 사이버 방패"</p>
 
-        <!-- 바. 자주하는 질문 (FAQ) -->
-        <section id="mobile-faq" class="mobile-section">
-            <h2 class="mobile-section-title">바. 자주하는 질문 (FAQ)</h2>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span><span class="faq-q-badge">Q1</span> 전교생 기숙사 생활을 하나요?</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <span class="faq-a-badge">A</span>
-                            <p>네, 안전한 공동체 의식을 배양하고 학업에 완전 전념할 수 있도록 현대식 기숙사를 무상 제공하고 있습니다.</p>
+                            <div class="m-full-card">
+                                <h4>🌐 전공 소개</h4>
+                                <p>정보통신전공은 초연결 네트워크 시대에 대응하여 공군의 정보통신체계 및 군 전술 네트워크망을 구축, 운용 및 보호하는 군사 IT 기술 부사관을 육성합니다. 소프트웨어 개발, 컴퓨터 네트워크 설계, 사물인터넷(IoT) 기술 및 최신 사이버 보안 위협에 맞서는 방어 전술을 교육합니다.</p>
+                            </div>
+
+                            <div class="m-full-card">
+                                <h4>📖 주요 교육과정 (Curriculum)</h4>
+                                <table class="curriculum-table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 30%">학년/학기</th>
+                                            <th style="width: 70%">교육 교과목</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="grade-badge">2학년 1학기</td>
+                                            <td>전기전자일반, 통신시스템, 사무행정, IT시스템관리, 응용SW Engineering (NCS 및 사무자동화산업기사 연계)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="grade-badge">2학년 2학기</td>
+                                            <td>정보통신, DB Engineering, 사무행정, 총무 (NCS 및 사무자동화산업기사 연계)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="grade-badge">3학년 1학기</td>
+                                            <td>컴퓨터네트워크, 프로그래밍, 사물인터넷과 센서제어, 컴퓨터보안, 무선통신시스템</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="grade-badge">3학년 2학기</td>
+                                            <td>컴퓨터시스템 일반, 무선통신 구축, 네트워크 구축, 정보보호 관리</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="m-full-card">
+                                <h4>✈️ 졸업 후 배정 특기 (Specialty)</h4>
+                                <ul class="specialty-list">
+                                    <li><strong>사이버체계운용 (301X)</strong><p>운영체제, 프로그래밍, 정보보호, 인공지능 관련 업무</p></li>
+                                    <li><strong>작전체계운용 (302X)</strong><p>Radio Wave, TACAN, Radar, 5G 관련 업무</p></li>
+                                    <li><strong>기반체계운용 (303X)</strong><p>네트워크, 정보보호, 광케이블, 서버관제 관련 업무</p></li>
+                                    <li><strong>항공정보운용 (801X)</strong><p>군사보안, 정보관리, 영상정보, 표적정보 관련 업무</p></li>
+                                    <li><strong>기상장비정비 (252X)</strong><p>기상 장비 관련 정비 업무</p></li>
+                                </ul>
+                            </div>
+
+                            <div class="m-full-card">
+                                <h4>🔬 실습실 및 장비</h4>
+                                <div class="dept-fac-list">
+                                    <div class="dept-fac-item">
+                                        <div class="dept-fac-icon">💻</div>
+                                        <div class="dept-fac-text">
+                                            <h4>네트워크 실습실</h4>
+                                            <p>실제 라우터/스위치로 VLAN을 설계하고 모의 침입 방지 테스트(IPS/Firewall)를 통제 실습합니다.</p>
+                                        </div>
+                                    </div>
+                                    <div class="dept-fac-item">
+                                        <div class="dept-fac-icon">📡</div>
+                                        <div class="dept-fac-text">
+                                            <h4>정보화 실습장</h4>
+                                            <p>공군에서 사용중인 DB와 SW 전반을 실습 및 학습합니다.</p>
+                                        </div>
+                                    </div>
+                                    <div class="dept-fac-item">
+                                        <div class="dept-fac-icon">🔌</div>
+                                        <div class="dept-fac-text">
+                                            <h4>정보통신 실습실</h4>
+                                            <p>광섬유 융착 접속기 및 OTDR 계측 장비를 활용하여 군 지하 기반망 케이블 선로를 구축·정비합니다.</p>
+                                        </div>
+                                    </div>
+                                    <div class="dept-fac-item">
+                                        <div class="dept-fac-icon">🔌</div>
+                                        <div class="dept-fac-text">
+                                            <h4>전자 실습실</h4>
+                                            <p>레이더, 안테나에 사용하는 전자 회로를 분석 실습합니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span><span class="faq-q-badge">Q2</span> 졸업 후 의무 복무 기간은?</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <span class="faq-a-badge">A</span>
-                            <p>공군 하사 임관일로부터 7년입니다. 기술 스페셜리스트의 경력을 완벽하게 국가에서 인정받을 수 있습니다.</p>
+            </section>
+
+            <!-- Slide 8: 마. 4) 항공기계전공 -->
+            <section class="mobile-slide-page" id="m-slide-8">
+                <div class="mobile-section">
+                    <h2 class="mobile-section-title">마. 학교 전공 소개 (4/4)</h2>
+                    <div class="mobile-dept-card">
+                        <div class="m-dept-header mechanic">
+                            <img src="images/mechanic_emblem.png" alt="항공기계전공 마크" class="m-dept-emblem">
+                            <div>
+                                <h3>항공기계전공</h3>
+                                <p>Aeronautical Mechanics</p>
+                            </div>
+                        </div>
+                        <div class="m-dept-body">
+                            <p class="m-dept-subtitle">"하늘을 나는 전투기의 강철 심장과 동체를 다루는 정비 명장"</p>
+
+                            <div class="m-full-card">
+                                <h4>🌐 전공 소개</h4>
+                                <p>항공기계전공은 대한민국 공군 영공 방위의 최일선 기체 정비 및 제트 엔진 정비 전문가를 육성합니다. 전투기 가스터빈 제트 엔진의 분해/조립 실무, 손상된 기체 구조물을 수리하는 판금 및 용접 설계, 그리고 복잡한 제동/랜딩기어 시스템을 수리하는 항공 유공압 제어 기술을 교육합니다.</p>
+                            </div>
+
+                            <div class="m-full-card">
+                                <h4>📖 주요 교육과정 (Curriculum)</h4>
+                                <table class="curriculum-table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 30%">학년/학기</th>
+                                            <th style="width: 70%">교육 교과목</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="grade-badge">2학년 1학기</td>
+                                            <td>공업재료일반, 항공기일반, 기계도면작성, 사무행정</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="grade-badge">2학년 2학기</td>
+                                            <td>가공학기초, 유공압제어일반, 수작업실무, 컴퓨터응용가공 (항공기체정비기능사 연계)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="grade-badge">3학년 1학기</td>
+                                            <td>항공기체정비실습, 가스터빈엔진분해, 헬리콥터정비실무, 비파괴검사기초</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="grade-badge">3학년 2학기</td>
+                                            <td>기체구조물수리, 엔진성능시험실습, 유공압정비실무, 판금작업공학</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="m-full-card">
+                                <h4>✈️ 졸업 후 배정 특기 (Specialty)</h4>
+                                <ul class="specialty-list">
+                                    <li><strong>항공기체정비 (201X)</strong><p>전투기 기체 외형, 도어, 랜딩기어, 유압 조종 계통 점검 및 정비</p></li>
+                                    <li><strong>항공기관정비 (202X)</strong><p>가스터빈 제트 엔진 분해·조립, 압축기 및 터빈 부품 정비, 엔진 지상 시험 운용</p></li>
+                                    <li><strong>항공유압정비 (203X)</strong><p>조종타 고장 진단, 유공압 계통 펌프 및 액추에이터 수리·검사</p></li>
+                                    <li><strong>항공기제작지원 (204X)</strong><p>항공기 도금, 판금, 용접 및 특수 금속 기계 가공 지원</p></li>
+                                </ul>
+                            </div>
+
+                            <div class="m-full-card">
+                                <h4>🔬 실습실 및 특화 장비</h4>
+                                <div class="dept-fac-list">
+                                    <div class="dept-fac-item">
+                                        <div class="dept-fac-icon">⚙️</div>
+                                        <div class="dept-fac-text">
+                                            <h4>가스터빈 제트 엔진 분해 실습실</h4>
+                                            <p>실제 전투기에 탑재되는 가스터빈 엔진 오버홀(정밀 분해/검사/재조립) 실무를 전용 지그와 공구를 이용해 수행합니다.</p>
+                                        </div>
+                                    </div>
+                                    <div class="dept-fac-item">
+                                        <div class="dept-fac-icon">🔨</div>
+                                        <div class="dept-fac-text">
+                                            <h4>기체 구조 판금 및 비파괴 실습실</h4>
+                                            <p>알루미늄 스킨 리벳 접합 기법을 훈련하고, 초음파 및 자분 비파괴 탐상 장비로 미세 크랙을 진단합니다.</p>
+                                        </div>
+                                    </div>
+                                    <div class="dept-fac-item">
+                                        <div class="dept-fac-icon">🔌</div>
+                                        <div class="dept-fac-text">
+                                            <h4>유공압 제어 시뮬레이션실</h4>
+                                            <p>3000psi 압력의 랜딩기어 가동 실습 벤치와 유압 밸브 블록 회로를 조작하여 이착륙 동작을 시뮬레이션합니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span><span class="faq-q-badge">Q3</span> 본인 부담 교육 경비?</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <span class="faq-a-badge">A</span>
-                            <p>없습니다. 수업료, 급식비, 기숙사비 및 교과서대 등 모든 교육 관련 비용이 100% 면제되며 매월 소정의 품위유지비가 지급됩니다.</p>
+            </section>
+
+            <!-- Slide 9: 바. 자주하는 질문 (FAQ) -->
+            <section class="mobile-slide-page" id="m-slide-9">
+                <div class="mobile-section">
+                    <h2 class="mobile-section-title">바. 자주하는 질문 (FAQ)</h2>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span><span class="faq-q-badge">Q1</span> 전교생 기숙사 생활을 하나요?</span>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <span class="faq-a-badge">A</span>
+                                    <p>네, 안전한 공동체 의식을 배양하고 학업에 완전 전념할 수 있도록 현대식 기숙사를 무상 제공하고 있습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span><span class="faq-q-badge">Q2</span> 졸업 후 의무 복무 기간은?</span>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <span class="faq-a-badge">A</span>
+                                    <p>공군 하사 임관일로부터 7년입니다. 기술 스페셜리스트의 경력을 완벽하게 국가에서 인정받을 수 있습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span><span class="faq-q-badge">Q3</span> 본인 부담 교육 경비?</span>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <span class="faq-a-badge">A</span>
+                                    <p>없습니다. 수업료, 급식비, 기숙사비 및 교과서대 등 모든 교육 관련 비용이 100% 면제되며 매월 소정의 품위유지비가 지급됩니다.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- 사. 선배들 이야기 -->
-        <section id="mobile-stories" class="mobile-section">
-            <h2 class="mobile-section-title">사. 선배들 이야기</h2>
-            <div class="story-list">
-                <div class="story-item">
-                    <p class="story-quote">"고교 시절 가스터빈 엔진을 직접 분해·조립해보았던 실무 교육 덕분에 비행단에 배치되어서도 두려움 없이 최첨단 정비 업무를 수행하며 인정받을 수 있었습니다."</p>
-                    <div class="story-author">
-                        <strong>김철수 하사</strong>
-                        <span>항공기계전공 51기 졸업 (제11전투비행단)</span>
+            <!-- Slide 10: 사. 선배들 이야기 & 푸터 -->
+            <section class="mobile-slide-page" id="m-slide-10">
+                <div class="mobile-section">
+                    <h2 class="mobile-section-title">사. 선배들 이야기</h2>
+                    <div class="story-list">
+                        <div class="story-item">
+                            <p class="story-quote">"고교 시절 가스터빈 엔진을 직접 분해·조립해보았던 실무 교육 덕분에 비행단에 배치되어서도 두려움 없이 최첨단 정비 업무를 수행하며 인정받을 수 있었습니다."</p>
+                            <div class="story-author">
+                                <strong>김철수 하사</strong>
+                                <span>항공기계전공 51기 졸업 (제11전투비행단)</span>
+                            </div>
+                        </div>
+                        <div class="story-item">
+                            <p class="story-quote">"학교의 스마트 관제 시뮬레이션 덕택에 MCRC 중앙방공통제소에 배치되어 실시간 항공 항적을 탐독하고 대처할 때 긴장하지 않고 완벽하게 해냈습니다."</p>
+                            <div class="story-author">
+                                <strong>박영희 하사</strong>
+                                <span>항공통제전공 52기 졸업 (방공관제사령부)</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="story-item">
-                    <p class="story-quote">"학교의 스마트 관제 시뮬레이션 덕택에 MCRC 중앙방공통제소에 배치되어 실시간 항공 항적을 탐독하고 대처할 때 긴장하지 않고 완벽하게 해냈습니다."</p>
-                    <div class="story-author">
-                        <strong>박영희 하사</strong>
-                        <span>항공통제전공 52기 졸업 (방공관제사령부)</span>
-                    </div>
+
+                <div class="mobile-section mobile-future-banner">
+                    <img src="images/logo.png" alt="공군 로고" class="m-future-logo">
+                    <h3>미래 영공을 향한 끝없는 도전</h3>
+                    <p class="m-future-quote">"하늘을 지키는 가장 높은 힘, 대한민국 공군의 주역이 될 마이스터들의 요람"</p>
+                    <p class="m-future-desc">공군항공과학고등학교는 항공통제, 항공전자, 정보통신, 항공기계 분야의 최정예 기술 부사관을 육성하여 국가 안보의 핵심 전력을 담당하고 있습니다.</p>
                 </div>
-            </div>
-        </section>
 
-        <!-- 미래 영공을 향한 끝없는 도전 (푸터 상단) -->
-        <section class="mobile-section mobile-future-banner">
-            <img src="images/logo.png" alt="공군 로고" class="m-future-logo">
-            <h3>미래 영공을 향한 끝없는 도전</h3>
-            <p class="m-future-quote">"하늘을 지키는 가장 높은 힘, 대한민국 공군의 주역이 될 마이스터들의 요람"</p>
-            <p class="m-future-desc">공군항공과학고등학교는 항공통제, 항공전자, 정보통신, 항공기계 분야의 최정예 기술 부사관을 육성하여 국가 안보의 핵심 전력을 담당하고 있습니다.</p>
-        </section>
+                <footer class="mobile-footer">
+                    <img src="images/logo.png" alt="공군 마크" class="m-footer-logo">
+                    <h3>공군항공과학고등학교</h3>
+                    <p class="m-footer-sub">KASA Meister High School</p>
+                    
+                    <div class="m-footer-info">
+                        <p>📍 경상남도 진주시 금산면 송백로 46 객사함 306-1호</p>
+                        <p>📞 행정실: <a href="tel:055-750-2115">055-750-2115</a> | 입학처: <a href="tel:055-750-2114">055-750-2114</a></p>
+                    </div>
+                    
+                    <a href="https://rokaf.airforce.mil.kr/kokyo/index.do" target="_blank" class="m-footer-btn">🌐 공식 홈페이지 방문하기 ➔</a>
+                    <p class="m-copyright">© AIR FORCE AVIATION SCIENCE HIGH SCHOOL. ALL RIGHTS RESERVED.</p>
+                </footer>
+            </section>
+        </div>
 
-        <!-- 모바일 푸터 -->
-        <footer class="mobile-footer">
-            <img src="images/logo.png" alt="공군 마크" class="m-footer-logo">
-            <h3>공군항공과학고등학교</h3>
-            <p class="m-footer-sub">KASA Meister High School</p>
-            
-            <div class="m-footer-info">
-                <p>📍 경상남도 진주시 금산면 송백로 46 객사함 306-1호</p>
-                <p>📞 행정실: <a href="tel:055-750-2115">055-750-2115</a> | 입학처: <a href="tel:055-750-2114">055-750-2114</a></p>
-            </div>
-            
-            <a href="https://rokaf.airforce.mil.kr/kokyo/index.do" target="_blank" class="m-footer-btn">🌐 공식 홈페이지 방문하기 ➔</a>
-            <p class="m-copyright">© AIR FORCE AVIATION SCIENCE HIGH SCHOOL. ALL RIGHTS RESERVED.</p>
-        </footer>
+        <!-- 모바일 하단 페이지 넘김 바 -->
+        <nav class="mobile-bottom-nav">
+            <button type="button" class="m-nav-btn" id="m-prev-btn" onclick="prevMobileSlide()">◀ 이전</button>
+            <div class="m-dots-indicator" id="m-dots-indicator"></div>
+            <button type="button" class="m-nav-btn" id="m-next-btn" onclick="nextMobileSlide()">다음 ▶</button>
+        </nav>
     </div>
 
     <script src="script.js"></script>

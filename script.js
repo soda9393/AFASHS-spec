@@ -605,9 +605,15 @@
 
         function goToRecommendedDept() {
             if (window.innerWidth <= 768) {
-                const mDepts = document.getElementById('mobile-depts');
-                if (mDepts) {
-                    mDepts.scrollIntoView({ behavior: 'smooth' });
+                const mobileSlideMap = {
+                    'dept-control': 5,
+                    'dept-electronics': 6,
+                    'dept-telecom': 7,
+                    'dept-mechanic': 8
+                };
+                const slideIdx = mobileSlideMap[recommendedDeptId] || 5;
+                if (window.goToMobileSlide) {
+                    window.goToMobileSlide(slideIdx);
                 }
                 return;
             }
@@ -842,4 +848,67 @@
             } else if (hash === '#mechanic') {
                 goToSheet(7);
             }
+
+            initMobileSlides();
         });
+
+        let currentMobileSlide = 0;
+
+        function initMobileSlides() {
+            const container = document.getElementById('mobile-slides-container');
+            if (!container) return;
+
+            const updateUI = () => {
+                const slideWidth = container.clientWidth;
+                if (slideWidth > 0) {
+                    currentMobileSlide = Math.round(container.scrollLeft / slideWidth);
+                }
+                const counter = document.getElementById('m-page-counter');
+                const slides = container.querySelectorAll('.mobile-slide-page');
+                if (counter && slides.length) {
+                    counter.innerText = `${currentMobileSlide + 1} / ${slides.length} Page`;
+                }
+
+                const prevBtn = document.getElementById('m-prev-btn');
+                const nextBtn = document.getElementById('m-next-btn');
+                if (prevBtn) prevBtn.disabled = (currentMobileSlide === 0);
+                if (nextBtn) nextBtn.disabled = (currentMobileSlide === slides.length - 1);
+            };
+
+            let scrollTimer;
+            container.addEventListener('scroll', () => {
+                clearTimeout(scrollTimer);
+                scrollTimer = setTimeout(updateUI, 50);
+            }, { passive: true });
+
+            updateUI();
+        }
+
+        window.goToMobileSlide = function(index) {
+            const container = document.getElementById('mobile-slides-container');
+            if (!container) return;
+            const slides = container.querySelectorAll('.mobile-slide-page');
+            if (index < 0 || index >= slides.length) return;
+            const slideWidth = container.clientWidth;
+            container.scrollTo({
+                left: index * slideWidth,
+                behavior: 'smooth'
+            });
+            currentMobileSlide = index;
+            const counter = document.getElementById('m-page-counter');
+            if (counter) {
+                counter.innerText = `${currentMobileSlide + 1} / ${slides.length} Page`;
+            }
+            const prevBtn = document.getElementById('m-prev-btn');
+            const nextBtn = document.getElementById('m-next-btn');
+            if (prevBtn) prevBtn.disabled = (currentMobileSlide === 0);
+            if (nextBtn) nextBtn.disabled = (currentMobileSlide === slides.length - 1);
+        };
+
+        window.nextMobileSlide = function() {
+            goToMobileSlide(currentMobileSlide + 1);
+        };
+
+        window.prevMobileSlide = function() {
+            goToMobileSlide(currentMobileSlide - 1);
+        };
