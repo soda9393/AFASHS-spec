@@ -464,7 +464,7 @@ const majorResultData = {
     electronics: {
         name: "항공전자과",
         desc: "당신은 세밀하고 꼼꼼하며 논리적입니다. 복잡한 미세 회로, 전자기기 작동 분석 등 정밀 정보기술을 다루는 데 소질이 있으며, 전투기의 두뇌를 책임지는 스마트 하이테크 정비사 유형입니다!",
-        emblem: "images/electronics_emblem.png",
+        emblem: "images/electronics_emblem.jpg",
         sheetIndex: 5,
         deptId: "dept-electronics"
     },
