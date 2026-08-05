@@ -3316,3 +3316,14 @@
 .senior-topic-page-item:not(.active) {
     display: none !important;
 }
+.edu-topic-page-item {
+    width: 100%;
+}
+
+.edu-topic-page-item.active {
+    display: block !important;
+}
+
+.edu-topic-page-item:not(.active) {
+    display: none !important;
+}

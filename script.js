@@ -1019,3 +1019,56 @@ window.nextSeniorTopic = function () {
 };
 
 
+
+// 학교 교육과정 주제별 페이지 전환 (1~5페이지)
+let currentEduTopicNum = 1;
+
+window.switchEduTopic = function (topicNum) {
+    let targetNum = parseInt(topicNum, 10);
+    if (isNaN(targetNum) || targetNum < 1) targetNum = 1;
+    if (targetNum > 5) targetNum = 5;
+
+    currentEduTopicNum = targetNum;
+
+    const pages = document.querySelectorAll('.edu-topic-page-item');
+    pages.forEach(p => {
+        const pageTopicId = parseInt(p.getAttribute('data-edu-id'), 10);
+        if (pageTopicId === targetNum) {
+            p.classList.add('active');
+            p.style.setProperty('display', 'block', 'important');
+        } else {
+            p.classList.remove('active');
+            p.style.setProperty('display', 'none', 'important');
+        }
+    });
+
+    const tabs = document.querySelectorAll('.edu-topic-tab-btn');
+    tabs.forEach(t => {
+        const tabTargetId = parseInt(t.getAttribute('data-edu-target'), 10);
+        if (tabTargetId === targetNum) {
+            t.classList.add('active');
+        } else {
+            t.classList.remove('active');
+        }
+    });
+
+    const pageNumSpans = document.querySelectorAll('.edu-current-page-num');
+    pageNumSpans.forEach(span => {
+        span.textContent = targetNum;
+    });
+
+    const containers = document.querySelectorAll('.edu-container');
+    containers.forEach(c => { c.scrollTop = 0; });
+};
+
+window.prevEduTopic = function () {
+    if (currentEduTopicNum > 1) {
+        window.switchEduTopic(currentEduTopicNum - 1);
+    }
+};
+
+window.nextEduTopic = function () {
+    if (currentEduTopicNum < 5) {
+        window.switchEduTopic(currentEduTopicNum + 1);
+    }
+};

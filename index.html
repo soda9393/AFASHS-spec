@@ -125,35 +125,128 @@
 
                 <!-- [Sheet 1] 나. 교육과정 (Page 3) / 다. 시설 소개 (Page 4) -->
                 <div class="sheet" id="sheet-1">
-                    <!-- Front: 나. 교육과정 -->
+                                        <!-- Front: 나. 교육과정 -->
                     <div class="page-side paper-right" id="page-3">
                         <h2>나. 학교 교육과정</h2>
-                        <p class="section-desc">체계화된 교육과정을 통해 기초 전공 지식부터 전문 분야 지식까지 완성도 높게 이수합니다.</p>
+                        <p class="section-desc">공군항공과학고등학교 특기 교육의 이해 및 5개 핵심 세부 주제별 교육과정입니다. 아래 탭과 버튼을 이용해 넘겨보세요.</p>
 
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-badge">1학년</div>
-                                <div class="timeline-content">
-                                    <h3>기초 전공 및 소양 교육</h3>
-                                    <p>항공기 일반, 정보 등 전문 교과와 국어, 수학 등 보통 교과를 이수하여 전공 기초를 닦습니다.</p>
+                        <div class="senior-topic-nav edu-topic-nav" style="margin-bottom: 0.8rem;">
+                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn active" data-edu-target="1" onclick="switchEduTopic(1)">1. 특기교육의 이해</button>
+                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="2" onclick="switchEduTopic(2)">2. 기술중심 교육</button>
+                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="3" onclick="switchEduTopic(3)">3. 청소년의 성장</button>
+                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="4" onclick="switchEduTopic(4)">4. 부사관 병과</button>
+                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="5" onclick="switchEduTopic(5)">5. 병과 간 연관성</button>
+                        </div>
+
+                        <div class="senior-page-controls edu-page-controls" style="margin-bottom: 0.6rem;">
+                            <button type="button" class="senior-page-btn" onclick="prevEduTopic()">◀ 이전 주제</button>
+                            <span class="senior-page-indicator">주제 <span class="edu-current-page-num">1</span> / 5</span>
+                            <button type="button" class="senior-page-btn" onclick="nextEduTopic()">다음 주제 ▶</button>
+                        </div>
+                        <div class="story-container edu-container" style="max-height: 72%; overflow-y: auto; padding-right: 0.3rem;">
+                            <!-- 주제 1: 공군항공과학고등학교 특기 교육의 이해 & 1. 진로개발역량 함양과 영마이스터 육성 -->
+                            <div class="edu-topic-page-item active" data-edu-id="1" style="display: block;">
+                                <div class="story-category-card">
+                                    <h3 class="story-category-title">🎓 공군항공과학고등학교 특기 교육의 이해</h3>
+                                    <div class="story-cohort-group">
+                                        <span class="story-cohort-badge">❶ 항과고 학생은 어떤 기대와 촉망을 받고 있나요?</span>
+                                        <div class="story-item">
+                                            <p class="story-quote">"우리 공군항공과학고등학교에 입학한 학생들은 전문기술인으로서 뛰어난 잠재역량을 가진 사람일 것이라는 기대를 받습니다. 높은 경쟁률을 뚫고 입학한 뛰어난 역량의 학생들에게는 어쩌면 당연한 기대일지도 모르지만 당사자는 부담스러울 수도 있겠습니다. 전문기술도 익혀야 하고, 동시에 잠재역량(학습역량)도 길러야 한다니...<br><br>여러분 항공과학고등학교 학생에게 기대되는 바는 두 가지입니다. 첫째는 전문기술인입니다. 둘째 주제는 외국어 능력과 학습 능력을 갖춘 잠재역량인입니다. 이 둘은 모순되는 것은 아니지만, 시간이 충분하지 않다면 둘 중에 한 가지를 선택해야 하는 주제입니다. 고등학교에서의 3년이라는 시간도 그리 충분한 시간은 아닙니다. 이 두 가지를 모두 충족하기 위해서는 너무 짧습니다.<br><br>이 두 주장 모두 중요한 생각에 뿌리를 두고 있습니다. 전문기술을 익혀야 한다는 주장은 항공과학 분야 기술부사관을 양성하는 공군항공과학고등학교의 설립 목적에 뿌리를 두고 있습니다. 그런가 하면, 잠재역량을 강화해야 한다는 주장은 우선 고등학교 3년만으로 전문기술인이 되기에는 어려움이 있다고 봅니다. 왜냐하면 전문기술이라는 것은 일정 시간 현장에서의 특정 임무의 반복 시행을 통해 가능한 일이라고 보는 것이죠. 이것은 현장에서의 경험이 없는 상태에서 학교 교육만으로는 아무래도 역부족입니다. 그래서 이 입장에서는 단순 반복 훈련보다는 변화하는 현장 환경에서의 적응력과 학습력을 키우는 것이 우리 공군항공과학고등학교 입장에서는 더욱 중요하다고 봅니다. 외부의 기대에 비해 우리가 할 수 있는 것은 한계가 있어요. 여러분은 어느 쪽이 중요하다고 보세요?"</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="story-cohort-group">
+                                        <span class="story-cohort-badge">1 진로개발역량 함양과 영마이스터 육성</span>
+                                        <span class="story-cohort-badge" style="background: rgba(255, 201, 71, 0.2); color: var(--accent-gold); margin-top: 0.3rem;">❶ 우리 학교는 어떤 인재를 양성하는가요?</span>
+                                        <div class="story-item">
+                                            <p class="story-quote">"군 정예기술 간부 양성이 우리 학교 교육의 실제 목표입니다. 그래서 실무부대의 수요를 파악하고, 그것을 교육 내용에 적극 반영해 왔습니다. 마이스터고등학교는 영마이스터를 길러내는 학교이고, 우리 학교도 마이스터고라서 다르지 않습니다. 영마이스터란 나이가 어리지만 장인급의 기술 수준을 지향하는 기술자를 의미해요. 우리 학교의 교육은 영마이스터를 기르는 “기술 중심 교육”을 하는 학교라고 할 수 있으니까1), 시간의 경과 없이 고등학교만 다녀서 장인이 된다는 것은 직업 분야에서는 사실상 불가능하므로, 영+마이스터를 모순된 단어의 조합으로 보는 이들도 많다. 당연히 장인급의 기술 수준을 지닌 영마이스터를 길러야 할 겁니다.<br><br><span style="font-size: 0.8rem; color: #a0aec0;">1) 시간의 경과 없이 고등학교만 다녀서 장인이 된다는 것은 직업 분야에서는 사실상 불가능하므로, 영+마이스터를 모순된 단어의 조합으로 보는 이들도 많다.</span>"</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="timeline-item">
-                                <div class="timeline-badge">2학년</div>
-                                <div class="timeline-content">
-                                    <h3>전공 기초 교육</h3>
-                                    <p>4개의 전공학과(항공통제, 항공전자, 정보통신, 항공기계) 이론과 실습을 실질적으로 진행합니다.</p>
+
+                            <!-- 주제 2: ❷ 기술 중심 교육이라는 건 기술 연습을 의미하는가요? & ❸ 지금 사회에서 중요한 것은 무엇인가요? -->
+                            <div class="edu-topic-page-item" data-edu-id="2" style="display: none;">
+                                <div class="story-category-card">
+                                    <h3 class="story-category-title">⚙️ 기술 중심 교육 & 사회적 역량</h3>
+                                    <div class="story-cohort-group">
+                                        <span class="story-cohort-badge">❷ 기술 중심 교육이라는 건 기술 연습을 의미하는가요?</span>
+                                        <div class="story-item">
+                                            <p class="story-quote">"그런데 우리 학교의 교육이 기술을 중심으로 한다는 것에 대하여는 신중한 이해가 필요합니다. 기술을 가르친다고 하면, 인문·과학 소양은 포기한다는 것으로 이해될 수도 있거든요. 과거 사람이 계급으로 나누던 때가 있었습니다. 그 시절에는 복선형 학제라고 해서 지금으로 치면 인문계와 실업계로 나누고 귀족은 인문계를 다니고, 나머지 계급은 실업계를 다니게 했다고 해요. 영국이 그랬겠네요. 그래서 인문계에서 중요하게 생각하는 고전을 실업계에서는 읽히지 않았다고 합니다.<br><br>하지만 지금은 그렇지 않습니다. 우리 학교가 기술 중심의 교육을 한다는 말은 이런 말입니다. 스펙(specification) 쌓는 교육, 이론만 파고드는 교육 훈련, 즉 학력 중심의 교육을 하지 않는다는 뜻입니다. 학력 중심 교육보다는 능력 중심의 교육을 한다는 뜻입니다. 할 줄 아는 교육 훈련, 가고자 하는 분야에 필요한 일에 기반한 학습, 능력 향상 중심의 교육을 지향함을 의미하는 거죠.<br><br>우리 학교 교육에서 또 한 가지 중요한 점은 간부를 양성한다는 겁니다. 따라서 고전 읽기와 교양도 무시할 수 없습니다. 인생을 바라보는 눈이 있는 사람이 역경을 이겨내고 타인의 리더로 설 수 있기 때문입니다."</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="story-cohort-group">
+                                        <span class="story-cohort-badge">❸ 지금 사회에서 중요한 것은 무엇인가요?</span>
+                                        <div class="story-item">
+                                            <p class="story-quote">"우리 학교 교육에 대하여는 앞에서 말한 대로, 두 가지 교육적 관점이 있습니다. 특정 분야의 기술 전문가를 양성하여야 한다는 주장이 그 하나이고, 보편적 지성 함양을 통한 진로개발 역량을 함양함으로써, 평생학습 능력을 갖추게 해야 한다는 주장이 그 하나입니다. 과거에는 앞의 주장이 힘이 셌는데, 지금은 후자의 주장이 힘을 얻고 있습니다. 그 이유는 다음과 같습니다.<br><br>현대 사회가 맞고 있는 변화를 가리켜 Industry 4.0 또는 4차 산업혁명 시대라고 합니다. 사회 변혁의 속도가 과거 어느 시기보다 빠르고, 과거에 대량생산으로 대표되던 고도의 경제성장이 더이상 불가능하게 되었다고 해요. 그래서 양적 성장보다는 질적 성장, 그러니까 경제의 체질을 바꾸어 다변화되는 사회 시스템에 성공적으로 적응하는 준비를 하는 것이 국가 과제가 되었습니다.<br><br>이에 따라 한 가지에 고정된 능력보다는 적응력이 중요시되고 있습니다. 그에 따라 융합교육이 강조되고 있으며, 나아가 진로개발역량이 핵심 역량으로 떠올랐습니다. 진로개발역량이란 빠르게 다변화하는 직업세계와 그에 따라 시작된 평생학습 사회에 적극 대응할 수 있는 역량을 말합니다."</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="timeline-item">
-                                <div class="timeline-badge">3학년</div>
-                                <div class="timeline-content">
-                                    <h3>전공 심화 교육</h3>
-                                    <p>부사관 전문성 함양을 위한 군사학과 현장 실무 교육을 통해 임관 후 즉시 실무가 가능한 역량을 기릅니다.</p>
+
+                            <!-- 주제 3: ❹ 후보생이자 청소년인 우리에게 중요한 것은 무엇인가요? -->
+                            <div class="edu-topic-page-item" data-edu-id="3" style="display: none;">
+                                <div class="story-category-card">
+                                    <h3 class="story-category-title">🌱 청소년 후보생의 전인적 성장</h3>
+                                    <div class="story-cohort-group">
+                                        <span class="story-cohort-badge">❹ 후보생이자 청소년인 우리에게 중요한 것은 무엇인가요?</span>
+                                        <div class="story-item">
+                                            <p class="story-quote">"중학교과 고등학교를 중등교육 과정이라고 합니다. 고등학교는 후기 중등교육의 시기인 거죠. 우리 학교는 후기 중등교육을 담당하는 고등학교로서 보편교육의 책임도 중요한 부분으로 감당합니다. 우리 학교의 교육 대상이 미성년이므로 학습자들의 발달 특성에 맞는 교육을 하는 것은, 사회로부터 부여받은 일반적 책무이기도 합니다. 고등학교 시기 학습자들은 어떤 특성이 있을까요? 여러분의 나이에 보이는 발달 특성을 간략히 요약하면 다음과 같습니다.<br><br>① 범주적 지각, 자발적 주의, 논리적 기억, 개념적 사고와 같은 고등정신 기능의 발달.<br>② 세계, 타자, 자신에 대한 객관적, 체계적인 인식의 성장<br>③ 자아정체성 형성<br><br>①, ②, ③ 모두 너무 어려운 이야기입니다. 그냥 진지하게 읽어만 두세요. 어쨌든 이 시기에는 보편적 지성과 예술적 감수성을 기르는 보편적 교육의 기회를 충분히 확보함으로써 전인적 성장의 기회를 박탈하지 않아야 합니다. 여러분도 자신의 전인적 성숙을 기대하고 있을 겁니다.<br><br>후기 중등교육 기관이자 마이스터고, 그리고 군 간부를 기르는 학교로서, 우리 학교 교육의 최종 목표도 능력 중심의 기술 교육을 하되 진로개발역량의 함양에 무게를 두어야 할 것으로 보여요. 우리 학교를 나온 인재도 변화하는 사회, 평생 학습하는 사회에 적합한 사람이어야 합니다. 그러니까 인문·과학 소양을 갈고닦는 일도 중요하게 생각해야 합니다."</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 주제 4: 2 공군항과고 특기교육의 특징 - (1) 공군 부사관의 병과 -->
+                            <div class="edu-topic-page-item" data-edu-id="4" style="display: none;">
+                                <div class="story-category-card">
+                                    <h3 class="story-category-title">🎖️ 공군항과고 특기교육의 특징 (병과 분류)</h3>
+                                    <div class="story-cohort-group">
+                                        <span class="story-cohort-badge">2 공군항과고 특기교육의 특징 - (1) 공군 부사관의 병과</span>
+                                        <span class="story-cohort-badge" style="background: rgba(255, 201, 71, 0.2); color: var(--accent-gold); margin-top: 0.3rem;">❶ 병과란 무엇인가요?</span>
+                                        <div class="story-item">
+                                            <p class="story-quote">"병과는 군인이라는 뜻의 兵(병), 과목이라는 뜻의 科(과)가 합쳐진 말입니다. 개별 군인이나 부대를 그 임무(군무)에 따라 무리 지어 명명(분류)한 것을 병과라고 합니다. 규정에서는 “병과란 군 조직 편성 상의 임무와 기능을 수행하기 위해, '전문화'와 각종 인사관리가 가능하도록 전투 기능을 나누어 수평 분류한 것”이라고 설명하고 있습니다."</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="story-cohort-group">
+                                        <span class="story-cohort-badge">❷ 어떤 병과가 있나요?</span>
+                                        <div class="story-item">
+                                            <p class="story-quote">"공군의 부사관의 병과는 다음과 같습니다. 군인사법 제5조, 군인사법시행령 제2조의 2, 공군규정 2-1를 참고했습니다. 모두 13종류가 있네요.<br><br><strong>[기본병과]</strong><br>□ <strong>전투병과</strong> : 항공통제과, 방공포병과<br>□ <strong>기술전문병과</strong> : 기상과, 정보통신과, 군수과, 공병과, 재정과, 인사교육과, 공보정훈과, 정보과, 군사경찰과<br><br><strong>[특수병과]</strong> 법무과, 군종과, 의무과"</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="story-cohort-group">
+                                        <span class="story-cohort-badge">❸ 우리 학교와 관련 있는 병원은 무엇인가요?</span>
+                                        <div class="story-item">
+                                            <p class="story-quote">"대한민국 공군의 핵심 임무는 항공우주력을 운영하여 전쟁을 억제함으로써 대한민국의 영공을 방위하는 것이에요. 그 임무를 완수하기 대한민국 공군은 분업을 통해 전문화를 달성하고 있습니다.<br><br>‘&lt;그림 1&gt; 공군 부사관 병과 및 특기 분류’에 13개의 병과가 제시되어 있어요. 그중에는 A, B, C, D, E 기호가 붙어 있는 병과가 5개이고, 나머지에는 아무 기호가 없죠? A, B, C, D, E가 붙은 5개의 병과가 우리 공군항공과학고등학교에서 배출하는 병과입니다. 나머지 8개 병과는 아직까지는 우리 학교가 배출하지 않고 있습니다.<br><br>우리 학교에서 양성하는 병과는 직접 작전을 수행하는 분야와 작전을 지원하는 분야로 나뉜다고 보시면 돼요. A가 작전을 직접 수행하는 병과이고 B, C, D, E는 작전의 직접 수행을 지원하는 병과입니다. 이것을 앞서와 같이 표현하면,, A는 전투병과이고, B, C, D, E는 기술전문병과인 거죠."</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 주제 5: ❹ 우리 학교에서 배출하는 병과들은 서로 어떤 연관성이 있나요? -->
+                            <div class="edu-topic-page-item" data-edu-id="5" style="display: none;">
+                                <div class="story-category-card">
+                                    <h3 class="story-category-title">🔗 배출 병과 간의 분업과 협력 관계</h3>
+                                    <div class="story-cohort-group">
+                                        <span class="story-cohort-badge">❹ 우리 학교에서 배출하는 병과들은 서로 어떤 연관성이 있나요?</span>
+                                        <div class="story-item">
+                                            <p class="story-quote">"우리 학교에서 배출하는 병과가 모두 5개라는 건 이미 말했습니다. 항공통제, 기상, 정보통신, 군수, 정보, 이렇게 해서 5개입니다. 이 병과들끼리는 어떻게 분업하고 협력하는지 알아볼까요?<br><br>항공기가 안전하게 이착륙하도록 교통 정리를 해주며, 또 완벽한 항공작전을 위해 공중 상황을 지휘하고 통제하는 병과가 “A. 항공통제” 병과입니다. 항공통제의 성공적 임무 완수를 위하여 항공 기상 분석을 통한 정보 제공을 해주는 데가 반드시 필요한데요, 그것을 하는 병과가 바로 “B. 항공기상분석” 병과입니다.<br><br>적군에게 어떤 무기가 있고, 어떤 비행기가 있는지, 사진 등을 분석하고 해석해서 작전에 보탬이 되도록 해주는 데가 있습니다. 그게 바로 “E. 항공정보” 병과예요. 항공정보를 분석하여 제공하는 것을 중요 임무로 합니다.<sup>2)</sup><br><br>전쟁이 일어나거나 또는 전쟁을 억제하기 위해서는 무기가 필요하죠. 이 무기체계 전반에 대하여 점검·정비 등 관리를 담당하는 것이 바로 “D 군수” 병과입니다. 무기체계란 작전 수행을 위해서 필수인 무기와 관련하여, 무기와 그 무기를 중심으로 구성된 주요 장비, 그리고 무기와 관련된 기구와 재료의 총체를 말해요.<sup>3)</sup>"</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="senior-page-controls edu-page-controls" style="margin-top: 0.4rem;">
+                            <button type="button" class="senior-page-btn" onclick="prevEduTopic()">◀ 이전 주제</button>
+                            <span class="senior-page-indicator">주제 <span class="edu-current-page-num">1</span> / 5</span>
+                            <button type="button" class="senior-page-btn" onclick="nextEduTopic()">다음 주제 ▶</button>
+                        </div>
                     </div>
+
                     <!-- Back: 다. 시설 소개 -->
                     <div class="page-side back paper-left" id="page-4">
                         <h2>다. 학교 시설 소개</h2>
@@ -1729,36 +1822,129 @@
                 </div>
             </section>
 
-            <!-- Slide 1: 나. 학교 교육과정 -->
+                        <!-- Slide 1: 나. 학교 교육과정 -->
             <section class="mobile-slide-page" id="m-slide-1">
                 <div class="mobile-section">
                     <h2 class="mobile-section-title">나. 학교 교육과정</h2>
-                    <p class="m-section-desc">체계화된 교육과정을 통해 기초 전공 지식부터 전문 분야 지식까지 완성도 높게 이수합니다.</p>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-badge">1학년</div>
-                            <div class="timeline-content">
-                                <h3>기초 전공 및 소양 교육</h3>
-                                <p>항공기 일반, 정보 등 전문 교과와 국어, 수학 등 보통 교과를 이수하여 전공 기초를 닦습니다.</p>
+                    <p class="m-section-desc" style="margin-bottom: 0.8rem;">공군항공과학고등학교 특기 교육의 이해 및 5개 핵심 세부 주제별 교육과정입니다. 아래 탭과 버튼을 이용해 넘겨보세요.</p>
+
+                        <div class="senior-topic-nav edu-topic-nav" style="margin-bottom: 0.8rem;">
+                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn active" data-edu-target="1" onclick="switchEduTopic(1)">1. 특기교육의 이해</button>
+                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="2" onclick="switchEduTopic(2)">2. 기술중심 교육</button>
+                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="3" onclick="switchEduTopic(3)">3. 청소년의 성장</button>
+                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="4" onclick="switchEduTopic(4)">4. 부사관 병과</button>
+                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="5" onclick="switchEduTopic(5)">5. 병과 간 연관성</button>
+                        </div>
+
+                        <div class="senior-page-controls edu-page-controls" style="margin-bottom: 0.6rem;">
+                            <button type="button" class="senior-page-btn" onclick="prevEduTopic()">◀ 이전 주제</button>
+                            <span class="senior-page-indicator">주제 <span class="edu-current-page-num">1</span> / 5</span>
+                            <button type="button" class="senior-page-btn" onclick="nextEduTopic()">다음 주제 ▶</button>
+                        </div>
+                        <div class="story-container edu-container" style="max-height: 72%; overflow-y: auto; padding-right: 0.3rem;">
+                            <!-- 주제 1: 공군항공과학고등학교 특기 교육의 이해 & 1. 진로개발역량 함양과 영마이스터 육성 -->
+                            <div class="edu-topic-page-item active" data-edu-id="1" style="display: block;">
+                                <div class="story-category-card">
+                                    <h3 class="story-category-title">🎓 공군항공과학고등학교 특기 교육의 이해</h3>
+                                    <div class="story-cohort-group">
+                                        <span class="story-cohort-badge">❶ 항과고 학생은 어떤 기대와 촉망을 받고 있나요?</span>
+                                        <div class="story-item">
+                                            <p class="story-quote">"우리 공군항공과학고등학교에 입학한 학생들은 전문기술인으로서 뛰어난 잠재역량을 가진 사람일 것이라는 기대를 받습니다. 높은 경쟁률을 뚫고 입학한 뛰어난 역량의 학생들에게는 어쩌면 당연한 기대일지도 모르지만 당사자는 부담스러울 수도 있겠습니다. 전문기술도 익혀야 하고, 동시에 잠재역량(학습역량)도 길러야 한다니...<br><br>여러분 항공과학고등학교 학생에게 기대되는 바는 두 가지입니다. 첫째는 전문기술인입니다. 둘째 주제는 외국어 능력과 학습 능력을 갖춘 잠재역량인입니다. 이 둘은 모순되는 것은 아니지만, 시간이 충분하지 않다면 둘 중에 한 가지를 선택해야 하는 주제입니다. 고등학교에서의 3년이라는 시간도 그리 충분한 시간은 아닙니다. 이 두 가지를 모두 충족하기 위해서는 너무 짧습니다.<br><br>이 두 주장 모두 중요한 생각에 뿌리를 두고 있습니다. 전문기술을 익혀야 한다는 주장은 항공과학 분야 기술부사관을 양성하는 공군항공과학고등학교의 설립 목적에 뿌리를 두고 있습니다. 그런가 하면, 잠재역량을 강화해야 한다는 주장은 우선 고등학교 3년만으로 전문기술인이 되기에는 어려움이 있다고 봅니다. 왜냐하면 전문기술이라는 것은 일정 시간 현장에서의 특정 임무의 반복 시행을 통해 가능한 일이라고 보는 것이죠. 이것은 현장에서의 경험이 없는 상태에서 학교 교육만으로는 아무래도 역부족입니다. 그래서 이 입장에서는 단순 반복 훈련보다는 변화하는 현장 환경에서의 적응력과 학습력을 키우는 것이 우리 공군항공과학고등학교 입장에서는 더욱 중요하다고 봅니다. 외부의 기대에 비해 우리가 할 수 있는 것은 한계가 있어요. 여러분은 어느 쪽이 중요하다고 보세요?"</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="story-cohort-group">
+                                        <span class="story-cohort-badge">1 진로개발역량 함양과 영마이스터 육성</span>
+                                        <span class="story-cohort-badge" style="background: rgba(255, 201, 71, 0.2); color: var(--accent-gold); margin-top: 0.3rem;">❶ 우리 학교는 어떤 인재를 양성하는가요?</span>
+                                        <div class="story-item">
+                                            <p class="story-quote">"군 정예기술 간부 양성이 우리 학교 교육의 실제 목표입니다. 그래서 실무부대의 수요를 파악하고, 그것을 교육 내용에 적극 반영해 왔습니다. 마이스터고등학교는 영마이스터를 길러내는 학교이고, 우리 학교도 마이스터고라서 다르지 않습니다. 영마이스터란 나이가 어리지만 장인급의 기술 수준을 지향하는 기술자를 의미해요. 우리 학교의 교육은 영마이스터를 기르는 “기술 중심 교육”을 하는 학교라고 할 수 있으니까1), 시간의 경과 없이 고등학교만 다녀서 장인이 된다는 것은 직업 분야에서는 사실상 불가능하므로, 영+마이스터를 모순된 단어의 조합으로 보는 이들도 많다. 당연히 장인급의 기술 수준을 지닌 영마이스터를 길러야 할 겁니다.<br><br><span style="font-size: 0.8rem; color: #a0aec0;">1) 시간의 경과 없이 고등학교만 다녀서 장인이 된다는 것은 직업 분야에서는 사실상 불가능하므로, 영+마이스터를 모순된 단어의 조합으로 보는 이들도 많다.</span>"</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 주제 2: ❷ 기술 중심 교육이라는 건 기술 연습을 의미하는가요? & ❸ 지금 사회에서 중요한 것은 무엇인가요? -->
+                            <div class="edu-topic-page-item" data-edu-id="2" style="display: none;">
+                                <div class="story-category-card">
+                                    <h3 class="story-category-title">⚙️ 기술 중심 교육 & 사회적 역량</h3>
+                                    <div class="story-cohort-group">
+                                        <span class="story-cohort-badge">❷ 기술 중심 교육이라는 건 기술 연습을 의미하는가요?</span>
+                                        <div class="story-item">
+                                            <p class="story-quote">"그런데 우리 학교의 교육이 기술을 중심으로 한다는 것에 대하여는 신중한 이해가 필요합니다. 기술을 가르친다고 하면, 인문·과학 소양은 포기한다는 것으로 이해될 수도 있거든요. 과거 사람이 계급으로 나누던 때가 있었습니다. 그 시절에는 복선형 학제라고 해서 지금으로 치면 인문계와 실업계로 나누고 귀족은 인문계를 다니고, 나머지 계급은 실업계를 다니게 했다고 해요. 영국이 그랬겠네요. 그래서 인문계에서 중요하게 생각하는 고전을 실업계에서는 읽히지 않았다고 합니다.<br><br>하지만 지금은 그렇지 않습니다. 우리 학교가 기술 중심의 교육을 한다는 말은 이런 말입니다. 스펙(specification) 쌓는 교육, 이론만 파고드는 교육 훈련, 즉 학력 중심의 교육을 하지 않는다는 뜻입니다. 학력 중심 교육보다는 능력 중심의 교육을 한다는 뜻입니다. 할 줄 아는 교육 훈련, 가고자 하는 분야에 필요한 일에 기반한 학습, 능력 향상 중심의 교육을 지향함을 의미하는 거죠.<br><br>우리 학교 교육에서 또 한 가지 중요한 점은 간부를 양성한다는 겁니다. 따라서 고전 읽기와 교양도 무시할 수 없습니다. 인생을 바라보는 눈이 있는 사람이 역경을 이겨내고 타인의 리더로 설 수 있기 때문입니다."</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="story-cohort-group">
+                                        <span class="story-cohort-badge">❸ 지금 사회에서 중요한 것은 무엇인가요?</span>
+                                        <div class="story-item">
+                                            <p class="story-quote">"우리 학교 교육에 대하여는 앞에서 말한 대로, 두 가지 교육적 관점이 있습니다. 특정 분야의 기술 전문가를 양성하여야 한다는 주장이 그 하나이고, 보편적 지성 함양을 통한 진로개발 역량을 함양함으로써, 평생학습 능력을 갖추게 해야 한다는 주장이 그 하나입니다. 과거에는 앞의 주장이 힘이 셌는데, 지금은 후자의 주장이 힘을 얻고 있습니다. 그 이유는 다음과 같습니다.<br><br>현대 사회가 맞고 있는 변화를 가리켜 Industry 4.0 또는 4차 산업혁명 시대라고 합니다. 사회 변혁의 속도가 과거 어느 시기보다 빠르고, 과거에 대량생산으로 대표되던 고도의 경제성장이 더이상 불가능하게 되었다고 해요. 그래서 양적 성장보다는 질적 성장, 그러니까 경제의 체질을 바꾸어 다변화되는 사회 시스템에 성공적으로 적응하는 준비를 하는 것이 국가 과제가 되었습니다.<br><br>이에 따라 한 가지에 고정된 능력보다는 적응력이 중요시되고 있습니다. 그에 따라 융합교육이 강조되고 있으며, 나아가 진로개발역량이 핵심 역량으로 떠올랐습니다. 진로개발역량이란 빠르게 다변화하는 직업세계와 그에 따라 시작된 평생학습 사회에 적극 대응할 수 있는 역량을 말합니다."</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 주제 3: ❹ 후보생이자 청소년인 우리에게 중요한 것은 무엇인가요? -->
+                            <div class="edu-topic-page-item" data-edu-id="3" style="display: none;">
+                                <div class="story-category-card">
+                                    <h3 class="story-category-title">🌱 청소년 후보생의 전인적 성장</h3>
+                                    <div class="story-cohort-group">
+                                        <span class="story-cohort-badge">❹ 후보생이자 청소년인 우리에게 중요한 것은 무엇인가요?</span>
+                                        <div class="story-item">
+                                            <p class="story-quote">"중학교과 고등학교를 중등교육 과정이라고 합니다. 고등학교는 후기 중등교육의 시기인 거죠. 우리 학교는 후기 중등교육을 담당하는 고등학교로서 보편교육의 책임도 중요한 부분으로 감당합니다. 우리 학교의 교육 대상이 미성년이므로 학습자들의 발달 특성에 맞는 교육을 하는 것은, 사회로부터 부여받은 일반적 책무이기도 합니다. 고등학교 시기 학습자들은 어떤 특성이 있을까요? 여러분의 나이에 보이는 발달 특성을 간략히 요약하면 다음과 같습니다.<br><br>① 범주적 지각, 자발적 주의, 논리적 기억, 개념적 사고와 같은 고등정신 기능의 발달.<br>② 세계, 타자, 자신에 대한 객관적, 체계적인 인식의 성장<br>③ 자아정체성 형성<br><br>①, ②, ③ 모두 너무 어려운 이야기입니다. 그냥 진지하게 읽어만 두세요. 어쨌든 이 시기에는 보편적 지성과 예술적 감수성을 기르는 보편적 교육의 기회를 충분히 확보함으로써 전인적 성장의 기회를 박탈하지 않아야 합니다. 여러분도 자신의 전인적 성숙을 기대하고 있을 겁니다.<br><br>후기 중등교육 기관이자 마이스터고, 그리고 군 간부를 기르는 학교로서, 우리 학교 교육의 최종 목표도 능력 중심의 기술 교육을 하되 진로개발역량의 함양에 무게를 두어야 할 것으로 보여요. 우리 학교를 나온 인재도 변화하는 사회, 평생 학습하는 사회에 적합한 사람이어야 합니다. 그러니까 인문·과학 소양을 갈고닦는 일도 중요하게 생각해야 합니다."</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 주제 4: 2 공군항과고 특기교육의 특징 - (1) 공군 부사관의 병과 -->
+                            <div class="edu-topic-page-item" data-edu-id="4" style="display: none;">
+                                <div class="story-category-card">
+                                    <h3 class="story-category-title">🎖️ 공군항과고 특기교육의 특징 (병과 분류)</h3>
+                                    <div class="story-cohort-group">
+                                        <span class="story-cohort-badge">2 공군항과고 특기교육의 특징 - (1) 공군 부사관의 병과</span>
+                                        <span class="story-cohort-badge" style="background: rgba(255, 201, 71, 0.2); color: var(--accent-gold); margin-top: 0.3rem;">❶ 병과란 무엇인가요?</span>
+                                        <div class="story-item">
+                                            <p class="story-quote">"병과는 군인이라는 뜻의 兵(병), 과목이라는 뜻의 科(과)가 합쳐진 말입니다. 개별 군인이나 부대를 그 임무(군무)에 따라 무리 지어 명명(분류)한 것을 병과라고 합니다. 규정에서는 “병과란 군 조직 편성 상의 임무와 기능을 수행하기 위해, '전문화'와 각종 인사관리가 가능하도록 전투 기능을 나누어 수평 분류한 것”이라고 설명하고 있습니다."</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="story-cohort-group">
+                                        <span class="story-cohort-badge">❷ 어떤 병과가 있나요?</span>
+                                        <div class="story-item">
+                                            <p class="story-quote">"공군의 부사관의 병과는 다음과 같습니다. 군인사법 제5조, 군인사법시행령 제2조의 2, 공군규정 2-1를 참고했습니다. 모두 13종류가 있네요.<br><br><strong>[기본병과]</strong><br>□ <strong>전투병과</strong> : 항공통제과, 방공포병과<br>□ <strong>기술전문병과</strong> : 기상과, 정보통신과, 군수과, 공병과, 재정과, 인사교육과, 공보정훈과, 정보과, 군사경찰과<br><br><strong>[특수병과]</strong> 법무과, 군종과, 의무과"</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="story-cohort-group">
+                                        <span class="story-cohort-badge">❸ 우리 학교와 관련 있는 병원은 무엇인가요?</span>
+                                        <div class="story-item">
+                                            <p class="story-quote">"대한민국 공군의 핵심 임무는 항공우주력을 운영하여 전쟁을 억제함으로써 대한민국의 영공을 방위하는 것이에요. 그 임무를 완수하기 대한민국 공군은 분업을 통해 전문화를 달성하고 있습니다.<br><br>‘&lt;그림 1&gt; 공군 부사관 병과 및 특기 분류’에 13개의 병과가 제시되어 있어요. 그중에는 A, B, C, D, E 기호가 붙어 있는 병과가 5개이고, 나머지에는 아무 기호가 없죠? A, B, C, D, E가 붙은 5개의 병과가 우리 공군항공과학고등학교에서 배출하는 병과입니다. 나머지 8개 병과는 아직까지는 우리 학교가 배출하지 않고 있습니다.<br><br>우리 학교에서 양성하는 병과는 직접 작전을 수행하는 분야와 작전을 지원하는 분야로 나뉜다고 보시면 돼요. A가 작전을 직접 수행하는 병과이고 B, C, D, E는 작전의 직접 수행을 지원하는 병과입니다. 이것을 앞서와 같이 표현하면,, A는 전투병과이고, B, C, D, E는 기술전문병과인 거죠."</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 주제 5: ❹ 우리 학교에서 배출하는 병과들은 서로 어떤 연관성이 있나요? -->
+                            <div class="edu-topic-page-item" data-edu-id="5" style="display: none;">
+                                <div class="story-category-card">
+                                    <h3 class="story-category-title">🔗 배출 병과 간의 분업과 협력 관계</h3>
+                                    <div class="story-cohort-group">
+                                        <span class="story-cohort-badge">❹ 우리 학교에서 배출하는 병과들은 서로 어떤 연관성이 있나요?</span>
+                                        <div class="story-item">
+                                            <p class="story-quote">"우리 학교에서 배출하는 병과가 모두 5개라는 건 이미 말했습니다. 항공통제, 기상, 정보통신, 군수, 정보, 이렇게 해서 5개입니다. 이 병과들끼리는 어떻게 분업하고 협력하는지 알아볼까요?<br><br>항공기가 안전하게 이착륙하도록 교통 정리를 해주며, 또 완벽한 항공작전을 위해 공중 상황을 지휘하고 통제하는 병과가 “A. 항공통제” 병과입니다. 항공통제의 성공적 임무 완수를 위하여 항공 기상 분석을 통한 정보 제공을 해주는 데가 반드시 필요한데요, 그것을 하는 병과가 바로 “B. 항공기상분석” 병과입니다.<br><br>적군에게 어떤 무기가 있고, 어떤 비행기가 있는지, 사진 등을 분석하고 해석해서 작전에 보탬이 되도록 해주는 데가 있습니다. 그게 바로 “E. 항공정보” 병과예요. 항공정보를 분석하여 제공하는 것을 중요 임무로 합니다.<sup>2)</sup><br><br>전쟁이 일어나거나 또는 전쟁을 억제하기 위해서는 무기가 필요하죠. 이 무기체계 전반에 대하여 점검·정비 등 관리를 담당하는 것이 바로 “D 군수” 병과입니다. 무기체계란 작전 수행을 위해서 필수인 무기와 관련하여, 무기와 그 무기를 중심으로 구성된 주요 장비, 그리고 무기와 관련된 기구와 재료의 총체를 말해요.<sup>3)</sup>"</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="timeline-item">
-                            <div class="timeline-badge">2학년</div>
-                            <div class="timeline-content">
-                                <h3>전공 기초 교육</h3>
-                                <p>4개의 전공(항공통제, 항공전자, 정보통신, 항공기계) 이론과 실습을 실질적으로 진행합니다.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-badge">3학년</div>
-                            <div class="timeline-content">
-                                <h3>전공 심화 교육</h3>
-                                <p>부사관 전문성 함양을 위한 군사학과 현장 실무 교육을 통해 임관 후 즉시 실무가 가능한 역량을 기릅니다.</p>
-                            </div>
-                        </div>
+
+                    <div class="senior-page-controls edu-page-controls" style="margin-top: 0.4rem;">
+                        <button type="button" class="senior-page-btn" onclick="prevEduTopic()">◀ 이전 주제</button>
+                        <span class="senior-page-indicator">주제 <span class="edu-current-page-num">1</span> / 5</span>
+                        <button type="button" class="senior-page-btn" onclick="nextEduTopic()">다음 주제 ▶</button>
                     </div>
-                    <button type="button" class="m-back-to-toc-btn" onclick="goToMobileSlide(0)">📋 목차(처음)로
-                        돌아가기</button>
+
+                    <button type="button" class="m-back-to-toc-btn" onclick="goToMobileSlide(0)" style="margin-top: 1rem;">📋 목차(처음)로 돌아가기</button>
                 </div>
             </section>
 
