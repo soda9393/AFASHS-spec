@@ -1104,10 +1104,73 @@
         <header class="mobile-top-bar">
             <span class="m-bar-title">공군항공과학고 전공 소개</span>
             <div style="display: flex; align-items: center; gap: 0.4rem;">
-                <button type="button" class="m-toc-nav-btn" onclick="goToMobileSlide(0)" title="목차로 돌아가기">📋 목차</button>
+                <button type="button" class="m-toc-nav-btn" onclick="openMobileTocModal()" title="전체 목차 열기">📋 목차</button>
                 <span class="m-page-counter" id="m-page-counter">1 / 10 Page</span>
             </div>
         </header>
+
+        <!-- 모바일 전용 목차 모달 / 팝업 (Mobile TOC Modal) -->
+        <div id="mobile-toc-modal" class="m-toc-modal-overlay">
+            <div class="m-toc-modal-content">
+                <div class="m-toc-modal-header">
+                    <h3>📋 책자 전체 목차</h3>
+                    <button type="button" class="m-toc-close-btn" onclick="closeMobileTocModal()">✕</button>
+                </div>
+                <p class="m-toc-modal-subtitle">이동할 페이지를 클릭하세요 (1 ~ 10 Page)</p>
+                <div class="m-toc-modal-list">
+                    <button type="button" class="m-toc-item-btn" onclick="selectMobileTocItem(0)">
+                        <span class="m-toc-num">Page 01</span>
+                        <span class="m-toc-title">📍 표지 및 전공 개요</span>
+                        <span class="m-toc-arrow">➔</span>
+                    </button>
+                    <button type="button" class="m-toc-item-btn" onclick="selectMobileTocItem(1)">
+                        <span class="m-toc-num">Page 02</span>
+                        <span class="m-toc-title">🏫 나. 학교 교육과정</span>
+                        <span class="m-toc-arrow">➔</span>
+                    </button>
+                    <button type="button" class="m-toc-item-btn" onclick="selectMobileTocItem(2)">
+                        <span class="m-toc-num">Page 03</span>
+                        <span class="m-toc-title">🏛️ 다. 학교 시설 소개</span>
+                        <span class="m-toc-arrow">➔</span>
+                    </button>
+                    <button type="button" class="m-toc-item-btn" onclick="selectMobileTocItem(3)">
+                        <span class="m-toc-num">Page 04</span>
+                        <span class="m-toc-title">📡 마. 1) 항공통제과</span>
+                        <span class="m-toc-arrow">➔</span>
+                    </button>
+                    <button type="button" class="m-toc-item-btn" onclick="selectMobileTocItem(4)">
+                        <span class="m-toc-num">Page 05</span>
+                        <span class="m-toc-title">⚡ 마. 2) 항공전자과</span>
+                        <span class="m-toc-arrow">➔</span>
+                    </button>
+                    <button type="button" class="m-toc-item-btn" onclick="selectMobileTocItem(5)">
+                        <span class="m-toc-num">Page 06</span>
+                        <span class="m-toc-title">🔒 마. 3) 정보통신과</span>
+                        <span class="m-toc-arrow">➔</span>
+                    </button>
+                    <button type="button" class="m-toc-item-btn" onclick="selectMobileTocItem(6)">
+                        <span class="m-toc-num">Page 07</span>
+                        <span class="m-toc-title">⚙️ 마. 4) 항공기계과</span>
+                        <span class="m-toc-arrow">➔</span>
+                    </button>
+                    <button type="button" class="m-toc-item-btn" onclick="selectMobileTocItem(7)">
+                        <span class="m-toc-num">Page 08</span>
+                        <span class="m-toc-title">❓ 바. 자주하는 질문 (FAQ)</span>
+                        <span class="m-toc-arrow">➔</span>
+                    </button>
+                    <button type="button" class="m-toc-item-btn" onclick="selectMobileTocItem(8)">
+                        <span class="m-toc-num">Page 09</span>
+                        <span class="m-toc-title">💬 사. 선배들 이야기</span>
+                        <span class="m-toc-arrow">➔</span>
+                    </button>
+                    <button type="button" class="m-toc-item-btn" onclick="selectMobileTocItem(9)">
+                        <span class="m-toc-num">Page 10</span>
+                        <span class="m-toc-title">📘 뒷표지 (Back Cover)</span>
+                        <span class="m-toc-arrow">➔</span>
+                    </button>
+                </div>
+            </div>
+        </div>
 
         <!-- 좌우 스크롤 스냅 래퍼 -->
         <div class="mobile-slides-container" id="mobile-slides-container">
@@ -1136,6 +1199,86 @@
                             <button type="button" onclick="goToMobileSlide(6)" class="m-major-sub-btn mechanic">
                                 <span>⚙️ 항공기계과</span>
                                 <span class="arr">➔</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 모바일 전용 목차 카드 (Table of Contents) -->
+                    <div class="mobile-section m-toc-section" style="margin-top: 1.5rem; width: 100%; box-sizing: border-box; text-align: left;">
+                        <h2 class="mobile-section-title" style="margin-bottom: 0.4rem;">📋 책자 전체 목차</h2>
+                        <p class="m-section-desc" style="margin-bottom: 1rem;">원하시는 목차를 클릭하시면 해당 페이지로 이동합니다.</p>
+                        <div class="m-toc-grid">
+                            <button type="button" onclick="goToMobileSlide(1)" class="m-toc-grid-item">
+                                <span class="m-toc-grid-num">02</span>
+                                <div class="m-toc-grid-text">
+                                    <strong>나. 학교 교육과정</strong>
+                                    <span>체계적인 3개년 학년별 과정</span>
+                                </div>
+                                <span class="m-toc-grid-arr">➔</span>
+                            </button>
+                            <button type="button" onclick="goToMobileSlide(2)" class="m-toc-grid-item">
+                                <span class="m-toc-grid-num">03</span>
+                                <div class="m-toc-grid-text">
+                                    <strong>다. 학교 시설 소개</strong>
+                                    <span>최첨단 실습장 및 생활시설</span>
+                                </div>
+                                <span class="m-toc-grid-arr">➔</span>
+                            </button>
+                            <button type="button" onclick="goToMobileSlide(3)" class="m-toc-grid-item control">
+                                <span class="m-toc-grid-num">04</span>
+                                <div class="m-toc-grid-text">
+                                    <strong>마. 1) 항공통제과</strong>
+                                    <span>항공관제, 항공통제, 기상예보</span>
+                                </div>
+                                <span class="m-toc-grid-arr">➔</span>
+                            </button>
+                            <button type="button" onclick="goToMobileSlide(4)" class="m-toc-grid-item electronics">
+                                <span class="m-toc-grid-num">05</span>
+                                <div class="m-toc-grid-text">
+                                    <strong>마. 2) 항공전자과</strong>
+                                    <span>전투기 레이더 & 항법 장비</span>
+                                </div>
+                                <span class="m-toc-grid-arr">➔</span>
+                            </button>
+                            <button type="button" onclick="goToMobileSlide(5)" class="m-toc-grid-item telecom">
+                                <span class="m-toc-grid-num">06</span>
+                                <div class="m-toc-grid-text">
+                                    <strong>마. 3) 정보통신과</strong>
+                                    <span>네트워크 & 사이버 보안 체계</span>
+                                </div>
+                                <span class="m-toc-grid-arr">➔</span>
+                            </button>
+                            <button type="button" onclick="goToMobileSlide(6)" class="m-toc-grid-item mechanic">
+                                <span class="m-toc-grid-num">07</span>
+                                <div class="m-toc-grid-text">
+                                    <strong>마. 4) 항공기계과</strong>
+                                    <span>제트엔진 & 기체 구조 정비</span>
+                                </div>
+                                <span class="m-toc-grid-arr">➔</span>
+                            </button>
+                            <button type="button" onclick="goToMobileSlide(7)" class="m-toc-grid-item">
+                                <span class="m-toc-grid-num">08</span>
+                                <div class="m-toc-grid-text">
+                                    <strong>바. 자주하는 질문 (FAQ)</strong>
+                                    <span>기숙사, 복무기간, 경비 안내</span>
+                                </div>
+                                <span class="m-toc-grid-arr">➔</span>
+                            </button>
+                            <button type="button" onclick="goToMobileSlide(8)" class="m-toc-grid-item">
+                                <span class="m-toc-grid-num">09</span>
+                                <div class="m-toc-grid-text">
+                                    <strong>사. 선배들 이야기</strong>
+                                    <span>현장 졸업 생들의 생생한 수기</span>
+                                </div>
+                                <span class="m-toc-grid-arr">➔</span>
+                            </button>
+                            <button type="button" onclick="goToMobileSlide(9)" class="m-toc-grid-item">
+                                <span class="m-toc-grid-num">10</span>
+                                <div class="m-toc-grid-text">
+                                    <strong>뒷표지 (Back Cover)</strong>
+                                    <span>입학 안내 및 공식 연락처</span>
+                                </div>
+                                <span class="m-toc-grid-arr">➔</span>
                             </button>
                         </div>
                     </div>

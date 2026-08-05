@@ -2960,4 +2960,206 @@
             .m-spec-detail-box strong {
                 color: #64ffda !important;
             }
+
+            /* 모바일 전용 목차 모달 & 목차 그리드 스타일 */
+            .m-toc-modal-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background: rgba(3, 10, 18, 0.85);
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                z-index: 9999;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s ease;
+            }
+
+            .m-toc-modal-overlay.active {
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            .m-toc-modal-content {
+                width: 100%;
+                max-width: 500px;
+                max-height: 85vh;
+                background: linear-gradient(180deg, #0b1e36 0%, #061426 100%);
+                border-top: 2px solid rgba(255, 201, 71, 0.4);
+                border-radius: 20px 20px 0 0;
+                padding: 1.5rem 1.25rem 2rem 1.25rem;
+                box-sizing: border-box;
+                overflow-y: auto;
+                transform: translateY(100%);
+                transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+            }
+
+            .m-toc-modal-overlay.active .m-toc-modal-content {
+                transform: translateY(0);
+            }
+
+            .m-toc-modal-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 0.3rem;
+            }
+
+            .m-toc-modal-header h3 {
+                font-size: 1.2rem;
+                font-weight: 800;
+                color: #ffc947;
+                margin: 0;
+                display: flex;
+                align-items: center;
+                gap: 0.4rem;
+            }
+
+            .m-toc-close-btn {
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                color: #ffffff;
+                font-size: 1.1rem;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.2s ease;
+            }
+
+            .m-toc-close-btn:active {
+                transform: scale(0.9);
+                background: rgba(255, 255, 255, 0.25);
+            }
+
+            .m-toc-modal-subtitle {
+                font-size: 0.78rem;
+                color: #94a3b8;
+                margin: 0 0 1.2rem 0;
+            }
+
+            .m-toc-modal-list {
+                display: flex;
+                flex-direction: column;
+                gap: 0.55rem;
+            }
+
+            .m-toc-item-btn {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                padding: 0.75rem 1rem;
+                background: rgba(255, 255, 255, 0.04);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                border-radius: 12px;
+                color: #ffffff;
+                cursor: pointer;
+                text-align: left;
+                transition: all 0.2s ease;
+            }
+
+            .m-toc-item-btn:active {
+                transform: scale(0.98);
+                background: rgba(255, 201, 71, 0.15);
+                border-color: rgba(255, 201, 71, 0.5);
+            }
+
+            .m-toc-num {
+                font-size: 0.7rem;
+                font-weight: 700;
+                color: #ffc947;
+                background: rgba(255, 201, 71, 0.15);
+                padding: 0.2rem 0.5rem;
+                border-radius: 6px;
+            }
+
+            .m-toc-title {
+                font-size: 0.88rem;
+                font-weight: 600;
+                color: #f1f5f9;
+                flex: 1;
+                margin-left: 0.75rem;
+            }
+
+            .m-toc-arrow {
+                font-size: 0.8rem;
+                color: #64ffda;
+            }
+
+            /* Slide 0 내 목차 그리드 스타일 */
+            .m-toc-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 0.6rem;
+            }
+
+            .m-toc-grid-item {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                padding: 0.85rem 1rem;
+                background: rgba(255, 255, 255, 0.03);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                border-radius: 12px;
+                color: #ffffff;
+                cursor: pointer;
+                text-align: left;
+                transition: all 0.2s ease;
+                box-sizing: border-box;
+            }
+
+            .m-toc-grid-item:active {
+                transform: scale(0.98);
+                background: rgba(255, 201, 71, 0.15);
+                border-color: rgba(255, 201, 71, 0.4);
+            }
+
+            .m-toc-grid-num {
+                font-size: 0.75rem;
+                font-weight: 800;
+                color: #ffc947;
+                background: rgba(255, 201, 71, 0.12);
+                width: 32px;
+                height: 32px;
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+            }
+
+            .m-toc-grid-text {
+                flex: 1;
+                margin-left: 0.8rem;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .m-toc-grid-text strong {
+                font-size: 0.9rem;
+                color: #f8fafc;
+                font-weight: 700;
+            }
+
+            .m-toc-grid-text span {
+                font-size: 0.72rem;
+                color: #94a3b8;
+                margin-top: 0.15rem;
+            }
+
+            .m-toc-grid-arr {
+                font-size: 0.85rem;
+                color: #64ffda;
+                flex-shrink: 0;
+            }
         }

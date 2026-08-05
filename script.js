@@ -944,3 +944,23 @@ window.toggleSpecialtyDetail = function (el) {
         if (arrow) arrow.innerText = '▼';
     }
 };
+
+window.openMobileTocModal = function () {
+    const modal = document.getElementById('mobile-toc-modal');
+    if (modal) {
+        modal.classList.add('active');
+    }
+};
+
+window.closeMobileTocModal = function () {
+    const modal = document.getElementById('mobile-toc-modal');
+    if (modal) {
+        modal.classList.remove('active');
+    }
+};
+
+window.selectMobileTocItem = function (slideIndex) {
+    closeMobileTocModal();
+    goToMobileSlide(slideIndex);
+};
+
