@@ -2240,6 +2240,50 @@
                 border: 1px solid rgba(255, 201, 71, 0.3);
             }
 
+            .m-toc-nav-btn {
+                background: rgba(255, 201, 71, 0.2);
+                border: 1px solid rgba(255, 201, 71, 0.5);
+                color: #ffc947;
+                font-size: 0.75rem;
+                font-weight: 700;
+                padding: 0.25rem 0.65rem;
+                border-radius: 15px;
+                cursor: pointer;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.2rem;
+                transition: all 0.2s ease;
+            }
+
+            .m-toc-nav-btn:active {
+                transform: scale(0.95);
+                background: rgba(255, 201, 71, 0.35);
+            }
+
+            .m-back-to-toc-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.4rem;
+                width: 100%;
+                margin-top: 1.2rem;
+                padding: 0.7rem 1rem;
+                background: rgba(10, 37, 64, 0.8);
+                border: 1px solid rgba(255, 201, 71, 0.5);
+                border-radius: 10px;
+                color: #ffc947;
+                font-size: 0.85rem;
+                font-weight: 700;
+                cursor: pointer;
+                transition: all 0.2s ease;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            }
+
+            .m-back-to-toc-btn:active {
+                background: rgba(255, 201, 71, 0.25);
+                transform: scale(0.98);
+            }
+
             .mobile-slides-container {
                 display: flex;
                 flex-direction: row;
