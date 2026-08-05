@@ -3162,4 +3162,69 @@
                 color: #64ffda;
                 flex-shrink: 0;
             }
+
+            /* 선배들의 편지 / 진로 성찰 조언 스타일 */
+            .story-container {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .story-category-card {
+                background: rgba(255, 255, 255, 0.03);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                border-radius: 12px;
+                padding: 0.9rem;
+                box-sizing: border-box;
+            }
+
+            .story-category-title {
+                font-size: 0.9rem;
+                font-weight: 800;
+                color: #ffc947 !important;
+                margin: 0 0 0.8rem 0;
+                border-bottom: 1px dashed rgba(255, 201, 71, 0.3);
+                padding-bottom: 0.4rem;
+                word-break: keep-all;
+            }
+
+            .story-cohort-group {
+                margin-bottom: 0.85rem;
+            }
+
+            .story-cohort-group:last-child {
+                margin-bottom: 0;
+            }
+
+            .story-cohort-badge {
+                font-size: 0.7rem;
+                font-weight: 700;
+                color: #64ffda;
+                background: rgba(100, 255, 218, 0.12);
+                border: 1px solid rgba(100, 255, 218, 0.3);
+                padding: 0.18rem 0.5rem;
+                border-radius: 6px;
+                display: inline-block;
+                margin-bottom: 0.4rem;
+            }
+
+            .story-container .story-item {
+                background: rgba(255, 255, 255, 0.04);
+                border-left: 3px solid #ffc947;
+                border-radius: 0 8px 8px 0;
+                padding: 0.6rem 0.75rem;
+                margin-bottom: 0.45rem;
+            }
+
+            .story-container .story-item:last-child {
+                margin-bottom: 0;
+            }
+
+            .story-container .story-quote {
+                font-size: 0.76rem;
+                color: #e2e8f0 !important;
+                line-height: 1.5;
+                margin: 0 !important;
+                word-break: keep-all;
+            }
         }
