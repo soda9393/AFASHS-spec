@@ -3339,3 +3339,180 @@
 .faq-topic-page-item:not(.active) {
     display: none !important;
 }
+
+
+/* ----------------------------------------------------
+   Desktop High Contrast Paper Page & FAQ Styling Fix
+   ---------------------------------------------------- */
+.page-side {
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+    background-color: #ffffff;
+}
+
+.page-side.paper-right,
+.page-side.paper-left {
+    background: #ffffff !important;
+    color: #1e293b !important;
+}
+
+.page-side.dark-page {
+    background: linear-gradient(135deg, #051622 0%, #0d2840 100%) !important;
+    color: #ffffff !important;
+}
+
+/* Paper page cards high contrast */
+.paper-right .story-category-card,
+.paper-left .story-category-card {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06) !important;
+    border-radius: 10px !important;
+    padding: 0.9rem !important;
+}
+
+.paper-right .story-category-title,
+.paper-left .story-category-title {
+    color: #0f172a !important;
+    border-bottom: 2px solid #007d88 !important;
+    font-weight: 800 !important;
+    font-size: 0.92rem !important;
+    padding-bottom: 0.4rem !important;
+}
+
+.paper-right .story-cohort-badge,
+.paper-left .story-cohort-badge {
+    color: #007d88 !important;
+    background: rgba(0, 125, 136, 0.1) !important;
+    border: 1px solid rgba(0, 125, 136, 0.3) !important;
+}
+
+.paper-right .story-container .story-item,
+.paper-left .story-container .story-item {
+    background: #f8fafc !important;
+    border-left: 3px solid #007d88 !important;
+    border-radius: 0 8px 8px 0 !important;
+}
+
+.paper-right .story-container .story-quote,
+.paper-left .story-container .story-quote {
+    color: #1e293b !important;
+    font-weight: 500 !important;
+}
+
+/* Desktop FAQ Item & Accordion High Contrast Styling */
+.paper-right .faq-item,
+.paper-left .faq-item {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    margin-bottom: 0.55rem !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04) !important;
+    overflow: hidden !important;
+}
+
+.paper-right .faq-question,
+.paper-left .faq-question {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
+    padding: 0.75rem 0.9rem !important;
+    transition: background 0.2s ease !important;
+}
+
+.paper-right .faq-question:hover,
+.paper-left .faq-question:hover {
+    background: #f1f5f9 !important;
+}
+
+.paper-right .faq-q-badge,
+.paper-left .faq-q-badge {
+    background-color: #0a2540 !important;
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    padding: 0.2rem 0.45rem !important;
+    border-radius: 4px !important;
+    font-size: 0.68rem !important;
+}
+
+.paper-right .faq-answer,
+.paper-left .faq-answer {
+    background-color: #f8fafc !important;
+}
+
+.paper-right .faq-answer-inner,
+.paper-left .faq-answer-inner {
+    border-top: 1px solid #e2e8f0 !important;
+    padding: 0.85rem 0.9rem !important;
+}
+
+.paper-right .faq-a-badge,
+.paper-left .faq-a-badge {
+    background-color: #007d88 !important;
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    padding: 0.2rem 0.45rem !important;
+    border-radius: 4px !important;
+    font-size: 0.68rem !important;
+}
+
+.paper-right .faq-answer p,
+.paper-left .faq-answer p {
+    color: #1e293b !important;
+    font-size: 0.8rem !important;
+    line-height: 1.55 !important;
+    font-weight: 500 !important;
+}
+
+/* Tab buttons on paper pages */
+.paper-right .senior-topic-nav,
+.paper-left .senior-topic-nav {
+    background: #f1f5f9 !important;
+    border: 1px solid #cbd5e1 !important;
+}
+
+.paper-right .senior-topic-tab-btn,
+.paper-left .senior-topic-tab-btn {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #334155 !important;
+}
+
+.paper-right .senior-topic-tab-btn:hover,
+.paper-left .senior-topic-tab-btn:hover {
+    background: #e2e8f0 !important;
+    color: #0f172a !important;
+}
+
+.paper-right .senior-topic-tab-btn.active,
+.paper-left .senior-topic-tab-btn.active {
+    background: linear-gradient(135deg, #0a2540 0%, #007d88 100%) !important;
+    color: #ffffff !important;
+    border-color: #0a2540 !important;
+    box-shadow: 0 2px 6px rgba(10, 37, 64, 0.3) !important;
+}
+
+.paper-right .senior-page-controls,
+.paper-left .senior-page-controls {
+    background: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+}
+
+.paper-right .senior-page-btn,
+.paper-left .senior-page-btn {
+    background: #0a2540 !important;
+    border: 1px solid #0a2540 !important;
+    color: #ffffff !important;
+}
+
+.paper-right .senior-page-btn:hover,
+.paper-left .senior-page-btn:hover {
+    background: #007d88 !important;
+    border-color: #007d88 !important;
+}
+
+.paper-right .senior-page-indicator,
+.paper-left .senior-page-indicator {
+    color: #0f172a !important;
+}
