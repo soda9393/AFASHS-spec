@@ -3228,3 +3228,79 @@
                 word-break: keep-all;
             }
         }
+
+/* 주제별 탭 및 페이지 내비게이션 스타일 */
+.senior-topic-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.8rem;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 201, 71, 0.2);
+}
+
+.senior-topic-tab-btn {
+    flex: 1 1 calc(33.33% - 0.4rem);
+    min-width: 90px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #cbd5e1;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.4rem 0.3rem;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.senior-topic-tab-btn:hover {
+    background: rgba(255, 201, 71, 0.2);
+    color: #ffffff;
+}
+
+.senior-topic-tab-btn.active {
+    background: linear-gradient(135deg, #ffc947 0%, #ff9800 100%);
+    color: #0b1329 !important;
+    border-color: #ffc947;
+    box-shadow: 0 2px 8px rgba(255, 201, 71, 0.4);
+}
+
+.senior-page-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.8);
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 201, 71, 0.2);
+    margin-top: 0.8rem;
+}
+
+.senior-page-btn {
+    background: rgba(100, 255, 218, 0.15);
+    border: 1px solid rgba(100, 255, 218, 0.4);
+    color: #64ffda;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.3rem 0.7rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.senior-page-btn:hover {
+    background: rgba(100, 255, 218, 0.3);
+    color: #ffffff;
+}
+
+.senior-page-indicator {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #ffc947;
+}

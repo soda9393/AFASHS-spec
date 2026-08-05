@@ -964,3 +964,42 @@ window.selectMobileTocItem = function (slideIndex) {
     goToMobileSlide(slideIndex);
 };
 
+// 선배들의 편지 주제별 페이지 전환 (1~6페이지)
+window.switchSeniorTopic = function (topicNum) {
+    const pages = document.querySelectorAll('.senior-topic-page-item');
+    const tabs = document.querySelectorAll('.senior-topic-tab-btn');
+    const pageNumSpans = document.querySelectorAll('.senior-current-page-num');
+
+    if (!pages || pages.length === 0) return;
+
+    let targetNum = parseInt(topicNum, 10);
+    if (isNaN(targetNum) || targetNum < 1) targetNum = 1;
+    if (targetNum > pages.length) targetNum = pages.length;
+
+    pages.forEach(p => {
+        if (p.getAttribute('data-topic-id') == targetNum) {
+            p.style.display = 'block';
+            p.classList.add('active');
+        } else {
+            p.style.display = 'none';
+            p.classList.remove('active');
+        }
+    });
+
+    tabs.forEach(t => {
+        if (t.getAttribute('data-topic-target') == targetNum) {
+            t.classList.add('active');
+        } else {
+            t.classList.remove('active');
+        }
+    });
+
+    pageNumSpans.forEach(span => {
+        span.innerText = targetNum;
+    });
+
+    // 스크롤 맨 위로 이동
+    const containers = document.querySelectorAll('.story-container');
+    containers.forEach(c => c.scrollTop = 0);
+};
+
