@@ -131,17 +131,17 @@
                         <p class="section-desc">공군항공과학고등학교 특기 교육의 이해 및 5개 핵심 세부 주제별 교육과정입니다. 아래 탭과 버튼을 이용해 넘겨보세요.</p>
 
                         <div class="senior-topic-nav edu-topic-nav" style="margin-bottom: 0.8rem;">
-                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn active" data-edu-target="1" onclick="switchEduTopic(1)">1. 특기교육의 이해</button>
-                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="2" onclick="switchEduTopic(2)">2. 기술중심 교육</button>
-                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="3" onclick="switchEduTopic(3)">3. 청소년의 성장</button>
-                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="4" onclick="switchEduTopic(4)">4. 부사관 병과</button>
-                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="5" onclick="switchEduTopic(5)">5. 병과 간 연관성</button>
+                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn active" data-edu-target="1" onclick="switchEduTopic(1, event)">1. 특기교육의 이해</button>
+                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="2" onclick="switchEduTopic(2, event)">2. 기술중심 교육</button>
+                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="3" onclick="switchEduTopic(3, event)">3. 청소년의 성장</button>
+                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="4" onclick="switchEduTopic(4, event)">4. 부사관 병과</button>
+                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="5" onclick="switchEduTopic(5, event)">5. 병과 간 연관성</button>
                         </div>
 
                         <div class="senior-page-controls edu-page-controls" style="margin-bottom: 0.6rem;">
-                            <button type="button" class="senior-page-btn" onclick="prevEduTopic()">◀ 이전 주제</button>
+                            <button type="button" class="senior-page-btn" onclick="prevEduTopic(event)">◀ 이전 주제</button>
                             <span class="senior-page-indicator">주제 <span class="edu-current-page-num">1</span> / 5</span>
-                            <button type="button" class="senior-page-btn" onclick="nextEduTopic()">다음 주제 ▶</button>
+                            <button type="button" class="senior-page-btn" onclick="nextEduTopic(event)">다음 주제 ▶</button>
                         </div>
                         <div class="story-container edu-container" style="max-height: 72%; overflow-y: auto; padding-right: 0.3rem;">
                             <!-- 주제 1: 공군항공과학고등학교 특기 교육의 이해 & 1. 진로개발역량 함양과 영마이스터 육성 -->
@@ -241,9 +241,9 @@
                         </div>
 
                         <div class="senior-page-controls edu-page-controls" style="margin-top: 0.4rem;">
-                            <button type="button" class="senior-page-btn" onclick="prevEduTopic()">◀ 이전 주제</button>
+                            <button type="button" class="senior-page-btn" onclick="prevEduTopic(event)">◀ 이전 주제</button>
                             <span class="senior-page-indicator">주제 <span class="edu-current-page-num">1</span> / 5</span>
-                            <button type="button" class="senior-page-btn" onclick="nextEduTopic()">다음 주제 ▶</button>
+                            <button type="button" class="senior-page-btn" onclick="nextEduTopic(event)">다음 주제 ▶</button>
                         </div>
                     </div>
 
@@ -1075,15 +1075,15 @@
                         <p class="section-desc">학업, 전공, 군 생활 및 생활관 3개 세부 주제별 핵심 FAQ입니다. 아래 탭과 버튼을 통해 주제별 페이지를 넘겨보세요.</p>
 
                         <div class="senior-topic-nav faq-topic-nav" style="margin-bottom: 0.8rem;">
-                            <button type="button" class="senior-topic-tab-btn faq-topic-tab-btn active" data-faq-target="1" onclick="switchFaqTopic(1)">1. 학업 (Q1~Q6)</button>
-                            <button type="button" class="senior-topic-tab-btn faq-topic-tab-btn" data-faq-target="2" onclick="switchFaqTopic(2)">2. 전공 (Q7~Q11)</button>
-                            <button type="button" class="senior-topic-tab-btn faq-topic-tab-btn" data-faq-target="3" onclick="switchFaqTopic(3)">3. 군 생활 및 생활관 (Q12~Q20)</button>
+                            <button type="button" class="senior-topic-tab-btn faq-topic-tab-btn active" data-faq-target="1" onclick="switchFaqTopic(1, event)">1. 학업 (Q1~Q6)</button>
+                            <button type="button" class="senior-topic-tab-btn faq-topic-tab-btn" data-faq-target="2" onclick="switchFaqTopic(2, event)">2. 전공 (Q7~Q11)</button>
+                            <button type="button" class="senior-topic-tab-btn faq-topic-tab-btn" data-faq-target="3" onclick="switchFaqTopic(3, event)">3. 군 생활 및 생활관 (Q12~Q20)</button>
                         </div>
 
                         <div class="senior-page-controls faq-page-controls" style="margin-bottom: 0.6rem;">
-                            <button type="button" class="senior-page-btn" onclick="prevFaqTopic()">◀ 이전 주제</button>
+                            <button type="button" class="senior-page-btn" onclick="prevFaqTopic(event)">◀ 이전 주제</button>
                             <span class="senior-page-indicator">주제 <span class="faq-current-page-num">1</span> / 3</span>
-                            <button type="button" class="senior-page-btn" onclick="nextFaqTopic()">다음 주제 ▶</button>
+                            <button type="button" class="senior-page-btn" onclick="nextFaqTopic(event)">다음 주제 ▶</button>
                         </div>
                         <div class="story-container faq-container" style="max-height: 72%; overflow-y: auto; padding-right: 0.3rem;">
                             <!-- Category 1: 1. 학업 (Q1 ~ Q6) -->
@@ -1335,9 +1335,9 @@
                         </div>
 
                         <div class="senior-page-controls faq-page-controls" style="margin-top: 0.4rem;">
-                            <button type="button" class="senior-page-btn" onclick="prevFaqTopic()">◀ 이전 주제</button>
+                            <button type="button" class="senior-page-btn" onclick="prevFaqTopic(event)">◀ 이전 주제</button>
                             <span class="senior-page-indicator">주제 <span class="faq-current-page-num">1</span> / 3</span>
-                            <button type="button" class="senior-page-btn" onclick="nextFaqTopic()">다음 주제 ▶</button>
+                            <button type="button" class="senior-page-btn" onclick="nextFaqTopic(event)">다음 주제 ▶</button>
                         </div>
                     </div>
 
@@ -1347,18 +1347,18 @@
                         <p class="section-desc">현재 공군 비행단 및 전술 작전부서에서 활약하는 졸업생 선배(41기~45기)들의 원문 그대로의 후기입니다. 아래 주제 탭이나 이전/다음 버튼을 눌러 주제별 페이지를 넘겨보세요.</p>
 
                         <div class="senior-topic-nav">
-                            <button type="button" class="senior-topic-tab-btn active" data-topic-target="1" onclick="switchSeniorTopic(1)">1. 전공분류 고민</button>
-                            <button type="button" class="senior-topic-tab-btn" data-topic-target="2" onclick="switchSeniorTopic(2)">2. 조언 및 대안</button>
-                            <button type="button" class="senior-topic-tab-btn" data-topic-target="3" onclick="switchSeniorTopic(3)">3. 특기선택 동기</button>
-                            <button type="button" class="senior-topic-tab-btn" data-topic-target="4" onclick="switchSeniorTopic(4)">4. 부러운 특기</button>
-                            <button type="button" class="senior-topic-tab-btn" data-topic-target="5" onclick="switchSeniorTopic(5)">5. 고민하는 후배에게</button>
-                            <button type="button" class="senior-topic-tab-btn" data-topic-target="6" onclick="switchSeniorTopic(6)">6. 학교생활 조언</button>
+                            <button type="button" class="senior-topic-tab-btn active" data-topic-target="1" onclick="switchSeniorTopic(1, event)">1. 전공분류 고민</button>
+                            <button type="button" class="senior-topic-tab-btn" data-topic-target="2" onclick="switchSeniorTopic(2, event)">2. 조언 및 대안</button>
+                            <button type="button" class="senior-topic-tab-btn" data-topic-target="3" onclick="switchSeniorTopic(3, event)">3. 특기선택 동기</button>
+                            <button type="button" class="senior-topic-tab-btn" data-topic-target="4" onclick="switchSeniorTopic(4, event)">4. 부러운 특기</button>
+                            <button type="button" class="senior-topic-tab-btn" data-topic-target="5" onclick="switchSeniorTopic(5, event)">5. 고민하는 후배에게</button>
+                            <button type="button" class="senior-topic-tab-btn" data-topic-target="6" onclick="switchSeniorTopic(6, event)">6. 학교생활 조언</button>
                         </div>
 
                         <div class="senior-page-controls">
-                            <button type="button" class="senior-page-btn" onclick="prevSeniorTopic()">◀ 이전 주제</button>
+                            <button type="button" class="senior-page-btn" onclick="prevSeniorTopic(event)">◀ 이전 주제</button>
                             <span class="senior-page-indicator">주제 <span class="senior-current-page-num">1</span> / 6</span>
-                            <button type="button" class="senior-page-btn" onclick="nextSeniorTopic()">다음 주제 ▶</button>
+                            <button type="button" class="senior-page-btn" onclick="nextSeniorTopic(event)">다음 주제 ▶</button>
                         </div>
 
                         <div class="story-container" style="max-height: 72%; overflow-y: auto; padding-right: 0.3rem;">
@@ -1743,9 +1743,9 @@
                         </div>
 
                         <div class="senior-page-controls" style="margin-top: 0.4rem;">
-                            <button type="button" class="senior-page-btn" onclick="prevSeniorTopic()">◀ 이전 주제</button>
+                            <button type="button" class="senior-page-btn" onclick="prevSeniorTopic(event)">◀ 이전 주제</button>
                             <span class="senior-page-indicator">주제 <span class="senior-current-page-num">1</span> / 6</span>
-                            <button type="button" class="senior-page-btn" onclick="nextSeniorTopic()">다음 주제 ▶</button>
+                            <button type="button" class="senior-page-btn" onclick="nextSeniorTopic(event)">다음 주제 ▶</button>
                         </div>
                     </div>
 
@@ -2060,17 +2060,17 @@
                     <p class="m-section-desc" style="margin-bottom: 0.8rem;">공군항공과학고등학교 특기 교육의 이해 및 5개 핵심 세부 주제별 교육과정입니다. 아래 탭과 버튼을 이용해 넘겨보세요.</p>
 
                         <div class="senior-topic-nav edu-topic-nav" style="margin-bottom: 0.8rem;">
-                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn active" data-edu-target="1" onclick="switchEduTopic(1)">1. 특기교육의 이해</button>
-                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="2" onclick="switchEduTopic(2)">2. 기술중심 교육</button>
-                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="3" onclick="switchEduTopic(3)">3. 청소년의 성장</button>
-                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="4" onclick="switchEduTopic(4)">4. 부사관 병과</button>
-                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="5" onclick="switchEduTopic(5)">5. 병과 간 연관성</button>
+                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn active" data-edu-target="1" onclick="switchEduTopic(1, event)">1. 특기교육의 이해</button>
+                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="2" onclick="switchEduTopic(2, event)">2. 기술중심 교육</button>
+                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="3" onclick="switchEduTopic(3, event)">3. 청소년의 성장</button>
+                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="4" onclick="switchEduTopic(4, event)">4. 부사관 병과</button>
+                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="5" onclick="switchEduTopic(5, event)">5. 병과 간 연관성</button>
                         </div>
 
                         <div class="senior-page-controls edu-page-controls" style="margin-bottom: 0.6rem;">
-                            <button type="button" class="senior-page-btn" onclick="prevEduTopic()">◀ 이전 주제</button>
+                            <button type="button" class="senior-page-btn" onclick="prevEduTopic(event)">◀ 이전 주제</button>
                             <span class="senior-page-indicator">주제 <span class="edu-current-page-num">1</span> / 5</span>
-                            <button type="button" class="senior-page-btn" onclick="nextEduTopic()">다음 주제 ▶</button>
+                            <button type="button" class="senior-page-btn" onclick="nextEduTopic(event)">다음 주제 ▶</button>
                         </div>
                         <div class="story-container edu-container" style="max-height: 72%; overflow-y: auto; padding-right: 0.3rem;">
                             <!-- 주제 1: 공군항공과학고등학교 특기 교육의 이해 & 1. 진로개발역량 함양과 영마이스터 육성 -->
@@ -2170,9 +2170,9 @@
                         </div>
 
                     <div class="senior-page-controls edu-page-controls" style="margin-top: 0.4rem;">
-                        <button type="button" class="senior-page-btn" onclick="prevEduTopic()">◀ 이전 주제</button>
+                        <button type="button" class="senior-page-btn" onclick="prevEduTopic(event)">◀ 이전 주제</button>
                         <span class="senior-page-indicator">주제 <span class="edu-current-page-num">1</span> / 5</span>
-                        <button type="button" class="senior-page-btn" onclick="nextEduTopic()">다음 주제 ▶</button>
+                        <button type="button" class="senior-page-btn" onclick="nextEduTopic(event)">다음 주제 ▶</button>
                     </div>
 
                     <button type="button" class="m-back-to-toc-btn" onclick="goToMobileSlide(0)" style="margin-top: 1rem;">📋 목차(처음)로 돌아가기</button>
@@ -3090,15 +3090,15 @@
                     <p class="m-section-desc" style="margin-bottom: 0.8rem;">학업, 전공, 군 생활 및 생활관 3개 세부 주제별 핵심 FAQ입니다. 아래 탭과 버튼을 통해 주제별 페이지를 넘겨보세요.</p>
 
                         <div class="senior-topic-nav faq-topic-nav" style="margin-bottom: 0.8rem;">
-                            <button type="button" class="senior-topic-tab-btn faq-topic-tab-btn active" data-faq-target="1" onclick="switchFaqTopic(1)">1. 학업 (Q1~Q6)</button>
-                            <button type="button" class="senior-topic-tab-btn faq-topic-tab-btn" data-faq-target="2" onclick="switchFaqTopic(2)">2. 전공 (Q7~Q11)</button>
-                            <button type="button" class="senior-topic-tab-btn faq-topic-tab-btn" data-faq-target="3" onclick="switchFaqTopic(3)">3. 군 생활 및 생활관 (Q12~Q20)</button>
+                            <button type="button" class="senior-topic-tab-btn faq-topic-tab-btn active" data-faq-target="1" onclick="switchFaqTopic(1, event)">1. 학업 (Q1~Q6)</button>
+                            <button type="button" class="senior-topic-tab-btn faq-topic-tab-btn" data-faq-target="2" onclick="switchFaqTopic(2, event)">2. 전공 (Q7~Q11)</button>
+                            <button type="button" class="senior-topic-tab-btn faq-topic-tab-btn" data-faq-target="3" onclick="switchFaqTopic(3, event)">3. 군 생활 및 생활관 (Q12~Q20)</button>
                         </div>
 
                         <div class="senior-page-controls faq-page-controls" style="margin-bottom: 0.6rem;">
-                            <button type="button" class="senior-page-btn" onclick="prevFaqTopic()">◀ 이전 주제</button>
+                            <button type="button" class="senior-page-btn" onclick="prevFaqTopic(event)">◀ 이전 주제</button>
                             <span class="senior-page-indicator">주제 <span class="faq-current-page-num">1</span> / 3</span>
-                            <button type="button" class="senior-page-btn" onclick="nextFaqTopic()">다음 주제 ▶</button>
+                            <button type="button" class="senior-page-btn" onclick="nextFaqTopic(event)">다음 주제 ▶</button>
                         </div>
                         <div class="story-container faq-container" style="max-height: 72%; overflow-y: auto; padding-right: 0.3rem;">
                             <!-- Category 1: 1. 학업 (Q1 ~ Q6) -->
@@ -3350,9 +3350,9 @@
                         </div>
 
                     <div class="senior-page-controls faq-page-controls" style="margin-top: 0.4rem;">
-                        <button type="button" class="senior-page-btn" onclick="prevFaqTopic()">◀ 이전 주제</button>
+                        <button type="button" class="senior-page-btn" onclick="prevFaqTopic(event)">◀ 이전 주제</button>
                         <span class="senior-page-indicator">주제 <span class="faq-current-page-num">1</span> / 3</span>
-                        <button type="button" class="senior-page-btn" onclick="nextFaqTopic()">다음 주제 ▶</button>
+                        <button type="button" class="senior-page-btn" onclick="nextFaqTopic(event)">다음 주제 ▶</button>
                     </div>
 
                     <button type="button" class="m-back-to-toc-btn" onclick="goToMobileSlide(0)" style="margin-top: 1rem;">📋 목차(처음)로 돌아가기</button>
@@ -3366,18 +3366,18 @@
                     <p class="m-section-desc" style="margin-bottom: 0.8rem;">현재 공군 비행단 및 전술 작전부서에서 활약하는 졸업생 선배(41기~45기)들의 원문 그대로의 후기입니다. 아래 주제 탭이나 이전/다음 버튼을 눌러 주제별 페이지를 넘겨보세요.</p>
 
                     <div class="senior-topic-nav">
-                        <button type="button" class="senior-topic-tab-btn active" data-topic-target="1" onclick="switchSeniorTopic(1)">1. 전공분류 고민</button>
-                        <button type="button" class="senior-topic-tab-btn" data-topic-target="2" onclick="switchSeniorTopic(2)">2. 조언 및 대안</button>
-                        <button type="button" class="senior-topic-tab-btn" data-topic-target="3" onclick="switchSeniorTopic(3)">3. 특기선택 동기</button>
-                        <button type="button" class="senior-topic-tab-btn" data-topic-target="4" onclick="switchSeniorTopic(4)">4. 부러운 특기</button>
-                        <button type="button" class="senior-topic-tab-btn" data-topic-target="5" onclick="switchSeniorTopic(5)">5. 고민하는 후배에게</button>
-                        <button type="button" class="senior-topic-tab-btn" data-topic-target="6" onclick="switchSeniorTopic(6)">6. 학교생활 조언</button>
+                        <button type="button" class="senior-topic-tab-btn active" data-topic-target="1" onclick="switchSeniorTopic(1, event)">1. 전공분류 고민</button>
+                        <button type="button" class="senior-topic-tab-btn" data-topic-target="2" onclick="switchSeniorTopic(2, event)">2. 조언 및 대안</button>
+                        <button type="button" class="senior-topic-tab-btn" data-topic-target="3" onclick="switchSeniorTopic(3, event)">3. 특기선택 동기</button>
+                        <button type="button" class="senior-topic-tab-btn" data-topic-target="4" onclick="switchSeniorTopic(4, event)">4. 부러운 특기</button>
+                        <button type="button" class="senior-topic-tab-btn" data-topic-target="5" onclick="switchSeniorTopic(5, event)">5. 고민하는 후배에게</button>
+                        <button type="button" class="senior-topic-tab-btn" data-topic-target="6" onclick="switchSeniorTopic(6, event)">6. 학교생활 조언</button>
                     </div>
 
                     <div class="senior-page-controls">
-                        <button type="button" class="senior-page-btn" onclick="prevSeniorTopic()">◀ 이전 주제</button>
+                        <button type="button" class="senior-page-btn" onclick="prevSeniorTopic(event)">◀ 이전 주제</button>
                         <span class="senior-page-indicator">주제 <span class="senior-current-page-num">1</span> / 6</span>
-                        <button type="button" class="senior-page-btn" onclick="nextSeniorTopic()">다음 주제 ▶</button>
+                        <button type="button" class="senior-page-btn" onclick="nextSeniorTopic(event)">다음 주제 ▶</button>
                     </div>
 
                     <div class="story-container">
@@ -3762,9 +3762,9 @@
                     </div>
 
                     <div class="senior-page-controls">
-                        <button type="button" class="senior-page-btn" onclick="prevSeniorTopic()">◀ 이전 주제</button>
+                        <button type="button" class="senior-page-btn" onclick="prevSeniorTopic(event)">◀ 이전 주제</button>
                         <span class="senior-page-indicator">주제 <span class="senior-current-page-num">1</span> / 6</span>
-                        <button type="button" class="senior-page-btn" onclick="nextSeniorTopic()">다음 주제 ▶</button>
+                        <button type="button" class="senior-page-btn" onclick="nextSeniorTopic(event)">다음 주제 ▶</button>
                     </div>
                 </div>
 

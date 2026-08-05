@@ -337,7 +337,10 @@ function initFAQ() {
     faqQuestions.forEach(question => {
         let faqHandled = false;
         const toggleFAQ = (e) => {
-            if (e) e.stopPropagation();
+            if (e) {
+                if (typeof e.stopPropagation === 'function') e.stopPropagation();
+                if (typeof e.preventDefault === 'function') e.preventDefault();
+            }
             if (faqHandled) return;
             faqHandled = true;
             setTimeout(() => { faqHandled = false; }, 200);
@@ -785,7 +788,7 @@ window.addEventListener('DOMContentLoaded', () => {
             if (window.innerWidth <= 768) {
                 return;
             }
-            if (e.target.closest('button, a, input, select, textarea, .quiz-container, .quiz-screen, .quiz-option-btn, .quiz-start-btn, .faq-question, .story-item, .features-list, .timeline, .facilities-list, .major-grid, .dept-fac-list, .career-list, .curriculum-table')) {
+            if (e.target.closest('button, a, input, select, textarea, .quiz-container, .quiz-screen, .quiz-option-btn, .quiz-start-btn, .faq-question, .faq-item, .faq-answer, .faq-list, .faq-topic-tab-btn, .senior-topic-tab-btn, .edu-topic-tab-btn, .senior-page-btn, .senior-topic-nav, .senior-page-controls, .story-category-card, .story-container, .story-item, .features-list, .timeline, .facilities-list, .major-grid, .dept-fac-list, .career-list, .curriculum-table')) {
                 return;
             }
 
@@ -967,7 +970,11 @@ window.selectMobileTocItem = function (slideIndex) {
 // 선배들의 편지 주제별 페이지 전환 (1~6페이지)
 let currentSeniorTopicNum = 1;
 
-window.switchSeniorTopic = function (topicNum) {
+window.switchSeniorTopic = function (topicNum, e) {
+    if (e) {
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+    }
     let targetNum = parseInt(topicNum, 10);
     if (isNaN(targetNum) || targetNum < 1) targetNum = 1;
     if (targetNum > 6) targetNum = 6;
@@ -1006,13 +1013,21 @@ window.switchSeniorTopic = function (topicNum) {
     containers.forEach(c => { c.scrollTop = 0; });
 };
 
-window.prevSeniorTopic = function () {
+window.prevSeniorTopic = function (e) {
+    if (e) {
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+    }
     if (currentSeniorTopicNum > 1) {
         window.switchSeniorTopic(currentSeniorTopicNum - 1);
     }
 };
 
-window.nextSeniorTopic = function () {
+window.nextSeniorTopic = function (e) {
+    if (e) {
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+    }
     if (currentSeniorTopicNum < 6) {
         window.switchSeniorTopic(currentSeniorTopicNum + 1);
     }
@@ -1023,7 +1038,11 @@ window.nextSeniorTopic = function () {
 // 학교 교육과정 주제별 페이지 전환 (1~5페이지)
 let currentEduTopicNum = 1;
 
-window.switchEduTopic = function (topicNum) {
+window.switchEduTopic = function (topicNum, e) {
+    if (e) {
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+    }
     let targetNum = parseInt(topicNum, 10);
     if (isNaN(targetNum) || targetNum < 1) targetNum = 1;
     if (targetNum > 5) targetNum = 5;
@@ -1061,13 +1080,21 @@ window.switchEduTopic = function (topicNum) {
     containers.forEach(c => { c.scrollTop = 0; });
 };
 
-window.prevEduTopic = function () {
+window.prevEduTopic = function (e) {
+    if (e) {
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+    }
     if (currentEduTopicNum > 1) {
         window.switchEduTopic(currentEduTopicNum - 1);
     }
 };
 
-window.nextEduTopic = function () {
+window.nextEduTopic = function (e) {
+    if (e) {
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+    }
     if (currentEduTopicNum < 5) {
         window.switchEduTopic(currentEduTopicNum + 1);
     }
@@ -1076,7 +1103,11 @@ window.nextEduTopic = function () {
 // 자주하는 질문 (FAQ) 주제별 페이지 전환 (1~3페이지)
 let currentFaqTopicNum = 1;
 
-window.switchFaqTopic = function (topicNum) {
+window.switchFaqTopic = function (topicNum, e) {
+    if (e) {
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+    }
     let targetNum = parseInt(topicNum, 10);
     if (isNaN(targetNum) || targetNum < 1) targetNum = 1;
     if (targetNum > 3) targetNum = 3;
@@ -1119,13 +1150,21 @@ window.switchFaqTopic = function (topicNum) {
     }
 };
 
-window.prevFaqTopic = function () {
+window.prevFaqTopic = function (e) {
+    if (e) {
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+    }
     if (currentFaqTopicNum > 1) {
         window.switchFaqTopic(currentFaqTopicNum - 1);
     }
 };
 
-window.nextFaqTopic = function () {
+window.nextFaqTopic = function (e) {
+    if (e) {
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+    }
     if (currentFaqTopicNum < 3) {
         window.switchFaqTopic(currentFaqTopicNum + 1);
     }
