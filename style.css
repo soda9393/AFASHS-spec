@@ -3327,3 +3327,15 @@
 .edu-topic-page-item:not(.active) {
     display: none !important;
 }
+
+.faq-topic-page-item {
+    width: 100%;
+}
+
+.faq-topic-page-item.active {
+    display: block !important;
+}
+
+.faq-topic-page-item:not(.active) {
+    display: none !important;
+}

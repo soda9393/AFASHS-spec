@@ -1072,3 +1072,61 @@ window.nextEduTopic = function () {
         window.switchEduTopic(currentEduTopicNum + 1);
     }
 };
+
+// 자주하는 질문 (FAQ) 주제별 페이지 전환 (1~3페이지)
+let currentFaqTopicNum = 1;
+
+window.switchFaqTopic = function (topicNum) {
+    let targetNum = parseInt(topicNum, 10);
+    if (isNaN(targetNum) || targetNum < 1) targetNum = 1;
+    if (targetNum > 3) targetNum = 3;
+
+    currentFaqTopicNum = targetNum;
+
+    const pages = document.querySelectorAll('.faq-topic-page-item');
+    pages.forEach(p => {
+        const pageTopicId = parseInt(p.getAttribute('data-faq-id'), 10);
+        if (pageTopicId === targetNum) {
+            p.classList.add('active');
+            p.style.setProperty('display', 'block', 'important');
+        } else {
+            p.classList.remove('active');
+            p.style.setProperty('display', 'none', 'important');
+        }
+    });
+
+    const tabs = document.querySelectorAll('.faq-topic-tab-btn');
+    tabs.forEach(t => {
+        const tabTargetId = parseInt(t.getAttribute('data-faq-target'), 10);
+        if (tabTargetId === targetNum) {
+            t.classList.add('active');
+        } else {
+            t.classList.remove('active');
+        }
+    });
+
+    const pageNumSpans = document.querySelectorAll('.faq-current-page-num');
+    pageNumSpans.forEach(span => {
+        span.textContent = targetNum;
+    });
+
+    const containers = document.querySelectorAll('.faq-container');
+    containers.forEach(c => { c.scrollTop = 0; });
+
+    // FAQ 아코디언 이벤트 재연결
+    if (typeof initFAQ === 'function') {
+        initFAQ();
+    }
+};
+
+window.prevFaqTopic = function () {
+    if (currentFaqTopicNum > 1) {
+        window.switchFaqTopic(currentFaqTopicNum - 1);
+    }
+};
+
+window.nextFaqTopic = function () {
+    if (currentFaqTopicNum < 3) {
+        window.switchFaqTopic(currentFaqTopicNum + 1);
+    }
+};

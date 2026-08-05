@@ -1069,48 +1069,279 @@
 
                 <!-- [Sheet 11] 마. 자주하는 질문 (Page 23) / 바. 선배들 이야기 (Page 24) -->
                 <div class="sheet" id="sheet-11">
-                    <!-- Front: 마. 자주하는 질문 -->
+                                        <!-- Front: 마. 자주하는 질문 -->
                     <div class="page-side paper-right" id="page-23">
                         <h2>마. 자주하는 질문</h2>
-                        <p class="section-desc">입학 전 수험생 및 학부모님들께서 가장 많이 질문하시는 핵심 FAQ입니다.</p>
+                        <p class="section-desc">학업, 전공, 군 생활 및 생활관 3개 세부 주제별 핵심 FAQ입니다. 아래 탭과 버튼을 통해 주제별 페이지를 넘겨보세요.</p>
 
-                        <div class="faq-list">
-                            <div class="faq-item">
-                                <button class="faq-question">
-                                    <span><span class="faq-q-badge">Q1</span> 전교생 기숙사 생활을 하나요?</span>
-                                </button>
-                                <div class="faq-answer">
-                                    <div class="faq-answer-inner">
-                                        <span class="faq-a-badge">A</span>
-                                        <p>네, 안전한 공동체 의식을 배양하고 학업에 완전 전념할 수 있도록 현대식 기숙사를 무상 제공하고 있습니다.</p>
+                        <div class="senior-topic-nav faq-topic-nav" style="margin-bottom: 0.8rem;">
+                            <button type="button" class="senior-topic-tab-btn faq-topic-tab-btn active" data-faq-target="1" onclick="switchFaqTopic(1)">1. 학업 (Q1~Q6)</button>
+                            <button type="button" class="senior-topic-tab-btn faq-topic-tab-btn" data-faq-target="2" onclick="switchFaqTopic(2)">2. 전공 (Q7~Q11)</button>
+                            <button type="button" class="senior-topic-tab-btn faq-topic-tab-btn" data-faq-target="3" onclick="switchFaqTopic(3)">3. 군 생활 및 생활관 (Q12~Q20)</button>
+                        </div>
+
+                        <div class="senior-page-controls faq-page-controls" style="margin-bottom: 0.6rem;">
+                            <button type="button" class="senior-page-btn" onclick="prevFaqTopic()">◀ 이전 주제</button>
+                            <span class="senior-page-indicator">주제 <span class="faq-current-page-num">1</span> / 3</span>
+                            <button type="button" class="senior-page-btn" onclick="nextFaqTopic()">다음 주제 ▶</button>
+                        </div>
+                        <div class="story-container faq-container" style="max-height: 72%; overflow-y: auto; padding-right: 0.3rem;">
+                            <!-- Category 1: 1. 학업 (Q1 ~ Q6) -->
+                            <div class="faq-topic-page-item active" data-faq-id="1" style="display: block;">
+                                <div class="story-category-card">
+                                    <h3 class="story-category-title">📚 1. 학업 (Academic Life)</h3>
+                                    <div class="faq-list">
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q1</span> 일반 고등학교 교과목과 전문 교과목의 비율은 어떻게 되나요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>1학년 때는 국어, 영어, 수학, 한국사 등 일반 고등학교 기본 교과목 비중이 높으며, 이와 함께 항공 및 공학 기초 교과를 이수하게 됩니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q2</span> 내신 성적 관리는 어떻게 이루어지며 시험 난이도는 어떤가요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>지필평가와 수행평가로 구성되며, 전문교과는 실습 위주의 평가가 병행됩니다. 학습량이 많아 매일 일과 후 자율학습 시간을 적극 활용해야 합니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q3</span> 1학년 때 이수해야 하는 필수 자격증이나 추천 자격증이 있나요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>1학년 때는 한국사능력검정시험, 컴퓨터활용능력, ITQ, 어학 자격증 등 기본 교양 및 IT 관련 자격증을 우선적으로 준비합니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q4</span> 수업을 따라가지 못하거나 성적이 떨어지면 어떤지원이 있나요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>담당 교과 선생님의 보충 지도 및 선후배/동기 간 멘토링 프로그램이 운영되어 학습을 지원합니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q5</span> 외국어(영어) 공부는 얼마나 중요한가요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>항공 기술 및 관제, 정비 교재에 영어 전문 용어가 많아 원서 해독 능력과 기초 회화 능력이 매우 중요합니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q6</span> 대학 진학이나 학위 취득은 어떻게 준비할 수 있나요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>졸업 후 임관하여 복무하는 동안 e-뮤지엄, 독학사, 사이버대학, 야간대학 등을 통해 학사 학위를 취득할 수 있습니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="faq-item">
-                                <button class="faq-question">
-                                    <span><span class="faq-q-badge">Q2</span> 졸업 후 의무 복무 기간은?</span>
-                                </button>
-                                <div class="faq-answer">
-                                    <div class="faq-answer-inner">
-                                        <span class="faq-a-badge">A</span>
-                                        <p>공군 하사 임관일로부터 7년입니다. 기술 스페셜리스트의 경력을 완벽하게 국가에서 인정받을 수 있습니다.</p>
+
+                            <!-- Category 2: 2. 전공 (Q7 ~ Q11) -->
+                            <div class="faq-topic-page-item" data-faq-id="2" style="display: none;">
+                                <div class="story-category-card">
+                                    <h3 class="story-category-title">🛠️ 2. 전공 (Majors)</h3>
+                                    <div class="faq-list">
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q7</span> 1학년 때 전공 탐색은 어떻게 이루어지나요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>1학년 과정 동안 각 학과(항공통제, 항공전자, 정보통신, 항공기계)의 기초 과목과 실습을 경험하며 본인의 적성을 탐색합니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q8</span> 전공 학과 배정은 언제, 어떤 기준으로 결정되나요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>1학년 말에 결정되며, 1학년 학업 성적, 본인 희망 순위, 적성 검사 결과 등을 종합하여 배정됩니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q9</span> 원하는 학과에 배정되지 않을 수도 있나요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>특정 학과 지망자가 몰릴 경우 1학년 성적 순위 및 적성 결과에 따라 지망하지 않은 학과로 배정될 수 있으므로 성적 관리가 중요합니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q10</span> 전공 실습 수업 시 안전장비나 실습 도구는 어떻게 제공되나요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>실습에 필요한 안전모, 작업복, 정비 공구 및 첨단 실습 장비는 전액 국비로 지급 및 지원됩니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q11</span> 학과별로 취득하는 국가기술자격증 종류가 다르고 복수 취득도 가능한가요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>학과별 전공에 맞춰 항공정비사, 정보통신기사, 무선설비기사 등의 자격증을 취득하며, 노력에 따라 관련 분야 자격증을 복수 취득할 수 있습니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="faq-item">
-                                <button class="faq-question">
-                                    <span><span class="faq-q-badge">Q3</span> 본인 부담 교육 경비?</span>
-                                </button>
-                                <div class="faq-answer">
-                                    <div class="faq-answer-inner">
-                                        <span class="faq-a-badge">A</span>
-                                        <p>없습니다. 수업료, 급식비, 기숙사비 및 교과서대 등 모든 교육 관련 비용이 100% 면제되며 매월 소정의 품위유지비가 지급됩니다.</p>
+
+                            <!-- Category 3: 3. 군 생활 및 생활관 (Q12 ~ Q20) -->
+                            <div class="faq-topic-page-item" data-faq-id="3" style="display: none;">
+                                <div class="story-category-card">
+                                    <h3 class="story-category-title">🏠 3. 군 생활 및 생활관 (Military & Boarding Life)</h3>
+                                    <div class="faq-list">
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q12</span> 하루 기본 일과표(기상부터 취침까지)는 어떻게 되나요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>06:00~06:30 기상 및 아침 점호/달리기로 시작하여 학과 수업, 개인 정비 및 체력 단련, 저녁 자율학습을 거쳐 22:00 저녁 점호 후 취침합니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q13</span> 주말 외출, 외박, 면회 기준은 어떻게 되나요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>신입생 적응 기간이 지난 후 정기 외박 및 주말 외출이 가능하며, 사전 신청을 통해 주말 면회가 진행됩니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q14</span> 스마트폰이나 노트북 등 개인 전자기기 사용 수칙은 어떻게 되나요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>군 보안 수칙에 따라 일과 시간 외 지정된 개인 정비 시간 및 자율학습 이후 시간에만 제한적으로 사용할 수 있습니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q15</span> 피복, 식사, 생활용품 등 국비 지원 범위는 어디까지인가요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>교복, 군복, 체육복, 매일 3식 식사, 기본 학습 물품이 국비로 제공되며 매월 일정 금액의 학생 품위유지비(수당)가 지급됩니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q16</span> 체력 단련 및 체력 측정(검정) 기준은 엄격한가요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>매일 아침/오후 체력 단련을 진행하며, 윗몸일으키기, 팔굽혀펴기, 1.5km 뼘달리기 등 부사관 체력검정 기준에 맞춰 관리합니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q17</span> 아프거나 다쳤을 때 병원 진료는 어떻게 받나요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>학교 내 의무실을 1차로 이용하며, 추가 진료가 필요한 경우 공군 지구병원이나 민간 병원 진료를 지원받습니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q18</span> 두발 및 용모 규정은 일반 고등학교와 어떻게 다른가요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>예비 공군 부사관으로서 정해진 군사 용모 단정 규정(단정한 운동모 형태의 두발 등)을 준수해야 합니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q19</span> 생활관(기숙사) 내 선후배 간의 규율이나 분위기는 어떤가요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>자율과 책임, 상호 존중을 바탕으로 건전한 멘토-멘티 문화가 조성되어 있으며, 1학년의 학교 생활 적응을 돕습니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q20</span> 1학년 신입생이 군 생활 적응을 위해 가장 갖춰야 할 마음가짐은 무엇인가요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>약속과 시간에 대한 엄수, 규칙적인 공동체 생활에 대한 적응력, 그리고 서로를 배려하는 동기애가 가장 중요합니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="senior-page-controls faq-page-controls" style="margin-top: 0.4rem;">
+                            <button type="button" class="senior-page-btn" onclick="prevFaqTopic()">◀ 이전 주제</button>
+                            <span class="senior-page-indicator">주제 <span class="faq-current-page-num">1</span> / 3</span>
+                            <button type="button" class="senior-page-btn" onclick="nextFaqTopic()">다음 주제 ▶</button>
+                        </div>
                     </div>
-                                        <!-- Back: 바. 선배들 이야기 -->
+
+                    <!-- Back: 바. 선배들 이야기 -->
                     <div class="page-side back paper-left" id="page-24">
                         <h2>바. 선배들 이야기</h2>
                         <p class="section-desc">현재 공군 비행단 및 전술 작전부서에서 활약하는 졸업생 선배(41기~45기)들의 원문 그대로의 후기입니다. 아래 주제 탭이나 이전/다음 버튼을 눌러 주제별 페이지를 넘겨보세요.</p>
@@ -2852,51 +3083,283 @@
                 </div>
             </section>
 
-            <!-- Slide 7: 바. 자주하는 질문 (FAQ) -->
+                        <!-- Slide 7: 바. 자주하는 질문 (FAQ) -->
             <section class="mobile-slide-page" id="m-slide-7">
                 <div class="mobile-section">
                     <h2 class="mobile-section-title">바. 자주하는 질문 (FAQ)</h2>
-                    <div class="faq-list">
-                        <div class="faq-item">
-                            <button class="faq-question">
-                                <span><span class="faq-q-badge">Q1</span> 전교생 기숙사 생활을 하나요?</span>
-                            </button>
-                            <div class="faq-answer">
-                                <div class="faq-answer-inner">
-                                    <span class="faq-a-badge">A</span>
-                                    <p>네, 안전한 공동체 의식을 배양하고 학업에 완전 전념할 수 있도록 현대식 기숙사를 무상 제공하고 있습니다.</p>
+                    <p class="m-section-desc" style="margin-bottom: 0.8rem;">학업, 전공, 군 생활 및 생활관 3개 세부 주제별 핵심 FAQ입니다. 아래 탭과 버튼을 통해 주제별 페이지를 넘겨보세요.</p>
+
+                        <div class="senior-topic-nav faq-topic-nav" style="margin-bottom: 0.8rem;">
+                            <button type="button" class="senior-topic-tab-btn faq-topic-tab-btn active" data-faq-target="1" onclick="switchFaqTopic(1)">1. 학업 (Q1~Q6)</button>
+                            <button type="button" class="senior-topic-tab-btn faq-topic-tab-btn" data-faq-target="2" onclick="switchFaqTopic(2)">2. 전공 (Q7~Q11)</button>
+                            <button type="button" class="senior-topic-tab-btn faq-topic-tab-btn" data-faq-target="3" onclick="switchFaqTopic(3)">3. 군 생활 및 생활관 (Q12~Q20)</button>
+                        </div>
+
+                        <div class="senior-page-controls faq-page-controls" style="margin-bottom: 0.6rem;">
+                            <button type="button" class="senior-page-btn" onclick="prevFaqTopic()">◀ 이전 주제</button>
+                            <span class="senior-page-indicator">주제 <span class="faq-current-page-num">1</span> / 3</span>
+                            <button type="button" class="senior-page-btn" onclick="nextFaqTopic()">다음 주제 ▶</button>
+                        </div>
+                        <div class="story-container faq-container" style="max-height: 72%; overflow-y: auto; padding-right: 0.3rem;">
+                            <!-- Category 1: 1. 학업 (Q1 ~ Q6) -->
+                            <div class="faq-topic-page-item active" data-faq-id="1" style="display: block;">
+                                <div class="story-category-card">
+                                    <h3 class="story-category-title">📚 1. 학업 (Academic Life)</h3>
+                                    <div class="faq-list">
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q1</span> 일반 고등학교 교과목과 전문 교과목의 비율은 어떻게 되나요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>1학년 때는 국어, 영어, 수학, 한국사 등 일반 고등학교 기본 교과목 비중이 높으며, 이와 함께 항공 및 공학 기초 교과를 이수하게 됩니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q2</span> 내신 성적 관리는 어떻게 이루어지며 시험 난이도는 어떤가요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>지필평가와 수행평가로 구성되며, 전문교과는 실습 위주의 평가가 병행됩니다. 학습량이 많아 매일 일과 후 자율학습 시간을 적극 활용해야 합니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q3</span> 1학년 때 이수해야 하는 필수 자격증이나 추천 자격증이 있나요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>1학년 때는 한국사능력검정시험, 컴퓨터활용능력, ITQ, 어학 자격증 등 기본 교양 및 IT 관련 자격증을 우선적으로 준비합니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q4</span> 수업을 따라가지 못하거나 성적이 떨어지면 어떤지원이 있나요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>담당 교과 선생님의 보충 지도 및 선후배/동기 간 멘토링 프로그램이 운영되어 학습을 지원합니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q5</span> 외국어(영어) 공부는 얼마나 중요한가요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>항공 기술 및 관제, 정비 교재에 영어 전문 용어가 많아 원서 해독 능력과 기초 회화 능력이 매우 중요합니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q6</span> 대학 진학이나 학위 취득은 어떻게 준비할 수 있나요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>졸업 후 임관하여 복무하는 동안 e-뮤지엄, 독학사, 사이버대학, 야간대학 등을 통해 학사 학위를 취득할 수 있습니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Category 2: 2. 전공 (Q7 ~ Q11) -->
+                            <div class="faq-topic-page-item" data-faq-id="2" style="display: none;">
+                                <div class="story-category-card">
+                                    <h3 class="story-category-title">🛠️ 2. 전공 (Majors)</h3>
+                                    <div class="faq-list">
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q7</span> 1학년 때 전공 탐색은 어떻게 이루어지나요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>1학년 과정 동안 각 학과(항공통제, 항공전자, 정보통신, 항공기계)의 기초 과목과 실습을 경험하며 본인의 적성을 탐색합니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q8</span> 전공 학과 배정은 언제, 어떤 기준으로 결정되나요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>1학년 말에 결정되며, 1학년 학업 성적, 본인 희망 순위, 적성 검사 결과 등을 종합하여 배정됩니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q9</span> 원하는 학과에 배정되지 않을 수도 있나요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>특정 학과 지망자가 몰릴 경우 1학년 성적 순위 및 적성 결과에 따라 지망하지 않은 학과로 배정될 수 있으므로 성적 관리가 중요합니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q10</span> 전공 실습 수업 시 안전장비나 실습 도구는 어떻게 제공되나요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>실습에 필요한 안전모, 작업복, 정비 공구 및 첨단 실습 장비는 전액 국비로 지급 및 지원됩니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q11</span> 학과별로 취득하는 국가기술자격증 종류가 다르고 복수 취득도 가능한가요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>학과별 전공에 맞춰 항공정비사, 정보통신기사, 무선설비기사 등의 자격증을 취득하며, 노력에 따라 관련 분야 자격증을 복수 취득할 수 있습니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Category 3: 3. 군 생활 및 생활관 (Q12 ~ Q20) -->
+                            <div class="faq-topic-page-item" data-faq-id="3" style="display: none;">
+                                <div class="story-category-card">
+                                    <h3 class="story-category-title">🏠 3. 군 생활 및 생활관 (Military & Boarding Life)</h3>
+                                    <div class="faq-list">
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q12</span> 하루 기본 일과표(기상부터 취침까지)는 어떻게 되나요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>06:00~06:30 기상 및 아침 점호/달리기로 시작하여 학과 수업, 개인 정비 및 체력 단련, 저녁 자율학습을 거쳐 22:00 저녁 점호 후 취침합니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q13</span> 주말 외출, 외박, 면회 기준은 어떻게 되나요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>신입생 적응 기간이 지난 후 정기 외박 및 주말 외출이 가능하며, 사전 신청을 통해 주말 면회가 진행됩니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q14</span> 스마트폰이나 노트북 등 개인 전자기기 사용 수칙은 어떻게 되나요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>군 보안 수칙에 따라 일과 시간 외 지정된 개인 정비 시간 및 자율학습 이후 시간에만 제한적으로 사용할 수 있습니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q15</span> 피복, 식사, 생활용품 등 국비 지원 범위는 어디까지인가요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>교복, 군복, 체육복, 매일 3식 식사, 기본 학습 물품이 국비로 제공되며 매월 일정 금액의 학생 품위유지비(수당)가 지급됩니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q16</span> 체력 단련 및 체력 측정(검정) 기준은 엄격한가요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>매일 아침/오후 체력 단련을 진행하며, 윗몸일으키기, 팔굽혀펴기, 1.5km 뼘달리기 등 부사관 체력검정 기준에 맞춰 관리합니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q17</span> 아프거나 다쳤을 때 병원 진료는 어떻게 받나요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>학교 내 의무실을 1차로 이용하며, 추가 진료가 필요한 경우 공군 지구병원이나 민간 병원 진료를 지원받습니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q18</span> 두발 및 용모 규정은 일반 고등학교와 어떻게 다른가요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>예비 공군 부사관으로서 정해진 군사 용모 단정 규정(단정한 운동모 형태의 두발 등)을 준수해야 합니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q19</span> 생활관(기숙사) 내 선후배 간의 규율이나 분위기는 어떤가요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>자율과 책임, 상호 존중을 바탕으로 건전한 멘토-멘티 문화가 조성되어 있으며, 1학년의 학교 생활 적응을 돕습니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="faq-item">
+                                            <button type="button" class="faq-question">
+                                                <span><span class="faq-q-badge">Q20</span> 1학년 신입생이 군 생활 적응을 위해 가장 갖춰야 할 마음가짐은 무엇인가요?</span>
+                                            </button>
+                                            <div class="faq-answer">
+                                                <div class="faq-answer-inner">
+                                                    <span class="faq-a-badge">A</span>
+                                                    <p>약속과 시간에 대한 엄수, 규칙적인 공동체 생활에 대한 적응력, 그리고 서로를 배려하는 동기애가 가장 중요합니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="faq-item">
-                            <button class="faq-question">
-                                <span><span class="faq-q-badge">Q2</span> 졸업 후 의무 복무 기간은?</span>
-                            </button>
-                            <div class="faq-answer">
-                                <div class="faq-answer-inner">
-                                    <span class="faq-a-badge">A</span>
-                                    <p>공군 하사 임관일로부터 7년입니다. 기술 스페셜리스트의 경력을 완벽하게 국가에서 인정받을 수 있습니다.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <button class="faq-question">
-                                <span><span class="faq-q-badge">Q3</span> 본인 부담 교육 경비?</span>
-                            </button>
-                            <div class="faq-answer">
-                                <div class="faq-answer-inner">
-                                    <span class="faq-a-badge">A</span>
-                                    <p>없습니다. 수업료, 급식비, 기숙사비 및 교과서대 등 모든 교육 관련 비용이 100% 면제되며 매월 소정의 품위유지비가 지급됩니다.</p>
-                                </div>
-                            </div>
-                        </div>
+
+                    <div class="senior-page-controls faq-page-controls" style="margin-top: 0.4rem;">
+                        <button type="button" class="senior-page-btn" onclick="prevFaqTopic()">◀ 이전 주제</button>
+                        <span class="senior-page-indicator">주제 <span class="faq-current-page-num">1</span> / 3</span>
+                        <button type="button" class="senior-page-btn" onclick="nextFaqTopic()">다음 주제 ▶</button>
                     </div>
-                    <button type="button" class="m-back-to-toc-btn" onclick="goToMobileSlide(0)">📋 목차(처음)로
-                        돌아가기</button>
+
+                    <button type="button" class="m-back-to-toc-btn" onclick="goToMobileSlide(0)" style="margin-top: 1rem;">📋 목차(처음)로 돌아가기</button>
                 </div>
             </section>
 
-                        <!-- Slide 8: 사. 선배들 이야기 -->
+            <!-- Slide 8: 사. 선배들 이야기 -->
             <section class="mobile-slide-page" id="m-slide-8">
                 <div class="mobile-section">
                     <h2 class="mobile-section-title">사. 선배들 이야기</h2>
