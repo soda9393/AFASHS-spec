@@ -965,41 +965,57 @@ window.selectMobileTocItem = function (slideIndex) {
 };
 
 // 선배들의 편지 주제별 페이지 전환 (1~6페이지)
+let currentSeniorTopicNum = 1;
+
 window.switchSeniorTopic = function (topicNum) {
-    const pages = document.querySelectorAll('.senior-topic-page-item');
-    const tabs = document.querySelectorAll('.senior-topic-tab-btn');
-    const pageNumSpans = document.querySelectorAll('.senior-current-page-num');
-
-    if (!pages || pages.length === 0) return;
-
     let targetNum = parseInt(topicNum, 10);
     if (isNaN(targetNum) || targetNum < 1) targetNum = 1;
-    if (targetNum > pages.length) targetNum = pages.length;
+    if (targetNum > 6) targetNum = 6;
 
+    currentSeniorTopicNum = targetNum;
+
+    const pages = document.querySelectorAll('.senior-topic-page-item');
     pages.forEach(p => {
-        if (p.getAttribute('data-topic-id') == targetNum) {
-            p.style.display = 'block';
+        const pageTopicId = parseInt(p.getAttribute('data-topic-id'), 10);
+        if (pageTopicId === targetNum) {
             p.classList.add('active');
+            p.style.setProperty('display', 'block', 'important');
         } else {
-            p.style.display = 'none';
             p.classList.remove('active');
+            p.style.setProperty('display', 'none', 'important');
         }
     });
 
+    const tabs = document.querySelectorAll('.senior-topic-tab-btn');
     tabs.forEach(t => {
-        if (t.getAttribute('data-topic-target') == targetNum) {
+        const tabTargetId = parseInt(t.getAttribute('data-topic-target'), 10);
+        if (tabTargetId === targetNum) {
             t.classList.add('active');
         } else {
             t.classList.remove('active');
         }
     });
 
+    const pageNumSpans = document.querySelectorAll('.senior-current-page-num');
     pageNumSpans.forEach(span => {
-        span.innerText = targetNum;
+        span.textContent = targetNum;
     });
 
     // 스크롤 맨 위로 이동
     const containers = document.querySelectorAll('.story-container');
-    containers.forEach(c => c.scrollTop = 0);
+    containers.forEach(c => { c.scrollTop = 0; });
 };
+
+window.prevSeniorTopic = function () {
+    if (currentSeniorTopicNum > 1) {
+        window.switchSeniorTopic(currentSeniorTopicNum - 1);
+    }
+};
+
+window.nextSeniorTopic = function () {
+    if (currentSeniorTopicNum < 6) {
+        window.switchSeniorTopic(currentSeniorTopicNum + 1);
+    }
+};
+
 

@@ -3304,3 +3304,15 @@
     font-weight: 700;
     color: #ffc947;
 }
+
+.senior-topic-page-item {
+    width: 100%;
+}
+
+.senior-topic-page-item.active {
+    display: block !important;
+}
+
+.senior-topic-page-item:not(.active) {
+    display: none !important;
+}
