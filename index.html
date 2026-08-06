@@ -123,6 +123,11 @@
                     </div>
                 </div>
 
+                <div class="desktop-page-nav">
+                            <button type="button" class="desktop-nav-btn" onclick="goToPage(1, event)">◀ 이전: 표지 (P.1)</button>
+                            <span class="desktop-nav-indicator">Page 2 / 26</span>
+                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(3, event)">다음: 학교 교육과정 (P.3) ▶</button>
+                        </div>
                 <!-- [Sheet 1] 나. 교육과정 (Page 3) / 다. 시설 소개 (Page 4) -->
                 <div class="sheet" id="sheet-1">
                                         <!-- Front: 나. 교육과정 -->
@@ -247,6 +252,11 @@
                         </div>
                     </div>
 
+                    <div class="desktop-page-nav">
+                            <button type="button" class="desktop-nav-btn" onclick="goToPage(2, event)">◀ 이전: 학교 특성 (P.2)</button>
+                            <span class="desktop-nav-indicator">Page 3 / 26</span>
+                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(4, event)">다음: 학교 시설 소개 (P.4) ▶</button>
+                        </div>
                     <!-- Back: 다. 시설 소개 -->
                     <div class="page-side back paper-left" id="page-4">
                         <h2>다. 학교 시설 소개</h2>
@@ -327,6 +337,11 @@
                             </div>
                         </div>
                     </div>
+                    <div class="desktop-page-nav">
+                            <button type="button" class="desktop-nav-btn" onclick="goToPage(4, event)">◀ 이전: 학교 시설 소개 (P.4)</button>
+                            <span class="desktop-nav-indicator">Page 5 / 26</span>
+                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(6, event)">다음: 학교 전공 소개 (P.6) ▶</button>
+                        </div>
                     <!-- Back: 라. 학교 전공 소개 -->
                     <div class="page-side back paper-left" id="page-6">
                         <h2>라. 학교 전공 소개</h2>
@@ -357,10 +372,21 @@
                     </div>
                 </div>
 
+                <div class="desktop-page-nav">
+                            <button type="button" class="desktop-nav-btn" onclick="goToPage(5, event)">◀ 이전: 전공 심리 검사 (P.5)</button>
+                            <span class="desktop-nav-indicator">Page 6 / 26</span>
+                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(7, event)">다음: 항공통제과 (P.7) ▶</button>
+                        </div>
                 <!-- [Sheet 3] 📡 항공통제과 간지 (Page 7) / 📡 항공통제과 소개 1 (Page 8) -->
                 <div class="sheet" id="sheet-3">
                     <!-- Front: 항공통제과 간지 -->
                     <div class="page-side paper-right dark-page">
+                        <div class="dept-subtab-nav">
+                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(7, event)">1. 엠블럼</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(8, event)">2. 교육과정</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(9, event)">3. 배정특기</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(10, event)">4. 실습장비</button>
+                        </div>
                         <div class="dept-divider-page control">
                             <img src="images/control_emblem.png" alt="항공통제과 엠블럼" class="dept-divider-emblem">
                             <h2 class="dept-divider-title">항공통제과</h2>
@@ -369,8 +395,19 @@
                             <p class="dept-divider-desc">하늘의 눈과 길잡이로서 항공통제, 비행 관제, 기상 예보 업무 수행</p>
                         </div>
                     </div>
+                    <div class="desktop-page-nav">
+                            <button type="button" class="desktop-nav-btn" onclick="goToPage(6, event)">◀ 이전: 전공 소개 (P.6)</button>
+                            <span class="desktop-nav-indicator">항공통제과 1 / 4 Page (P.7)</span>
+                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(8, event)">다음: 교육과정 (P.8) ▶</button>
+                        </div>
                     <!-- Back: 항공통제과 소개 1 (전공소개 & 교육과정 표) -->
                     <div class="page-side back paper-left" id="dept-control">
+                        <div class="dept-subtab-nav">
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(7, event)">1. 엠블럼</button>
+                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(8, event)">2. 교육과정</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(9, event)">3. 배정특기</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(10, event)">4. 실습장비</button>
+                        </div>
                         <div class="dept-header">
                             <div class="dept-header-info">
                                 <h3>항공통제과</h3>
@@ -431,10 +468,21 @@
                     </div>
                 </div>
 
+                <div class="desktop-page-nav">
+                            <button type="button" class="desktop-nav-btn" onclick="goToPage(7, event)">◀ 이전: 엠블럼 (P.7)</button>
+                            <span class="desktop-nav-indicator">항공통제과 2 / 4 Page (P.8)</span>
+                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(9, event)">다음: 배정특기 (P.9) ▶</button>
+                        </div>
                 <!-- [Sheet 4] 📡 항공통제과 소개 2 (Page 9) / 📡 항공통제과 소개 3 (Page 10) -->
                 <div class="sheet" id="sheet-4">
                     <!-- Front: 항공통제과 소개 2 (배정특기) -->
                     <div class="page-side paper-right" id="dept-control-specialty">
+                        <div class="dept-subtab-nav">
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(7, event)">1. 엠블럼</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(8, event)">2. 교육과정</button>
+                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(9, event)">3. 배정특기</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(10, event)">4. 실습장비</button>
+                        </div>
                         <div class="dept-header">
                             <div class="dept-header-info">
                                 <h3>항공통제과 <span
@@ -492,8 +540,19 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="desktop-page-nav">
+                            <button type="button" class="desktop-nav-btn" onclick="goToPage(8, event)">◀ 이전: 교육과정 (P.8)</button>
+                            <span class="desktop-nav-indicator">항공통제과 3 / 4 Page (P.9)</span>
+                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(10, event)">다음: 실습장비 (P.10) ▶</button>
+                        </div>
                     <!-- Back: 항공통제과 소개 3 (실습실) -->
                     <div class="page-side back paper-left" id="dept-control-facilities">
+                        <div class="dept-subtab-nav">
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(7, event)">1. 엠블럼</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(8, event)">2. 교육과정</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(9, event)">3. 배정특기</button>
+                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(10, event)">4. 실습장비</button>
+                        </div>
                         <div class="dept-header">
                             <div class="dept-header-info">
                                 <h3>항공통제과 <span
@@ -544,10 +603,21 @@
                     </div>
                 </div>
 
+                <div class="desktop-page-nav">
+                            <button type="button" class="desktop-nav-btn" onclick="goToPage(9, event)">◀ 이전: 배정특기 (P.9)</button>
+                            <span class="desktop-nav-indicator">항공통제과 4 / 4 Page (P.10)</span>
+                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(11, event)">다음: 항공전자과 (P.11) ▶</button>
+                        </div>
                 <!-- [Sheet 5] ⚡ 항공전자과 간지 (Page 11) / ⚡ 항공전자과 소개 1 (Page 12) -->
                 <div class="sheet" id="sheet-5">
                     <!-- Front: 항공전자과 간지 -->
                     <div class="page-side paper-right dark-page">
+                        <div class="dept-subtab-nav">
+                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(11, event)">1. 엠블럼</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(12, event)">2. 교육과정</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(13, event)">3. 배정특기</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(14, event)">4. 실습장비</button>
+                        </div>
                         <div class="dept-divider-page electronics">
                             <img src="images/electronics_emblem.jpg" alt="항공전자과 엠블럼" class="dept-divider-emblem">
                             <h2 class="dept-divider-title">항공전자과</h2>
@@ -556,8 +626,19 @@
                             <p class="dept-divider-desc">전투기의 두뇌를 설계하고, 하늘의 임무를 완성합니다.</p>
                         </div>
                     </div>
+                    <div class="desktop-page-nav">
+                            <button type="button" class="desktop-nav-btn" onclick="goToPage(10, event)">◀ 이전: 항공통제과 (P.10)</button>
+                            <span class="desktop-nav-indicator">항공전자과 1 / 4 Page (P.11)</span>
+                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(12, event)">다음: 교육과정 (P.12) ▶</button>
+                        </div>
                     <!-- Back: 항공전자과 소개 1 (전공소개 & 교육과정 표) -->
                     <div class="page-side back paper-left" id="dept-electronics">
+                        <div class="dept-subtab-nav">
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(11, event)">1. 엠블럼</button>
+                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(12, event)">2. 교육과정</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(13, event)">3. 배정특기</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(14, event)">4. 실습장비</button>
+                        </div>
                         <div class="dept-header">
                             <div class="dept-header-info">
                                 <h3>항공전자과</h3>
@@ -619,10 +700,21 @@
                     </div>
                 </div>
 
+                <div class="desktop-page-nav">
+                            <button type="button" class="desktop-nav-btn" onclick="goToPage(11, event)">◀ 이전: 엠블럼 (P.11)</button>
+                            <span class="desktop-nav-indicator">항공전자과 2 / 4 Page (P.12)</span>
+                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(13, event)">다음: 배정특기 (P.13) ▶</button>
+                        </div>
                 <!-- [Sheet 6] ⚡ 항공전자과 소개 2 (Page 13) / ⚡ 항공전자과 소개 3 (Page 14) -->
                 <div class="sheet" id="sheet-6">
                     <!-- Front: 항공전자과 소개 2 (배정특기) -->
                     <div class="page-side paper-right" id="dept-electronics-specialty">
+                        <div class="dept-subtab-nav">
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(11, event)">1. 엠블럼</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(12, event)">2. 교육과정</button>
+                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(13, event)">3. 배정특기</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(14, event)">4. 실습장비</button>
+                        </div>
                         <div class="dept-header">
                             <div class="dept-header-info">
                                 <h3>항공전자과 <span
@@ -694,8 +786,19 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="desktop-page-nav">
+                            <button type="button" class="desktop-nav-btn" onclick="goToPage(12, event)">◀ 이전: 교육과정 (P.12)</button>
+                            <span class="desktop-nav-indicator">항공전자과 3 / 4 Page (P.13)</span>
+                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(14, event)">다음: 실습장비 (P.14) ▶</button>
+                        </div>
                     <!-- Back: 항공전자과 소개 3 (실습실) -->
                     <div class="page-side back paper-left" id="dept-electronics-facilities">
+                        <div class="dept-subtab-nav">
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(11, event)">1. 엠블럼</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(12, event)">2. 교육과정</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(13, event)">3. 배정특기</button>
+                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(14, event)">4. 실습장비</button>
+                        </div>
                         <div class="dept-header">
                             <div class="dept-header-info">
                                 <h3>항공전자과 <span
@@ -736,6 +839,12 @@
                 <div class="sheet" id="sheet-7">
                     <!-- Front: 정보통신과 간지 -->
                     <div class="page-side paper-right dark-page">
+                        <div class="dept-subtab-nav">
+                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(15, event)">1. 엠블럼</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(16, event)">2. 교육과정</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(17, event)">3. 배정특기</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(18, event)">4. 실습장비</button>
+                        </div>
                         <div class="dept-divider-page telecom">
                             <img src="images/telecom_emblem.png" alt="정보통신과 엠블럼" class="dept-divider-emblem">
                             <h2 class="dept-divider-title">정보통신과</h2>
@@ -744,8 +853,19 @@
                             <p class="dept-divider-desc">전술 정보망과 군 네트워크망을 수호하는 사이버 방패</p>
                         </div>
                     </div>
+                    <div class="desktop-page-nav">
+                            <button type="button" class="desktop-nav-btn" onclick="goToPage(14, event)">◀ 이전: 항공전자과 (P.14)</button>
+                            <span class="desktop-nav-indicator">정보통신과 1 / 4 Page (P.15)</span>
+                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(16, event)">다음: 교육과정 (P.16) ▶</button>
+                        </div>
                     <!-- Back: 정보통신과 소개 1 (전공소개 & 교육과정 표) -->
                     <div class="page-side back paper-left" id="dept-telecom">
+                        <div class="dept-subtab-nav">
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(15, event)">1. 엠블럼</button>
+                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(16, event)">2. 교육과정</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(17, event)">3. 배정특기</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(18, event)">4. 실습장비</button>
+                        </div>
                         <div class="dept-header">
                             <div class="dept-header-info">
                                 <h3>정보통신과</h3>
@@ -801,6 +921,12 @@
                 <div class="sheet" id="sheet-8">
                     <!-- Front: 정보통신과 소개 2 (배정특기) -->
                     <div class="page-side paper-right" id="dept-telecom-specialty">
+                        <div class="dept-subtab-nav">
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(15, event)">1. 엠블럼</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(16, event)">2. 교육과정</button>
+                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(17, event)">3. 배정특기</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(18, event)">4. 실습장비</button>
+                        </div>
                         <div class="dept-header">
                             <div class="dept-header-info">
                                 <h3>정보통신과 <span
@@ -837,8 +963,19 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="desktop-page-nav">
+                            <button type="button" class="desktop-nav-btn" onclick="goToPage(16, event)">◀ 이전: 교육과정 (P.16)</button>
+                            <span class="desktop-nav-indicator">정보통신과 3 / 4 Page (P.17)</span>
+                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(18, event)">다음: 실습장비 (P.18) ▶</button>
+                        </div>
                     <!-- Back: 정보통신과 소개 3 (실습실) -->
                     <div class="page-side back paper-left" id="dept-telecom-facilities">
+                        <div class="dept-subtab-nav">
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(15, event)">1. 엠블럼</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(16, event)">2. 교육과정</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(17, event)">3. 배정특기</button>
+                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(18, event)">4. 실습장비</button>
+                        </div>
                         <div class="dept-header">
                             <div class="dept-header-info">
                                 <h3>정보통신과 <span
@@ -893,10 +1030,21 @@
                     </div>
                 </div>
 
+                <div class="desktop-page-nav">
+                            <button type="button" class="desktop-nav-btn" onclick="goToPage(17, event)">◀ 이전: 배정특기 (P.17)</button>
+                            <span class="desktop-nav-indicator">정보통신과 4 / 4 Page (P.18)</span>
+                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(19, event)">다음: 항공기계과 (P.19) ▶</button>
+                        </div>
                 <!-- [Sheet 9] ⚙️ 항공기계과 간지 (Page 19) / ⚙️ 항공기계과 소개 1 (Page 20) -->
                 <div class="sheet" id="sheet-9">
                     <!-- Front: 항공기계과 간지 -->
                     <div class="page-side paper-right dark-page">
+                        <div class="dept-subtab-nav">
+                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(19, event)">1. 엠블럼</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(20, event)">2. 교육과정</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(21, event)">3. 배정특기</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(22, event)">4. 실습장비</button>
+                        </div>
                         <div class="dept-divider-page mechanic">
                             <img src="images/mechanic_emblem.png" alt="항공기계과 엠블럼" class="dept-divider-emblem">
                             <h2 class="dept-divider-title">항공기계과</h2>
@@ -905,8 +1053,19 @@
                             <p class="dept-divider-desc">하늘을 나는 전투기의 강철 심장과 동체를 다루는 정비 명장</p>
                         </div>
                     </div>
+                    <div class="desktop-page-nav">
+                            <button type="button" class="desktop-nav-btn" onclick="goToPage(18, event)">◀ 이전: 정보통신과 (P.18)</button>
+                            <span class="desktop-nav-indicator">항공기계과 1 / 4 Page (P.19)</span>
+                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(20, event)">다음: 교육과정 (P.20) ▶</button>
+                        </div>
                     <!-- Back: 항공기계과 소개 1 (전공소개 & 교육과정 표) -->
                     <div class="page-side back paper-left" id="dept-mechanic">
+                        <div class="dept-subtab-nav">
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(19, event)">1. 엠블럼</button>
+                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(20, event)">2. 교육과정</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(21, event)">3. 배정특기</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(22, event)">4. 실습장비</button>
+                        </div>
                         <div class="dept-header">
                             <div class="dept-header-info">
                                 <h3>항공기계과</h3>
@@ -959,10 +1118,21 @@
                     </div>
                 </div>
 
+                <div class="desktop-page-nav">
+                            <button type="button" class="desktop-nav-btn" onclick="goToPage(19, event)">◀ 이전: 엠블럼 (P.19)</button>
+                            <span class="desktop-nav-indicator">항공기계과 2 / 4 Page (P.20)</span>
+                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(21, event)">다음: 배정특기 (P.21) ▶</button>
+                        </div>
                 <!-- [Sheet 10] ⚙️ 항공기계과 소개 2 (Page 21) / ⚙️ 항공기계과 소개 3 (Page 22) -->
                 <div class="sheet" id="sheet-10">
                     <!-- Front: 항공기계과 소개 2 (배정특기) -->
                     <div class="page-side paper-right" id="dept-mechanic-specialty">
+                        <div class="dept-subtab-nav">
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(19, event)">1. 엠블럼</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(20, event)">2. 교육과정</button>
+                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(21, event)">3. 배정특기</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(22, event)">4. 실습장비</button>
+                        </div>
                         <div class="dept-header">
                             <div class="dept-header-info">
                                 <h3>항공기계과 <span
@@ -1011,8 +1181,19 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="desktop-page-nav">
+                            <button type="button" class="desktop-nav-btn" onclick="goToPage(20, event)">◀ 이전: 교육과정 (P.20)</button>
+                            <span class="desktop-nav-indicator">항공기계과 3 / 4 Page (P.21)</span>
+                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(22, event)">다음: 실습장비 (P.22) ▶</button>
+                        </div>
                     <!-- Back: 항공기계과 소개 3 (실습실) -->
                     <div class="page-side back paper-left" id="dept-mechanic-facilities">
+                        <div class="dept-subtab-nav">
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(19, event)">1. 엠블럼</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(20, event)">2. 교육과정</button>
+                            <button type="button" class="dept-subtab-btn" onclick="goToPage(21, event)">3. 배정특기</button>
+                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(22, event)">4. 실습장비</button>
+                        </div>
                         <div class="dept-header">
                             <div class="dept-header-info">
                                 <h3>항공기계과 <span
@@ -1067,6 +1248,11 @@
                     </div>
                 </div>
 
+                <div class="desktop-page-nav">
+                            <button type="button" class="desktop-nav-btn" onclick="goToPage(21, event)">◀ 이전: 배정특기 (P.21)</button>
+                            <span class="desktop-nav-indicator">항공기계과 4 / 4 Page (P.22)</span>
+                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(23, event)">다음: 자주하는 질문 (P.23) ▶</button>
+                        </div>
                 <!-- [Sheet 11] 마. 자주하는 질문 (Page 23) / 바. 선배들 이야기 (Page 24) -->
                 <div class="sheet" id="sheet-11">
                                         <!-- Front: 마. 자주하는 질문 -->
@@ -1341,6 +1527,11 @@
                         </div>
                     </div>
 
+                    <div class="desktop-page-nav">
+                            <button type="button" class="desktop-nav-btn" onclick="goToPage(22, event)">◀ 이전: 항공기계과 (P.22)</button>
+                            <span class="desktop-nav-indicator">자주하는 질문 (P.23)</span>
+                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(24, event)">다음: 선배 이야기 (P.24) ▶</button>
+                        </div>
                     <!-- Back: 바. 선배들 이야기 -->
                     <div class="page-side back paper-left" id="page-24">
                         <h2>바. 선배들 이야기</h2>
@@ -1749,6 +1940,11 @@
                         </div>
                     </div>
 
+                <div class="desktop-page-nav">
+                            <button type="button" class="desktop-nav-btn" onclick="goToPage(23, event)">◀ 이전: 자주하는 질문 (P.23)</button>
+                            <span class="desktop-nav-indicator">선배 이야기 (P.24)</span>
+                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(25, event)">다음: 미래의 도약 (P.25) ▶</button>
+                        </div>
                 <!-- [Sheet 12] 미래의 도약 (Page 25) / 백커버 (Page 26) -->
                 <div class="sheet" id="sheet-12">
                     <!-- Front: 미래의 도약 -->

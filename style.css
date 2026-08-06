@@ -3516,3 +3516,102 @@
 .paper-left .senior-page-indicator {
     color: #0f172a !important;
 }
+
+/* ----------------------------------------------------
+   Desktop Page Navigation & Department Subtabs Styling
+   ---------------------------------------------------- */
+.desktop-page-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 0.4rem 0.7rem;
+    margin-top: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.paper-right .desktop-page-nav,
+.paper-left .desktop-page-nav {
+    background: #f1f5f9 !important;
+    border: 1px solid #cbd5e1 !important;
+}
+
+.dark-page .desktop-page-nav {
+    background: rgba(15, 23, 42, 0.85) !important;
+    border: 1px solid rgba(255, 201, 71, 0.3) !important;
+}
+
+.desktop-nav-btn {
+    background: #0a2540;
+    color: #ffffff;
+    border: 1px solid #0a2540;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.35rem 0.65rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.desktop-nav-btn:hover {
+    background: #007d88;
+    border-color: #007d88;
+    color: #ffffff;
+}
+
+.desktop-nav-btn.highlight {
+    background: linear-gradient(135deg, #007d88 0%, #0a2540 100%);
+    border-color: #007d88;
+    color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 125, 136, 0.3);
+}
+
+.desktop-nav-indicator {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.dark-page .desktop-nav-indicator {
+    color: #ffc947 !important;
+}
+
+/* Department Subtabs */
+.dept-subtab-nav {
+    display: flex;
+    gap: 0.3rem;
+    margin-bottom: 0.6rem;
+    background: #f1f5f9;
+    padding: 0.4rem;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+}
+
+.dept-subtab-btn {
+    flex: 1;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #334155;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.35rem 0.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.dept-subtab-btn:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.dept-subtab-btn.active {
+    background: linear-gradient(135deg, #0a2540 0%, #007d88 100%) !important;
+    color: #ffffff !important;
+    border-color: #0a2540 !important;
+    box-shadow: 0 2px 6px rgba(10, 37, 64, 0.3) !important;
+}

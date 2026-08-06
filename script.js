@@ -1169,3 +1169,20 @@ window.nextFaqTopic = function (e) {
         window.switchFaqTopic(currentFaqTopicNum + 1);
     }
 };
+
+// 데스크탑 페이지 직접 이동 기능 (1~26 Page)
+window.goToPage = function (pageNumber, e) {
+    if (e) {
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+    }
+    const targetPage = parseInt(pageNumber, 10);
+    if (isNaN(targetPage) || targetPage < 1) return;
+    if (viewMode === 'single') {
+        currentPage = Math.min(targetPage, totalSheets * 2);
+        updateBookState();
+    } else {
+        const sheetIdx = Math.floor((targetPage - 1) / 2);
+        goToSheet(sheetIdx);
+    }
+};
