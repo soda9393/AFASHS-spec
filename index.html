@@ -857,7 +857,10 @@
 <div id="mobile-app-view" class="mobile-app-view">
         <!-- 모바일 상단 미니 헤더 & 슬라이드 카운터 -->
         <header class="mobile-top-bar">
-            <span class="m-bar-title">공군항공과학고 전공 소개</span>
+            <span class="m-bar-title" onclick="goToMobileSlide(0)" title="첫 페이지로 이동">
+                <img src="images/logo.png" alt="공군 로고" class="m-bar-logo">
+                <span>공군항공과학고 전공 소개</span>
+            </span>
             <div style="display: flex; align-items: center; gap: 0.4rem;">
                 <button type="button" class="m-toc-nav-btn" onclick="openMobileTocModal()" title="전체 목차 열기">📋 목차</button>
                 <span class="m-page-counter" id="m-page-counter">1 / 10 Page</span>

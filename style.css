@@ -2228,6 +2228,24 @@
                 font-size: 0.88rem;
                 font-weight: 800;
                 color: #ffffff;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.4rem;
+                cursor: pointer;
+                user-select: none;
+                transition: opacity 0.2s ease;
+            }
+
+            .m-bar-title:hover,
+            .m-bar-title:active {
+                opacity: 0.85;
+            }
+
+            .m-bar-logo {
+                width: 22px;
+                height: 22px;
+                object-fit: contain;
+                filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
             }
 
             .m-page-counter {
