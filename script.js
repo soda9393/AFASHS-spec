@@ -977,7 +977,7 @@ window.switchSeniorTopic = function (topicNum, e) {
     }
     let targetNum = parseInt(topicNum, 10);
     if (isNaN(targetNum) || targetNum < 1) targetNum = 1;
-    if (targetNum > 6) targetNum = 6;
+    if (targetNum > 13) targetNum = 13;
 
     currentSeniorTopicNum = targetNum;
 
@@ -1028,7 +1028,7 @@ window.nextSeniorTopic = function (e) {
         if (typeof e.stopPropagation === 'function') e.stopPropagation();
         if (typeof e.preventDefault === 'function') e.preventDefault();
     }
-    if (currentSeniorTopicNum < 6) {
+    if (currentSeniorTopicNum < 13) {
         window.switchSeniorTopic(currentSeniorTopicNum + 1);
     }
 };
