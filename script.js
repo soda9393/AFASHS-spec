@@ -88,7 +88,7 @@ function updateBookState() {
         currentSheet = Math.floor((currentPage - 1) / 2);
 
         // 1면 보기 시 정렬 클래스 세팅
-        bookContainer.className = 'single-page-mode';
+        if (bookContainer) bookContainer.className = 'single-page-mode';
 
         // 시트 3D 플립 상태 반영 (단일 페이지 오버라이드를 위해 유지)
         for (let i = 0; i < totalSheets; i++) {
@@ -133,11 +133,11 @@ function updateBookState() {
 
         const indicator = document.getElementById('page-indicator');
         if (currentPage === 1) {
-            indicator.innerText = "표지 (Page 1)";
+            if (indicator) indicator.innerText = "표지 (Page 1)";
         } else if (currentPage === totalSheets * 2) {
-            indicator.innerText = "뒷표지 (Page " + (totalSheets * 2) + ")";
+            if (indicator) indicator.innerText = "뒷표지 (Page " + (totalSheets * 2) + ")";
         } else {
-            indicator.innerText = "Page " + currentPage;
+            if (indicator) indicator.innerText = "Page " + currentPage;
         }
 
         // 조작 버튼 활성/비활성 설정
@@ -150,16 +150,18 @@ function updateBookState() {
         }
     } else {
         // 2면 보기 (Double Page Mode)
-        bookContainer.className = '';
-        if (currentSheet === 0) {
-            bookContainer.classList.add('closed-front');
-            book.classList.remove('is-open');
-        } else if (currentSheet === totalSheets) {
-            bookContainer.classList.add('closed-back');
-            book.classList.remove('is-open');
-        } else {
-            bookContainer.classList.add('open');
-            book.classList.add('is-open');
+        if (bookContainer) bookContainer.className = '';
+        if (bookContainer) {
+            if (currentSheet === 0) {
+                bookContainer.classList.add('closed-front');
+                if (book) book.classList.remove('is-open');
+            } else if (currentSheet === totalSheets) {
+                bookContainer.classList.add('closed-back');
+                if (book) book.classList.remove('is-open');
+            } else {
+                bookContainer.classList.add('open');
+                if (book) book.classList.add('is-open');
+            }
         }
 
         for (let i = 0; i < totalSheets; i++) {
@@ -188,13 +190,13 @@ function updateBookState() {
         const el__page_slider_ = document.getElementById('page-slider'); if (el__page_slider_) el__page_slider_.value = currentSheet;
         const indicator = document.getElementById('page-indicator');
         if (currentSheet === 0) {
-            indicator.innerText = "표지 (Page 1)";
+            if (indicator) indicator.innerText = "표지 (Page 1)";
         } else if (currentSheet === totalSheets) {
-            indicator.innerText = "뒷표지 (Page " + (totalSheets * 2) + ")";
+            if (indicator) indicator.innerText = "뒷표지 (Page " + (totalSheets * 2) + ")";
         } else {
             const leftPage = currentSheet * 2;
             const rightPage = currentSheet * 2 + 1;
-            indicator.innerText = `Page ${leftPage} - ${rightPage}`;
+            if (indicator) indicator.innerText = `Page ${leftPage} - ${rightPage}`;
         }
 
         // 조작 버튼 활성/비활성 설정

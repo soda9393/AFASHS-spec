@@ -3681,3 +3681,39 @@
     color: #2d3748 !important;
     margin: 0;
 }
+
+/* ----------------------------------------------------
+   Logo Image Resizing & Styling Adjustments
+   ---------------------------------------------------- */
+.hero-logo {
+    max-width: 75px !important;
+    height: auto !important;
+    object-fit: contain !important;
+    margin-bottom: 0.8rem !important;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25)) !important;
+    display: inline-block !important;
+}
+
+.desktop-brand-logo {
+    max-height: 38px !important;
+    width: auto !important;
+    object-fit: contain !important;
+    vertical-align: middle !important;
+}
+
+.cover-logo {
+    max-width: 80px !important;
+    height: auto !important;
+    margin-bottom: 1rem !important;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25)) !important;
+}
+
+.backcover-logo,
+.m-backcover-logo,
+.d-footer-logo {
+    max-width: 65px !important;
+    max-height: 65px !important;
+    object-fit: contain !important;
+    margin-bottom: 0.7rem !important;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.25)) !important;
+}
