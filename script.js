@@ -1,16 +1,31 @@
+// Global State Variables (Declared at top level to prevent TDZ errors)
+var currentSheet = 0;
+var viewMode = 'double'; // 'double' or 'single'
+var currentPage = 1;
+var recommendedSheetIndex = null;
+var recommendedDeptId = null;
+var currentQuizIndex = 0;
+var quizScores = { control: 0, electronics: 0, telecom: 0, mechanic: 0 };
+var lastQuizAction = 0;
+var currentZoom = 1.0;
+var currentMobileSlide = 0;
+var currentSeniorTopicNum = 1;
+var currentEduTopicNum = 1;
+var currentFaqTopicNum = 1;
+
 // 1. 책자 3D 넘김 애니메이션 상태 관리
 const bookContainer = document.getElementById('book-container');
 const book = document.getElementById('book');
 const sheets = document.querySelectorAll('.sheet');
 const totalSheets = sheets.length;
-let currentSheet = 0;
-let viewMode = 'double'; // 'double' or 'single'
-let currentPage = 1;
-let recommendedSheetIndex = null;
-let recommendedDeptId = null;
+// currentSheet initialized at top
+// viewMode initialized at top // 'double' or 'single'
+// currentPage initialized at top
+// recommendedSheetIndex initialized at top
+// recommendedDeptId initialized at top
 
 // 초기 슬라이더 최댓값 설정 (2면 보기 기준)
-document.getElementById('page-slider').max = totalSheets;
+const pageSliderEl = document.getElementById('page-slider'); if (pageSliderEl) pageSliderEl.max = totalSheets;
 
 function setViewMode(mode) {
     viewMode = mode;
@@ -111,9 +126,9 @@ function updateBookState() {
 
         // 슬라이더 및 인디케이터 동기화
         if (viewMode === 'single') {
-            document.getElementById('page-slider').value = currentPage;
+            const el__page_slider_ = document.getElementById('page-slider'); if (el__page_slider_) el__page_slider_.value = currentPage;
         } else {
-            document.getElementById('page-slider').value = currentSheet;
+            const el__page_slider_ = document.getElementById('page-slider'); if (el__page_slider_) el__page_slider_.value = currentSheet;
         }
 
         const indicator = document.getElementById('page-indicator');
@@ -127,11 +142,11 @@ function updateBookState() {
 
         // 조작 버튼 활성/비활성 설정
         if (viewMode === 'single') {
-            document.getElementById('prev-btn').disabled = (currentPage === 1);
-            document.getElementById('next-btn').disabled = (currentPage === totalSheets * 2);
+            const el__prev_btn_ = document.getElementById('prev-btn'); if (el__prev_btn_) el__prev_btn_.disabled = (currentPage === 1);
+            const el__next_btn_ = document.getElementById('next-btn'); if (el__next_btn_) el__next_btn_.disabled = (currentPage === totalSheets * 2);
         } else {
-            document.getElementById('prev-btn').disabled = (currentSheet === 0);
-            document.getElementById('next-btn').disabled = (currentSheet === totalSheets);
+            const el__prev_btn_ = document.getElementById('prev-btn'); if (el__prev_btn_) el__prev_btn_.disabled = (currentSheet === 0);
+            const el__next_btn_ = document.getElementById('next-btn'); if (el__next_btn_) el__next_btn_.disabled = (currentSheet === totalSheets);
         }
     } else {
         // 2면 보기 (Double Page Mode)
@@ -170,7 +185,7 @@ function updateBookState() {
         });
 
         // 슬라이더 및 인디케이터 동기화
-        document.getElementById('page-slider').value = currentSheet;
+        const el__page_slider_ = document.getElementById('page-slider'); if (el__page_slider_) el__page_slider_.value = currentSheet;
         const indicator = document.getElementById('page-indicator');
         if (currentSheet === 0) {
             indicator.innerText = "표지 (Page 1)";
@@ -183,8 +198,8 @@ function updateBookState() {
         }
 
         // 조작 버튼 활성/비활성 설정
-        document.getElementById('prev-btn').disabled = (currentSheet === 0);
-        document.getElementById('next-btn').disabled = (currentSheet === totalSheets);
+        const el__prev_btn_ = document.getElementById('prev-btn'); if (el__prev_btn_) el__prev_btn_.disabled = (currentSheet === 0);
+        const el__next_btn_ = document.getElementById('next-btn'); if (el__next_btn_) el__next_btn_.disabled = (currentSheet === totalSheets);
     }
 
     // GNB 목차 내 링크 상태 활성화
@@ -487,10 +502,10 @@ const majorResultData = {
     }
 };
 
-let currentQuizIndex = 0;
-let quizScores = { control: 0, electronics: 0, telecom: 0, mechanic: 0 };
+// currentQuizIndex initialized at top
+// quizScores initialized at top
 
-let lastQuizAction = 0;
+// lastQuizAction initialized at top
 
 function startQuiz() {
     const now = Date.now();
@@ -663,11 +678,11 @@ function resetQuiz() {
 }
 
 // 4.1 글자 크기 조절 (Zoom) 기능
-let currentZoom = 1.0;
+// currentZoom initialized at top
 function adjustZoom(amount) {
     currentZoom = Math.min(Math.max(currentZoom + amount, 0.8), 1.3); // 최소 80%, 최대 130%
     document.documentElement.style.setProperty('--zoom-level', currentZoom);
-    document.getElementById('zoom-indicator').innerText = Math.round(currentZoom * 100) + '%';
+    const el__zoom_indicator_ = document.getElementById('zoom-indicator'); if (el__zoom_indicator_) el__zoom_indicator_.innerText = Math.round(currentZoom * 100) + '%';
 }
 
 // 4.1.2 Ctrl + 마우스 휠 줌 이벤트 바인딩
@@ -855,7 +870,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initMobileSlides();
 });
 
-let currentMobileSlide = 0;
+// currentMobileSlide initialized at top
 
 function initMobileSlides() {
     const container = document.getElementById('mobile-slides-container');
@@ -977,7 +992,7 @@ function selectMobileTocItem(slideIndex) {
 };
 
 // 선배들의 편지 주제별 페이지 전환 (1~6페이지)
-let currentSeniorTopicNum = 1;
+// currentSeniorTopicNum initialized at top
 
 function switchSeniorTopic(topicNum, e) {
     window.switchSeniorTopic = switchSeniorTopic;
@@ -1048,7 +1063,7 @@ function nextSeniorTopic(e) {
 
 
 // 학교 교육과정 주제별 페이지 전환 (1~5페이지)
-let currentEduTopicNum = 1;
+// currentEduTopicNum initialized at top
 
 function switchEduTopic(topicNum, e) {
     window.switchEduTopic = switchEduTopic;
@@ -1116,7 +1131,7 @@ function nextEduTopic(e) {
 };
 
 // 자주하는 질문 (FAQ) 주제별 페이지 전환 (1~3페이지)
-let currentFaqTopicNum = 1;
+// currentFaqTopicNum initialized at top
 
 function switchFaqTopic(topicNum, e) {
     window.switchFaqTopic = switchFaqTopic;
