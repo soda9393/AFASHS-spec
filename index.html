@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,147 +9,102 @@
         href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- 상단 헤더 -->
-    <header class="main-header">
-        <div class="header-container">
-            <a href="#" class="logo-area" onclick="goToSheet(0)">
-                <img src="images/logo.png" alt="공군항공과학고 로고" class="header-logo">
-                <span class="logo-text">
-                    <strong>공군항공과학고등학교</strong>
-                    <span class="sub-text">전공 소개</span>
-                </span>
-            </a>
-            <div class="header-actions">
-                <div class="view-mode-controls">
-                    <button class="header-btn active" id="view-double-btn" onclick="setViewMode('double')"
-                        title="여러 페이지 보기 (2면)">📖 2면 보기</button>
-                    <button class="header-btn" id="view-single-btn" onclick="setViewMode('single')"
-                        title="한 페이지씩 보기 (1면)">📄 1면 보기</button>
+    <!-- =====================================================
+         DESKTOP WEB APPLICATION PORTAL LAYOUT
+         ===================================================== -->
+    <div id="desktop-web-view" class="desktop-website-container">
+        
+        <!-- Sticky Desktop Header Navigation -->
+        <header id="desktop-header" class="desktop-header">
+            <div class="desktop-header-inner">
+                <div class="desktop-brand" onclick="scrollToDesktopSection('sec-cover')">
+                    <img src="images/logo.png" alt="공군 로고" class="desktop-brand-logo">
+                    <div class="desktop-brand-text">
+                        <span class="desktop-brand-title">공군항공과학고등학교</span>
+                        <span class="desktop-brand-sub">AIR FORCE AVIATION SCIENCE HIGH SCHOOL</span>
+                    </div>
                 </div>
-                <div class="zoom-controls">
-                    <button class="header-btn" onclick="adjustZoom(-0.1)" title="글자 작게">A-</button>
-                    <span id="zoom-indicator">100%</span>
-                    <button class="header-btn" onclick="adjustZoom(0.1)" title="글자 크게">A+</button>
+
+                <nav class="desktop-nav-menu">
+                    <button type="button" class="desktop-nav-link active" onclick="scrollToDesktopSection('sec-cover')">📍 특성</button>
+                    <button type="button" class="desktop-nav-link" onclick="scrollToDesktopSection('sec-edu')">🏫 교육과정</button>
+                    <button type="button" class="desktop-nav-link" onclick="scrollToDesktopSection('sec-fac')">🏛️ 시설소개</button>
+                    <button type="button" class="desktop-nav-link" onclick="scrollToDesktopSection('sec-depts')">✈️ 전공소개</button>
+                    <button type="button" class="desktop-nav-link" onclick="scrollToDesktopSection('sec-quiz')">🎯 적성검사</button>
+                    <button type="button" class="desktop-nav-link" onclick="scrollToDesktopSection('sec-faq')">❓ FAQ</button>
+                    <button type="button" class="desktop-nav-link" onclick="scrollToDesktopSection('sec-letter')">💌 하고싶은이야기</button>
+                    <button type="button" class="desktop-nav-link" onclick="scrollToDesktopSection('sec-footer')">📘 안내/SNS</button>
+                </nav>
+
+                <div class="desktop-header-actions">
+                    <button type="button" class="desktop-action-btn quiz-btn" onclick="scrollToDesktopSection('sec-quiz')">🎯 전공 찾기</button>
+                    <button type="button" id="fullscreen-btn" class="desktop-action-btn fs-btn" onclick="toggleFullscreen()">🖥️ 전체화면</button>
                 </div>
-                <button class="header-btn" id="fullscreen-btn" onclick="toggleFullscreen()" title="전체화면으로 보기">🖥️
-                    전체화면</button>
-                <a href="https://rokaf.airforce.mil.kr/kokyo/index.do" target="_blank" class="home-btn">공식 사이트 ➔</a>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <!-- 목차 드로워 (TOC Drawer - Hover Sidebar) -->
-    <div class="toc-drawer" id="toc-drawer">
-        <h2>📖 전공책자 목차</h2>
-        <ul class="toc-list">
-            <li><a href="#" id="toc-0" onclick="jumpToChapter(0)">표지 (P.1)</a></li>
-            <li><a href="#" id="toc-1" onclick="jumpToChapter(0)">학교 특성 (P.2)</a></li>
-            <li><a href="#" id="toc-2" onclick="jumpToChapter(1)">학교 교육과정 (P.3)</a></li>
-            <li><a href="#" id="toc-3" onclick="jumpToChapter(1)">학교 시설 소개 (P.4)</a></li>
-            <li><a href="#" id="toc-4" onclick="jumpToChapter(2)">전공 매칭 테스트 (P.5)</a></li>
-            <li><a href="#" id="toc-5" onclick="jumpToChapter(2)">학교 전공 소개 (P.6)</a></li>
-            <li><a href="#" id="toc-6" onclick="jumpToChapter(3)">항공통제과 소개 (P.7-10)</a></li>
-            <li><a href="#" id="toc-7" onclick="jumpToChapter(5)">항공전자과 소개 (P.11-14)</a></li>
-            <li><a href="#" id="toc-8" onclick="jumpToChapter(7)">정보통신과 소개 (P.15-18)</a></li>
-            <li><a href="#" id="toc-9" onclick="jumpToChapter(9)">항공기계과 소개 (P.19-22)</a></li>
-            <li><a href="#" id="toc-10" onclick="jumpToChapter(11)">자주하는 질문 (P.23)</a></li>
-            <li><a href="#" id="toc-11" onclick="jumpToChapter(11)">하고 싶은 이야기 (P.24)</a></li>
-        </ul>
-    </div>
+        <!-- Main Portal Container -->
+        <main class="desktop-main-content">
 
-    <!-- 책자 뷰포트 영역 -->
-    <div class="book-viewport">
-        <div id="book-container" class="closed-front">
-            <div id="book">
-                <!-- Spine rings (open book view only) -->
-                <div class="book-spine-rings"></div>
+            <!-- Section 1: Hero Cover & Features -->
+            <section id="sec-cover" class="desktop-section sec-hero">
+                <div class="hero-banner-card">
+                    <img src="images/logo.png" alt="공군 마크" class="hero-logo">
+                    <span class="hero-badge">항공우주 분야 군 전문인력 양성</span>
+                    <h1 class="hero-title">공군항공과학고등학교 전공 소개</h1>
+                    <p class="hero-subtitle">"참되고! 슬기롭고! 씩씩하게!"</p>
+                </div>
 
-                <!-- [Sheet 0] Cover (Page 1) / Contents & Features (Page 2) -->
-                <div class="sheet" id="sheet-0">
-                    <!-- Front: Cover -->
-                    <div class="page-side cover-front dark-page">
-                        <img src="images/logo.png" alt="공군 마크" class="cover-logo">
-                        <div class="cover-badge">항공우주 분야 군 전문인력 양성</div>
-                        <h1 class="cover-title">공군항공과학고등학교<br>전공 소개</h1>
-                        <p class="cover-subtitle">참되고! 슬기롭고! 씩씩하게!</p>
-                        <button class="cover-start-btn" onclick="nextPage()">책자 펼쳐보기 ➔</button>
-                    </div>
-                    <!-- Back: Table of Contents & 가. 학교 특성 -->
-                    <div class="page-side back paper-left" id="page-2">
-                        <h2>가. 학교 특성</h2>
-                        <div class="page2-toc-preview">
-                            <h3>📚 한눈에 보는 목차</h3>
-                            <div class="page2-toc-grid">
-                                <a href="#" onclick="jumpToChapter(0)">• 학교 특성 (P.2)</a>
-                                <a href="#" onclick="jumpToChapter(1)">• 교육과정 (P.3)</a>
-                                <a href="#" onclick="jumpToChapter(1)">• 시설 소개 (P.4)</a>
-                                <a href="#" onclick="jumpToChapter(2)">• 적성 매칭 (P.5)</a>
-                                <a href="#" onclick="jumpToChapter(2)">• 전공 소개 (P.6)</a>
-                                <a href="#" onclick="jumpToChapter(3)">• 항공통제과 (P.7-10)</a>
-                                <a href="#" onclick="jumpToChapter(5)">• 항공전자과 (P.11-14)</a>
-                                <a href="#" onclick="jumpToChapter(7)">• 정보통신과 (P.15-18)</a>
-                                <a href="#" onclick="jumpToChapter(9)">• 항공기계과 (P.19-22)</a>
-                                <a href="#" onclick="jumpToChapter(11)">• 자주묻는질문 (P.23)</a>
-                                <a href="#" onclick="jumpToChapter(11)">• 하고 싶은 이야기 (P.24)</a>
-                            </div>
+                <div class="desktop-features-grid">
+                    <div class="d-feature-card">
+                        <span class="d-feature-icon">🎖️</span>
+                        <div class="d-feature-text">
+                            <h3>공군 정예 기술 부사관</h3>
+                            <p>졸업과 동시에 전원 공군 기술 부사관(하사)으로 임관합니다.</p>
                         </div>
-                        <div class="features-list">
-                            <div class="feature-item">
-                                <span class="feature-icon">🎖️</span>
-                                <div class="feature-text">
-                                    <h3>공군 정예 기술 부사관</h3>
-                                    <p>졸업과 동시에 전원 공군 기술 부사관(하사)으로 임관합니다.</p>
-                                </div>
-                            </div>
-                            <div class="feature-item">
-                                <span class="feature-icon">💰</span>
-                                <div class="feature-text">
-                                    <h3>전액 국비 지원</h3>
-                                    <p>입학금, 수업료, 기숙사비 등 생활비 전액 면제와 매월 소정의 월급이 지급됩니다.</p>
-                                </div>
-                            </div>
-                            <div class="feature-item">
-                                <span class="feature-icon">✈️</span>
-                                <div class="feature-text">
-                                    <h3>항공 우주 분야 기술</h3>
-                                    <p>항공기 정비, 정보통신 등 공군 비행단의 시스템과 연계된 수준 높은 마이스터 교육을 받습니다.</p>
-                                </div>
-                            </div>
+                    </div>
+                    <div class="d-feature-card">
+                        <span class="d-feature-icon">💰</span>
+                        <div class="d-feature-text">
+                            <h3>전액 국비 지원</h3>
+                            <p>입학금, 수업료, 기숙사비 등 생활비 전액 면제와 매월 소정의 월급이 지급됩니다.</p>
+                        </div>
+                    </div>
+                    <div class="d-feature-card">
+                        <span class="d-feature-icon">✈️</span>
+                        <div class="d-feature-text">
+                            <h3>항공 우주 분야 기술</h3>
+                            <p>항공기 정비, 정보통신 등 공군 비행단의 시스템과 연계된 수준 높은 마이스터 교육을 받습니다.</p>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <div class="desktop-page-nav">
-                            <button type="button" class="desktop-nav-btn" onclick="goToPage(1, event)">◀ 이전: 표지 (P.1)</button>
-                            <span class="desktop-nav-indicator">Page 2 / 26</span>
-                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(3, event)">다음: 학교 교육과정 (P.3) ▶</button>
-                        </div>
-                <!-- [Sheet 1] 나. 교육과정 (Page 3) / 다. 시설 소개 (Page 4) -->
-                <div class="sheet" id="sheet-1">
-                                        <!-- Front: 나. 교육과정 -->
-                    <div class="page-side paper-right" id="page-3">
-                        <h2>나. 학교 교육과정</h2>
-                        <p class="section-desc">공군항공과학고등학교 특기 교육의 이해 및 5개 핵심 세부 주제별 교육과정입니다. 아래 탭과 버튼을 이용해 넘겨보세요.</p>
+            <!-- Section 2: 🏫 학교 교육과정 -->
+            <section id="sec-edu" class="desktop-section">
+                <div class="d-section-header">
+                    <h2>🏫 학교 교육과정</h2>
+                    <p>공군항공과학고등학교 특기 교육의 이해 및 5개 핵심 세부 주제별 교육과정입니다.</p>
+                </div>
 
-                        <div class="senior-topic-nav edu-topic-nav" style="margin-bottom: 0.8rem;">
-                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn active" data-edu-target="1" onclick="switchEduTopic(1, event)">1. 특기교육의 이해</button>
-                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="2" onclick="switchEduTopic(2, event)">2. 기술중심 교육</button>
-                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="3" onclick="switchEduTopic(3, event)">3. 청소년의 성장</button>
-                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="4" onclick="switchEduTopic(4, event)">4. 부사관 병과</button>
-                            <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="5" onclick="switchEduTopic(5, event)">5. 병과 간 연관성</button>
-                        </div>
+                <div class="senior-topic-nav edu-topic-nav" style="margin-bottom: 1rem;">
+                    <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn active" data-edu-target="1" onclick="switchEduTopic(1, event)">1. 특기교육의 이해</button>
+                    <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="2" onclick="switchEduTopic(2, event)">2. 기술중심 교육</button>
+                    <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="3" onclick="switchEduTopic(3, event)">3. 청소년의 성장</button>
+                    <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="4" onclick="switchEduTopic(4, event)">4. 부사관 병과</button>
+                    <button type="button" class="senior-topic-tab-btn edu-topic-tab-btn" data-edu-target="5" onclick="switchEduTopic(5, event)">5. 병과 간 연관성</button>
+                </div>
 
-                        <div class="senior-page-controls edu-page-controls" style="margin-bottom: 0.6rem;">
-                            <button type="button" class="senior-page-btn" onclick="prevEduTopic(event)">◀ 이전 주제</button>
-                            <span class="senior-page-indicator">주제 <span class="edu-current-page-num">1</span> / 5</span>
-                            <button type="button" class="senior-page-btn" onclick="nextEduTopic(event)">다음 주제 ▶</button>
-                        </div>
-                        <div class="story-container edu-container" style="max-height: 72%; overflow-y: auto; padding-right: 0.3rem;">
-                            <!-- 주제 1: 공군항공과학고등학교 특기 교육의 이해 & 1. 진로개발역량 함양과 영마이스터 육성 -->
-                            <div class="edu-topic-page-item active" data-edu-id="1" style="display: block;">
+                <div class="senior-page-controls edu-page-controls" style="margin-bottom: 1rem;">
+                    <button type="button" class="senior-page-btn" onclick="prevEduTopic(event)">◀ 이전 주제</button>
+                    <span class="senior-page-indicator">주제 <span class="edu-current-page-num">1</span> / 5</span>
+                    <button type="button" class="senior-page-btn" onclick="nextEduTopic(event)">다음 주제 ▶</button>
+                </div>
+
+                <div class="story-container edu-container" style="max-height: 600px; overflow-y: auto;">
+                    <div class="edu-topic-page-item active" data-edu-id="1" style="display: block;">
                                 <div class="story-category-card">
                                     <h3 class="story-category-title">🎓 공군항공과학고등학교 특기 교육의 이해</h3>
                                     <div class="story-cohort-group">
@@ -171,7 +125,7 @@
                             </div>
 
                             <!-- 주제 2: ❷ 기술 중심 교육이라는 건 기술 연습을 의미하는가요? & ❸ 지금 사회에서 중요한 것은 무엇인가요? -->
-                            <div class="edu-topic-page-item" data-edu-id="2" style="display: none;">
+<div class="edu-topic-page-item" data-edu-id="2" style="display: none;">
                                 <div class="story-category-card">
                                     <h3 class="story-category-title">⚙️ 기술 중심 교육 & 사회적 역량</h3>
                                     <div class="story-cohort-group">
@@ -191,7 +145,7 @@
                             </div>
 
                             <!-- 주제 3: ❹ 후보생이자 청소년인 우리에게 중요한 것은 무엇인가요? -->
-                            <div class="edu-topic-page-item" data-edu-id="3" style="display: none;">
+<div class="edu-topic-page-item" data-edu-id="3" style="display: none;">
                                 <div class="story-category-card">
                                     <h3 class="story-category-title">🌱 청소년 후보생의 전인적 성장</h3>
                                     <div class="story-cohort-group">
@@ -204,7 +158,7 @@
                             </div>
 
                             <!-- 주제 4: 2 공군항과고 특기교육의 특징 - (1) 공군 부사관의 병과 -->
-                            <div class="edu-topic-page-item" data-edu-id="4" style="display: none;">
+<div class="edu-topic-page-item" data-edu-id="4" style="display: none;">
                                 <div class="story-category-card">
                                     <h3 class="story-category-title">🎖️ 공군항과고 특기교육의 특징 (병과 분류)</h3>
                                     <div class="story-cohort-group">
@@ -232,7 +186,7 @@
                             </div>
 
                             <!-- 주제 5: ❹ 우리 학교에서 배출하는 병과들은 서로 어떤 연관성이 있나요? -->
-                            <div class="edu-topic-page-item" data-edu-id="5" style="display: none;">
+<div class="edu-topic-page-item" data-edu-id="5" style="display: none;">
                                 <div class="story-category-card">
                                     <h3 class="story-category-title">🔗 배출 병과 간의 분업과 협력 관계</h3>
                                     <div class="story-cohort-group">
@@ -244,1023 +198,153 @@
                                 </div>
                             </div>
                         </div>
+            </section>
 
-                        <div class="senior-page-controls edu-page-controls" style="margin-top: 0.4rem;">
-                            <button type="button" class="senior-page-btn" onclick="prevEduTopic(event)">◀ 이전 주제</button>
-                            <span class="senior-page-indicator">주제 <span class="edu-current-page-num">1</span> / 5</span>
-                            <button type="button" class="senior-page-btn" onclick="nextEduTopic(event)">다음 주제 ▶</button>
+            <!-- Section 3: 🏛️ 학교 시설 소개 -->
+            <section id="sec-fac" class="desktop-section">
+                <div class="d-section-header">
+                    <h2>🏛️ 학교 시설 소개</h2>
+                    <p>오직 학업과 생활에만 온전히 몰입할 수 있도록 교육·생활 전반에 최고의 시설을 구비하고 있습니다.</p>
+                </div>
+
+                <div class="d-facilities-grid">
+                    <div class="facility-item">
+                        <h3>지학관 / 기예관</h3>
+                        <p>교과 수업을 위한 교실과 실습장, 휴게실이 있습니다.</p>
+                    </div>
+                    <div class="facility-item">
+                        <h3>종합정비 실습장</h3>
+                        <p>전투기 기체, 가스터빈 엔진, 항공 무장 정비를 위한 실전 실습 환경입니다.</p>
+                    </div>
+                    <div class="facility-item">
+                        <h3>정보화학과장</h3>
+                        <p>정보통신 네트워크, 암호 장비, 인터넷 컴퓨팅실을 구비하고 있습니다.</p>
+                    </div>
+                    <div class="facility-item">
+                        <h3>항공 통제/관제 실습장</h3>
+                        <p>MCRC CBT실, 비행관제 시뮬레이터 및 기상관측 투사대를 갖추고 있습니다.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: ✈️ 학교 전공 소개 & 4개 과 상세 -->
+            <section id="sec-depts" class="desktop-section">
+                <div class="d-section-header">
+                    <h2>✈️ 학교 전공 소개</h2>
+                    <p>미래 공군 영공 방위의 네 가지 핵심 두뇌와 강철 심장을 담당하는 각 학과입니다.</p>
+                </div>
+
+                <div class="major-grid" style="margin-bottom: 2rem;">
+                    <div class="major-box control" onclick="scrollToDesktopSection('dept-control')">
+                        <h3>항공통제과 <span class="major-tag">Control</span></h3>
+                        <p>하늘의 눈과 길잡이로서 항공통제, 비행 관제, 기상 예보 업무 수행</p>
+                        <button class="detail-btn">상세 내용 ➔</button>
+                    </div>
+                    <div class="major-box electronics" onclick="scrollToDesktopSection('dept-electronics')">
+                        <h3>항공전자과 <span class="major-tag">Electronics</span></h3>
+                        <p>전투기 비행 컴퓨터 제어, 사격 레이더 및 항공 전자 회로 정밀 정비</p>
+                        <button class="detail-btn">상세 내용 ➔</button>
+                    </div>
+                    <div class="major-box telecom" onclick="scrollToDesktopSection('dept-telecom')">
+                        <h3>정보통신과 <span class="major-tag">Telecom</span></h3>
+                        <p>군 지휘 통신망, 위성국 관리, 암호기 탑재 및 사이버 보안망 방어</p>
+                        <button class="detail-btn">상세 내용 ➔</button>
+                    </div>
+                    <div class="major-box mechanic" onclick="scrollToDesktopSection('dept-mechanic')">
+                        <h3>항공기계과 <span class="major-tag">Mechanic</span></h3>
+                        <p>전투기 가스터빈 제트 엔진 조립/분해, 기체 구조물 결함 교정</p>
+                        <button class="detail-btn">상세 내용 ➔</button>
+                    </div>
+                </div>
+
+                <!-- 1. 항공통제과 -->
+                <div id="dept-control" class="d-dept-card-wrapper">
+                    
+                    <div style="margin-top: 1.5rem;">
+                        
+                    </div>
+                </div>
+
+                <!-- 2. 항공전자과 -->
+                <div id="dept-electronics" class="d-dept-card-wrapper" style="margin-top: 2rem;">
+                    
+                </div>
+
+                <!-- 3. 정보통신과 -->
+                <div id="dept-telecom" class="d-dept-card-wrapper" style="margin-top: 2rem;">
+                    
+                </div>
+
+                <!-- 4. 항공기계과 -->
+                <div id="dept-mechanic" class="d-dept-card-wrapper" style="margin-top: 2rem;">
+                    
+                </div>
+            </section>
+
+            <!-- Section 8: 🎯 전공 심리 검사 -->
+            <section id="sec-quiz" class="desktop-section">
+                <div class="d-section-header">
+                    <h2>🎯 전공 심리 검사</h2>
+                    <p>간단한 문항을 통해 당신의 적성과 흥미에 어울리는 추천 전공을 진단받으세요.</p>
+                </div>
+
+                <div class="quiz-container">
+                    <div id="quiz-start" class="quiz-screen active">
+                        <div class="quiz-intro">
+                            <span class="quiz-badge">기본 진단</span>
+                            <h3>나의 전공 찾기</h3>
+                            <p>나의 소질과 흥미는 어떤 학과와 잘 맞을까요?<br>10가지 간단한 질문을 통해 분석해보세요.</p>
+                            <button type="button" id="quiz-start-btn" class="quiz-start-btn" onclick="startQuiz()" ontouchend="startQuiz()">테스트 시작하기 ➔</button>
                         </div>
                     </div>
 
-                    <div class="desktop-page-nav">
-                            <button type="button" class="desktop-nav-btn" onclick="goToPage(2, event)">◀ 이전: 학교 특성 (P.2)</button>
-                            <span class="desktop-nav-indicator">Page 3 / 26</span>
-                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(4, event)">다음: 학교 시설 소개 (P.4) ▶</button>
+                    <div id="quiz-question" class="quiz-screen">
+                        <div class="quiz-progress-bar">
+                            <div id="quiz-progress" class="quiz-progress-fill"></div>
                         </div>
-                    <!-- Back: 다. 시설 소개 -->
-                    <div class="page-side back paper-left" id="page-4">
-                        <h2>다. 학교 시설 소개</h2>
-                        <p class="section-desc">오직 학업과 생활에만 온전히 몰입할 수 있도록 교육·생활 전반에 시설을 구비하고 있습니다.</p>
-                        <div class="facilities-list">
-                            <div class="facility-item">
-                                <h3>지학관 / 기예관</h3>
-                                <p>교과 수업을 위한 교실과 실습장, 휴게실이 있습니다.</p>
+                        <div class="quiz-step-indicator">질문 <span id="quiz-current-step">1</span> / 10</div>
+                        <div id="quiz-question-text" class="quiz-q-text">질문 내용</div>
+                        <div id="quiz-options" class="quiz-options-list"></div>
+                    </div>
+
+                    <div id="quiz-result" class="quiz-screen">
+                        <div class="quiz-result-card">
+                            <span class="quiz-badge">🎉 분석 완료</span>
+                            <div class="result-emblem-container">
+                                <img id="result-emblem" src="" alt="추천 전공 마크" class="result-emblem-img" style="display: none;">
                             </div>
-                            <div class="facility-item">
-                                <h3>종합정비 실습장</h3>
-                                <p>기체,기관, 용접, 판금 실습을 위한 최신 장비를 갖추고 있습니다.</p>
-                            </div>
-                            <div class="facility-item">
-                                <h3>정보화학과장</h3>
-                                <p>인공지능과 정보화 소양 교육을 위한 최신 컴퓨터 실습장입니다.</p>
-                            </div>
-                            <div class="facility-item">
-                                <h3>항공 통제/관제 실습장</h3>
-                                <p>시뮬레이션 장비를 통한 현장을 느낄 수 있는 실습장입니다.</p>
-                            </div>
-                            <div class="facility-item">
-                                <h3>항공 전자 실습장</h3>
-                                <p>숄더링, 회로 분석 등 전자 분야 실습장입니다.</p>
+                            <h3 class="result-major-title">추천 전공: <span id="result-major-name" class="highlight-text">학과명</span></h3>
+                            <p id="result-major-desc" class="result-major-description">추천 이유 설명</p>
+                            <div class="result-actions">
+                                <button id="result-detail-link" class="result-btn detail" onclick="goToRecommendedDept()">전공 상세 섹션으로 이동 ➔</button>
+                                <button class="result-btn restart" onclick="resetQuiz()">다시하기 🔄</button>
                             </div>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <!-- [Sheet 2] 🎯 전공 매칭 테스트 (Page 5) / 라. 학교 전공 소개 (Page 6) -->
-                <div class="sheet" id="sheet-2">
-                    <!-- Front: 전공 매칭 테스트 -->
-                    <div class="page-side paper-right" id="page-5">
-                        <h2>전공 심리 검사</h2>
-                        <p class="section-desc">간단한 문항을 통해 당신의 적성과 흥미에 어울리는 전공을 추천받으세요.</p>
-
-                        <div class="quiz-container">
-                            <!-- 시작 화면 -->
-                            <div id="quiz-start" class="quiz-screen active">
-                                <div class="quiz-intro">
-                                    <span class="quiz-badge">기본 진단</span>
-                                    <h3>나의 전공 찾기</h3>
-                                    <p>나의 소질과 흥미는 어떤 학과와 잘 맞을까요?<br>10가지 간단한 질문을 통해 분석해보세요.</p>
-                                    <button type="button" id="quiz-start-btn" class="quiz-start-btn"
-                                        onclick="startQuiz()" ontouchend="startQuiz()">테스트 시작하기 ➔</button>
-                                </div>
-                            </div>
-
-                            <!-- 질문 화면 -->
-                            <div id="quiz-question" class="quiz-screen">
-                                <div class="quiz-progress-bar">
-                                    <div id="quiz-progress" class="quiz-progress-fill"></div>
-                                </div>
-                                <div class="quiz-step-indicator">질문 <span id="quiz-current-step">1</span> / 10</div>
-                                <div id="quiz-question-text" class="quiz-q-text">질문 내용</div>
-                                <div id="quiz-options" class="quiz-options-list">
-                                    <!-- 옵션 버튼들이 동적으로 생성됩니다. -->
-                                </div>
-                            </div>
-
-                            <!-- 결과 화면 -->
-                            <div id="quiz-result" class="quiz-screen">
-                                <div class="quiz-result-card">
-                                    <span class="quiz-badge">🎉 분석 완료</span>
-                                    <div class="result-emblem-container">
-                                        <img id="result-emblem" src="" alt="추천 전공 마크" class="result-emblem-img"
-                                            style="display: none;">
-                                    </div>
-                                    <h3 class="result-major-title">추천 전공: <span id="result-major-name"
-                                            class="highlight-text">학과명</span></h3>
-                                    <p id="result-major-desc" class="result-major-description">추천 이유 설명</p>
-                                    <div class="result-actions">
-                                        <button id="result-detail-link" class="result-btn detail"
-                                            onclick="goToRecommendedDept()">전공 상세 페이지로 이동 ➔</button>
-                                        <button class="result-btn restart" onclick="resetQuiz()">다시하기 🔄</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="desktop-page-nav">
-                            <button type="button" class="desktop-nav-btn" onclick="goToPage(4, event)">◀ 이전: 학교 시설 소개 (P.4)</button>
-                            <span class="desktop-nav-indicator">Page 5 / 26</span>
-                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(6, event)">다음: 학교 전공 소개 (P.6) ▶</button>
-                        </div>
-                    <!-- Back: 라. 학교 전공 소개 -->
-                    <div class="page-side back paper-left" id="page-6">
-                        <h2>라. 학교 전공 소개</h2>
-                        <p class="section-desc">미래 공군 영공 방위의 네 가지 핵심 두뇌와 강철 심장을 담당하는 각 학과의 구조를 살펴볼 수 있습니다.</p>
-
-                        <div class="major-grid">
-                            <div class="major-box control" id="dept-control-box">
-                                <h3>항공통제과 <span class="major-tag">Control</span></h3>
-                                <p>하늘의 눈과 길잡이로서 항공통제, 비행 관제, 기상 예보 업무 수행</p>
-                                <button class="detail-btn" onclick="jumpToChapter(3)">상세 내용</button>
-                            </div>
-                            <div class="major-box electronics" id="dept-electronics-box">
-                                <h3>항공전자과 <span class="major-tag">Electronics</span></h3>
-                                <p>전투기 비행 컴퓨터 제어, 사격 레이더 및 항공 전자 회로 정밀 정비</p>
-                                <button class="detail-btn" onclick="jumpToChapter(5)">상세 내용</button>
-                            </div>
-                            <div class="major-box telecom" id="dept-telecom-box">
-                                <h3>정보통신과 <span class="major-tag">Telecom</span></h3>
-                                <p>군 지휘 통신망, 위성국 관리, 암호기 탑재 및 사이버 보안망 방어</p>
-                                <button class="detail-btn" onclick="jumpToChapter(7)">상세 내용</button>
-                            </div>
-                            <div class="major-box mechanic" id="dept-mechanic-box">
-                                <h3>항공기계과 <span class="major-tag">Mechanic</span></h3>
-                                <p>전투기 가스터빈 제트 엔진 조립/분해, 기체 구조물 결함 교정</p>
-                                <button class="detail-btn" onclick="jumpToChapter(9)">상세 내용</button>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Section 9: ❓ 자주하는 질문 (FAQ) -->
+            <section id="sec-faq" class="desktop-section">
+                <div class="d-section-header">
+                    <h2>❓ 자주하는 질문 (FAQ)</h2>
+                    <p>공군항공과학고등학교 입학 및 학교생활에 대해 궁금해하시는 질문과 답변입니다.</p>
                 </div>
 
-                <div class="desktop-page-nav">
-                            <button type="button" class="desktop-nav-btn" onclick="goToPage(5, event)">◀ 이전: 전공 심리 검사 (P.5)</button>
-                            <span class="desktop-nav-indicator">Page 6 / 26</span>
-                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(7, event)">다음: 항공통제과 (P.7) ▶</button>
-                        </div>
-                <!-- [Sheet 3] 📡 항공통제과 간지 (Page 7) / 📡 항공통제과 소개 1 (Page 8) -->
-                <div class="sheet" id="sheet-3">
-                    <!-- Front: 항공통제과 간지 -->
-                    <div class="page-side paper-right dark-page">
-                        <div class="dept-subtab-nav">
-                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(7, event)">1. 엠블럼</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(8, event)">2. 교육과정</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(9, event)">3. 배정특기</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(10, event)">4. 실습장비</button>
-                        </div>
-                        <div class="dept-divider-page control">
-                            <img src="images/control_emblem.png" alt="항공통제과 엠블럼" class="dept-divider-emblem">
-                            <h2 class="dept-divider-title">항공통제과</h2>
-                            <div class="dept-divider-deptname">Aviation Control</div>
-                            <div class="dept-divider-line"></div>
-                            <p class="dept-divider-desc">하늘의 눈과 길잡이로서 항공통제, 비행 관제, 기상 예보 업무 수행</p>
-                        </div>
-                    </div>
-                    <div class="desktop-page-nav">
-                            <button type="button" class="desktop-nav-btn" onclick="goToPage(6, event)">◀ 이전: 전공 소개 (P.6)</button>
-                            <span class="desktop-nav-indicator">항공통제과 1 / 4 Page (P.7)</span>
-                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(8, event)">다음: 교육과정 (P.8) ▶</button>
-                        </div>
-                    <!-- Back: 항공통제과 소개 1 (전공소개 & 교육과정 표) -->
-                    <div class="page-side back paper-left" id="dept-control">
-                        <div class="dept-subtab-nav">
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(7, event)">1. 엠블럼</button>
-                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(8, event)">2. 교육과정</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(9, event)">3. 배정특기</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(10, event)">4. 실습장비</button>
-                        </div>
-                        <div class="dept-header">
-                            <div class="dept-header-info">
-                                <h3>항공통제과</h3>
-                                <p>하늘의 눈과 길잡이로서 항공통제, 비행 관제, 기상 예보 업무 수행</p>
-                            </div>
-                            <img src="images/control_emblem.png" alt="항공통제과 엠블럼" class="dept-emblem">
-                        </div>
-
-                        <div class="dept-card">
-                            <h3>🌐 전공 소개</h3>
-                            <p style="font-size: 0.72rem; line-height: 1.45; color: #4a5568; margin: 0;">
-                                항공통제과는 공군의 항공작전을 최전방에서 지원하며, 항공관제와 항공통제, 기상예보 전문가를 양성하는 학과입니다. 적과 주변국의 위협으로부터 대한민국의
-                                영공방위를 담당하는 작전 실무 특기인 항공통제, 항공기의 안전한 이착륙을 안내하는 항공관제, 비행의 성패를 가르는 정밀 기상 분석까지 유기적으로 교육합니다.
-                                학생들은 실시간 상황 판단력과 첨단 장비 운용 능력을 습득하여, 완벽한 영공 방위와 성공적인 비행 작전을 지원하는 최고의 전문가로 성장합니다.
-                            </p>
-                        </div>
-
-                        <div class="dept-card">
-                            <h3>📖 주요 교육과정 (Curriculum)</h3>
-                            <table class="curriculum-table">
-                                <thead>
-                                    <tr>
-                                        <th style="width: 25%">학년/학기</th>
-                                        <th style="width: 75%">교육 교과목</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="grade-badge">1학년 2학기</td>
-                                        <td>항공법규, 기상학 기초</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="grade-badge">2학년 1학기</td>
-                                        <td>항공교통 통신 정보업무, 기상 일기도 분석, 항공통제 기초</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="grade-badge">2학년 2학기</td>
-                                        <td>항행안전시설, 기상 관측, 항공통제일반</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="grade-badge">3학년 1학기</td>
-                                        <td>항공관제영어, 기상영상 분석, MCRC체계 이론</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="grade-badge">3학년 2학기</td>
-                                        <td>관제일반, 기상분석 및 실무, MCRC체계 실무</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div class="dept-card" style="margin-top: 0.4rem;">
-                            <h3 style="font-size: 0.78rem; margin-bottom: 0.2rem;">🎖️ 취득 가능 자격증</h3>
-                            <p style="font-size: 0.72rem; color: #2b6cb0; font-weight: 700; margin: 0;">
-                                항공무선통신사, 정보처리기능사, 사무자동화산업기사
-                            </p>
-                        </div>
-                    </div>
+                <div class="senior-topic-nav faq-topic-nav" style="margin-bottom: 1rem;">
+                    <button type="button" class="senior-topic-tab-btn faq-topic-tab-btn active" data-faq-target="1" onclick="switchFaqTopic(1, event)">1. 학업 (Academic Life)</button>
+                    <button type="button" class="senior-topic-tab-btn faq-topic-tab-btn" data-faq-target="2" onclick="switchFaqTopic(2, event)">2. 학교생활 (School Life)</button>
+                    <button type="button" class="senior-topic-tab-btn faq-topic-tab-btn" data-faq-target="3" onclick="switchFaqTopic(3, event)">3. 진로 및 임관 (Career)</button>
                 </div>
 
-                <div class="desktop-page-nav">
-                            <button type="button" class="desktop-nav-btn" onclick="goToPage(7, event)">◀ 이전: 엠블럼 (P.7)</button>
-                            <span class="desktop-nav-indicator">항공통제과 2 / 4 Page (P.8)</span>
-                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(9, event)">다음: 배정특기 (P.9) ▶</button>
-                        </div>
-                <!-- [Sheet 4] 📡 항공통제과 소개 2 (Page 9) / 📡 항공통제과 소개 3 (Page 10) -->
-                <div class="sheet" id="sheet-4">
-                    <!-- Front: 항공통제과 소개 2 (배정특기) -->
-                    <div class="page-side paper-right" id="dept-control-specialty">
-                        <div class="dept-subtab-nav">
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(7, event)">1. 엠블럼</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(8, event)">2. 교육과정</button>
-                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(9, event)">3. 배정특기</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(10, event)">4. 실습장비</button>
-                        </div>
-                        <div class="dept-header">
-                            <div class="dept-header-info">
-                                <h3>항공통제과 <span
-                                        style="font-size: 0.8rem; color: var(--accent-gold); font-weight: normal; margin-left: 0.5rem;">[배정
-                                        특기]</span></h3>
-                                <p>공군 임관 후 실무 현장에서의 핵심 임무 및 역할</p>
-                            </div>
-                            <img src="images/control_emblem.png" alt="항공통제과 엠블럼" class="dept-emblem">
-                        </div>
-
-                        <div class="dept-card" style="max-height: 82%; overflow-y: auto;">
-                            <h3>✈️ 졸업 후 배정 특기 (Specialty)</h3>
-                            <ul class="specialty-list">
-                                <li style="margin-bottom: 0.5rem;">
-                                    <strong>항공기상 (251X)</strong>
-                                    <p style="font-size: 0.68rem; margin-bottom: 0.2rem;">기상관측, 기상위성 및 레이더 영상분석, 수치 기상예보 모델 분석 및 기상지원업무</p>
-                                    <div style="font-size: 0.63rem; color: #4a5568; padding-left: 0.3rem; line-height: 1.3;">
-                                        • <strong>기상 관측업무</strong>: 비행단에서 AMOS 화면에 제공되는 기상정보를 관측하는 업무<br>
-                                        • <strong>기상예보업무</strong>: 기상레이더 영상 분석 및 위성영상분석, 수치예보 모델 기상자료를 분석하여 비행작전기상예보 및 공중작전과 관련된 부처에 기상정보 제공 및 기상예보 지원<br>
-                                        • 📍 <strong>근무 가능지역</strong>: 공군 전부대(기상단, 비행단 기상대 등), 기타부대
-                                    </div>
-                                </li>
-                                <li style="margin-bottom: 0.5rem;">
-                                    <strong>항공관제 (161X)</strong>
-                                    <p style="font-size: 0.68rem; margin-bottom: 0.2rem;">활주로 및 기지 주변 공역 내 항공기의 안전한 이착륙과 공중 충돌 방지를 위한 지원업무</p>
-                                    <div style="font-size: 0.63rem; color: #4a5568; padding-left: 0.3rem; line-height: 1.3;">
-                                        • <strong>관제탑 관제업무</strong>: 관제탑에서 활주로와 지상 기동지역을 직접 감시하며, 항공기의 안전한 이착륙과 지상 이동 관제 업무를 수행<br>
-                                        • <strong>레이다 관제업무</strong>: 레이다 화면을 통해 육안으로 보이지 않는 먼 거리의 항공기의 안전한 운항을 지원하며, 항공기 간 간격 분리와 공중 충돌 방지를 위한 관제 업무를 수행<br>
-                                        • 📍 <strong>근무 가능지역</strong>: 공군 비행단
-                                    </div>
-                                </li>
-                                <li>
-                                    <strong>항공통제 (171X)</strong>
-                                    <p style="font-size: 0.68rem; margin-bottom: 0.2rem;">대한민국 영공을 위협하는 적 및 주변국 항공기의 활동을 감시하며, 방공식별구역(KADIZ) 내 무단 침범 항공기를 조기에 탐지·식별합니다. 상황에 따라 전투기를 요격 위치로 유도하는 등 항공작전 전반을 지휘통제하는 임무를 수행합니다.</p>
-                                    <div style="font-size: 0.63rem; color: #4a5568; padding-left: 0.3rem; line-height: 1.3;">
-                                        • <strong>공중감시</strong>: 전국에 배치된 공군방공관제레이다 및 타군 레이다로부터 수신되는 신호 자료를 분석하여, 신빙성을 판단하고 위협 수준을 평가하는 임무를 수행합니다.<br>
-                                        • <strong>식별</strong>: 한국제한식별구역(KLIZ) 내 모든 항공기에 대하여 목적지, 소속 기지, 임무 등 세부 정보를 식별합니다. 또한 주변국 항공기(중국, 일본, 러시아)에 대해서는 직통망을 통해 세부 정보를 식별하는 임무를 수행합니다.<br>
-                                        • <strong>무기운영</strong>: 대한민국 영공 방위에 위협이 되는 항공기에 대하여 가용 전력(전투기, 방공포 등)을 운용해 위협을 제거하는 항공작전을 최일선에서 수행합니다. 작전에 투입된 아군 전투기에는 적기의 고도, 방위, 위치, 대수 등의 정보를 실시간으로 전달하여, 최적의 조건에서 작전을 수행할 수 있도록 지원합니다.<br>
-                                        • 📍 <strong>근무 가능지역</strong>: 1MCRC(오산), 2MCRC(대구), E-737(김해) 등 도시 위주의 자대 선정이 가능합니다. 공군작전사령부, 방공관제사령부, 청와대, 레이다사이트 등 다양한 근무지 경험도 가능합니다.
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="desktop-page-nav">
-                            <button type="button" class="desktop-nav-btn" onclick="goToPage(8, event)">◀ 이전: 교육과정 (P.8)</button>
-                            <span class="desktop-nav-indicator">항공통제과 3 / 4 Page (P.9)</span>
-                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(10, event)">다음: 실습장비 (P.10) ▶</button>
-                        </div>
-                    <!-- Back: 항공통제과 소개 3 (실습실) -->
-                    <div class="page-side back paper-left" id="dept-control-facilities">
-                        <div class="dept-subtab-nav">
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(7, event)">1. 엠블럼</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(8, event)">2. 교육과정</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(9, event)">3. 배정특기</button>
-                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(10, event)">4. 실습장비</button>
-                        </div>
-                        <div class="dept-header">
-                            <div class="dept-header-info">
-                                <h3>항공통제과 <span
-                                        style="font-size: 0.8rem; color: var(--accent-gold); font-weight: normal; margin-left: 0.5rem;">[실습실
-                                        및 장비]</span></h3>
-                                <p>공군 관제소와 동일한 최고 수준의 모의 실습 환경</p>
-                            </div>
-                            <img src="images/control_emblem.png" alt="항공통제과 엠블럼" class="dept-emblem">
-                        </div>
-
-                        <div class="dept-card">
-                            <h3>🔬 실습실 및 특화 장비</h3>
-                            <div class="dept-fac-list">
-                                <div class="dept-fac-item" style="margin-bottom: 0.5rem;">
-                                    <div class="dept-fac-icon">🌤️</div>
-                                    <div class="dept-fac-text">
-                                        <h4>기상 실습실</h4>
-                                        <p style="font-size: 0.68rem; line-height: 1.4; margin: 0; color: #4a5568;">
-                                            기상관측, 기상일기도 분석, 수치예보 자료 분석을 위해 기상홈페이지를 활용하고 기상투사대를 이용하여 기상일기도를 분석, 작성하는 실습을
-                                            진행합니다.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="dept-fac-item" style="margin-bottom: 0.5rem;">
-                                    <div class="dept-fac-icon">📡</div>
-                                    <div class="dept-fac-text">
-                                        <h4>항공관제 시뮬레이터실</h4>
-                                        <p style="font-size: 0.68rem; line-height: 1.4; margin: 0; color: #4a5568;">
-                                            관제탑과 레이다 관제시설 환경을 그대로 재현하여, 학생들이 가상의 비행 상황 속에서 실전과 같은 이착륙 관제 능력을 배양하는 첨단 교육
-                                            실습 공간입니다. 다양한 기상 악화나 돌발적인 비상 상황을 대처해 봄으로써, 공중 충돌 방지와 안전한 비행 지원을 완벽히 수행할 수 있는
-                                            실무 능력을 갖출 수 있습니다.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="dept-fac-item">
-                                    <div class="dept-fac-icon">💻</div>
-                                    <div class="dept-fac-text">
-                                        <h4>MCRC CBT실</h4>
-                                        <p style="font-size: 0.68rem; line-height: 1.4; margin: 0; color: #4a5568;">
-                                            학생들이 임관 후 근무하게 될 환경을 미리 경험하여 자대 근무에 쉽게 적응할 수 있도록 MCRC에서 실제 사용하는 장비와 프로그램을
-                                            유사하게 구현해 놓았습니다. 학습 장비를 통해 가상의 레이다 자료와 공중상황을 경험해 보고, 공중감시·식별·무기운영 업무를 직접 체험하며
-                                            실무 능력을 배양할 수 있습니다.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="senior-page-controls faq-page-controls" style="margin-bottom: 1rem;">
+                    <button type="button" class="senior-page-btn" onclick="prevFaqTopic(event)">◀ 이전 주제</button>
+                    <span class="senior-page-indicator">주제 <span class="faq-current-page-num">1</span> / 3</span>
+                    <button type="button" class="senior-page-btn" onclick="nextFaqTopic(event)">다음 주제 ▶</button>
                 </div>
 
-                <div class="desktop-page-nav">
-                            <button type="button" class="desktop-nav-btn" onclick="goToPage(9, event)">◀ 이전: 배정특기 (P.9)</button>
-                            <span class="desktop-nav-indicator">항공통제과 4 / 4 Page (P.10)</span>
-                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(11, event)">다음: 항공전자과 (P.11) ▶</button>
-                        </div>
-                <!-- [Sheet 5] ⚡ 항공전자과 간지 (Page 11) / ⚡ 항공전자과 소개 1 (Page 12) -->
-                <div class="sheet" id="sheet-5">
-                    <!-- Front: 항공전자과 간지 -->
-                    <div class="page-side paper-right dark-page">
-                        <div class="dept-subtab-nav">
-                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(11, event)">1. 엠블럼</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(12, event)">2. 교육과정</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(13, event)">3. 배정특기</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(14, event)">4. 실습장비</button>
-                        </div>
-                        <div class="dept-divider-page electronics">
-                            <img src="images/electronics_emblem.jpg" alt="항공전자과 엠블럼" class="dept-divider-emblem">
-                            <h2 class="dept-divider-title">항공전자과</h2>
-                            <div class="dept-divider-deptname">Aviation Electronics</div>
-                            <div class="dept-divider-line"></div>
-                            <p class="dept-divider-desc">전투기의 두뇌를 설계하고, 하늘의 임무를 완성합니다.</p>
-                        </div>
-                    </div>
-                    <div class="desktop-page-nav">
-                            <button type="button" class="desktop-nav-btn" onclick="goToPage(10, event)">◀ 이전: 항공통제과 (P.10)</button>
-                            <span class="desktop-nav-indicator">항공전자과 1 / 4 Page (P.11)</span>
-                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(12, event)">다음: 교육과정 (P.12) ▶</button>
-                        </div>
-                    <!-- Back: 항공전자과 소개 1 (전공소개 & 교육과정 표) -->
-                    <div class="page-side back paper-left" id="dept-electronics">
-                        <div class="dept-subtab-nav">
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(11, event)">1. 엠블럼</button>
-                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(12, event)">2. 교육과정</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(13, event)">3. 배정특기</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(14, event)">4. 실습장비</button>
-                        </div>
-                        <div class="dept-header">
-                            <div class="dept-header-info">
-                                <h3>항공전자과</h3>
-                                <p>전투기의 두뇌를 설계하고, 하늘의 임무를 완성합니다.</p>
-                            </div>
-                            <img src="images/electronics_emblem.jpg" alt="항공전자과 엠블럼" class="dept-emblem">
-                        </div>
-
-                        <div class="dept-card">
-                            <h3>🌐 전공 소개</h3>
-                            <p style="font-size: 0.72rem; line-height: 1.45; color: #4a5568; margin: 0;">
-                                항공전자과는 항공기 전기·전자장비의 운용 and 정비를 담당하는 전문 기술인력을 양성하는 학과입니다.<br><br>
-                                학생들은 전기·전자 기초부터 디지털 회로, 전자제어, 프로그래밍 등 핵심 기술을 학습하고, 항공기 전기전자장비, 항공기 계통 및 항공무장 정비 실습을 통해
-                                현장 중심의 실무 역량을 갖추게 됩니다.<br><br>
-                                이를 바탕으로 공군 항공전자 분야에서 즉시 임무를 수행할 수 있는 전문 정비인력으로 성장합니다.
-                            </p>
-                        </div>
-
-                        <div class="dept-card">
-                            <h3>📖 주요 교육과정 (Curriculum)</h3>
-                            <table class="curriculum-table">
-                                <thead>
-                                    <tr>
-                                        <th style="width: 25%">학년/학기</th>
-                                        <th style="width: 75%">교육 교과목</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="grade-badge">1학년 2학기</td>
-                                        <td>전기회로</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="grade-badge">2학년 1학기</td>
-                                        <td>전기기기, 전자회로, 디지털논리회로</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="grade-badge">2학년 2학기</td>
-                                        <td>프로그래밍, 사물인터넷과 센서제어, 전자제어</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="grade-badge">3학년 1학기</td>
-                                        <td>항공방공무장, 항공기계통정비, 항공기전기전자장비정비</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="grade-badge">3학년 2학기</td>
-                                        <td>항공방공무장, 항공기계통정비, 항공기전기전자장비정비</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div class="dept-card" style="margin-top: 0.4rem;">
-                            <h3 style="font-size: 0.78rem; margin-bottom: 0.2rem;">🎖️ 취득 가능 자격증</h3>
-                            <p style="font-size: 0.72rem; color: #2b6cb0; font-weight: 700; margin: 0;">
-                                전기기능사, 전자기능사, 정보통신기능사, 위험물기능사 등
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="desktop-page-nav">
-                            <button type="button" class="desktop-nav-btn" onclick="goToPage(11, event)">◀ 이전: 엠블럼 (P.11)</button>
-                            <span class="desktop-nav-indicator">항공전자과 2 / 4 Page (P.12)</span>
-                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(13, event)">다음: 배정특기 (P.13) ▶</button>
-                        </div>
-                <!-- [Sheet 6] ⚡ 항공전자과 소개 2 (Page 13) / ⚡ 항공전자과 소개 3 (Page 14) -->
-                <div class="sheet" id="sheet-6">
-                    <!-- Front: 항공전자과 소개 2 (배정특기) -->
-                    <div class="page-side paper-right" id="dept-electronics-specialty">
-                        <div class="dept-subtab-nav">
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(11, event)">1. 엠블럼</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(12, event)">2. 교육과정</button>
-                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(13, event)">3. 배정특기</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(14, event)">4. 실습장비</button>
-                        </div>
-                        <div class="dept-header">
-                            <div class="dept-header-info">
-                                <h3>항공전자과 <span
-                                        style="font-size: 0.8rem; color: var(--accent-gold); font-weight: normal; margin-left: 0.5rem;">[배정
-                                        특기]</span></h3>
-                                <p>공군 임관 후 실무 현장에서의 핵심 임무 및 역할</p>
-                            </div>
-                            <img src="images/electronics_emblem.jpg" alt="항공전자과 엠블럼" class="dept-emblem">
-                        </div>
-
-                        <div class="dept-card">
-                            <h3>✈️ 졸업 후 배정 특기 (Specialty)</h3>
-                            <ul class="specialty-list">
-                                <li>
-                                    <strong>항공통신항법장비정비 (401X)</strong>
-                                    <p>전술항공기의 의사소통 및 전술정보를 주고 받는 통신, 현재위치와 목적지, 항로 및 시간을 알려주는 항법, 적과 아군을 식별할 수 있는 식별의
-                                        3가지 계통의 정비를 수행</p>
-                                </li>
-                                <li>
-                                    <strong>항공전자전장비정비 (402X)</strong>
-                                    <p>레이더 경보수신기(RWR), 미사일접근경보체계(MWS), CHAFF/FLARE 등의 전자방어 체계 및 전자방해장비 등의 공격체계의 정비를 수행
-                                    </p>
-                                </li>
-                                <li>
-                                    <strong>항공전산장비정비 (403X)</strong>
-                                    <p>최첨단 전술항공기 좌석과 동일한 장치를 운영하는 모의비행훈련반과 야전 및 창급 ATE 항공 소프트웨어지원소에서 소프트웨어 알고리즘 개발 및 개선을
-                                        하는 특기</p>
-                                </li>
-                                <li>
-                                    <strong>항공전자제어장비정비 (404X)</strong>
-                                    <p>최신 전술항공기에 능동주사위상배열레이더(AESA)를 이용한 화력제어와 정밀폭격을 지원하는 정밀폭격장치 및 전자광학, 적외선을 이용한 영상장치등의
-                                        정비를 수행</p>
-                                </li>
-                                <li>
-                                    <strong>비행제어장비정비 (405X)</strong>
-                                    <p>최신 전술항공기에 탑재된 고속, 고각기동에서도 안정적인 비행을 보장하는 비행조종, 비행정보를 실시간으로 보여주는 비행계기, 기관계기, 항법계기등
-                                        항공계기 계통의 정비를 수행</p>
-                                </li>
-                                <li>
-                                    <strong>정밀측정장비정비 (406X)</strong>
-                                    <p>정밀측정장비는 각종 무기체계정비의 신뢰성 확보에 기초가 되는 핵심분야로 3군 / 국방부 직할기관 등에서 사용하는 정밀측정장비에 대한 검사 및
-                                        교정을 수행</p>
-                                </li>
-                                <li>
-                                    <strong>항공기무기정비 (416X)</strong>
-                                    <p>공군이 보유한 항공작전에 따라 일선 및 야전 정비업무가 있으며 일선의 경우 항공기 비행 전, 중간, 비행 후 무장계통 점검 및 무장 장탈착 업무,
-                                        야전의 경우 발사체 및 기총의 정비를 수행</p>
-                                </li>
-                                <li>
-                                    <strong>항공탄약정비 (417X)</strong>
-                                    <p>공군이 보유한 항공탄약을 분산 보관하고 상황에 따라 탄약조립과 보관 시설물 관리 수행. 부서에 따라 탄약관리반, 탄약지원반, 유도무기정비반이
-                                        있으며, 일부 지원자에 한하여 폭발물처리사로 특기전환이 가능함.</p>
-                                </li>
-                                <li>
-                                    <strong>방공유도무기발사정비 (421X)</strong>
-                                    <p>대공방어 무기체계 중 발사장비는 발칸, 천궁, 패트리어트 체계 및 휴대용 무기(신궁, 미스트랄)에 대한 이동설치 지원과 계획 및 비계획정비 업무
-                                        수행</p>
-                                </li>
-                                <li>
-                                    <strong>방공유도무기레이더정비 (422X)</strong>
-                                    <p>다기능 위상 배열 레이더를 장착. 탐지 / 추적 / 식별의 기능으로 작전에 적용하며 14kW의 고전압 계통에 대한 이동설치 지원과 계획 및
-                                        비계획정비 업무 수행</p>
-                                </li>
-                                <li>
-                                    <strong>방공유도무기사격통제정비 (423X)</strong>
-                                    <p>대공방어 무기체계 중, 패트리어트 체계에 포함된 레이더를 통하여 ABT, TBM 항적에 대한 교전 및 격추명령 수행이 가능한 원격조작 컴퓨터가
-                                        탑재된 전자계통에 대한 이동설치 지원과 계획 및 비계획정비 업무 수행</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="desktop-page-nav">
-                            <button type="button" class="desktop-nav-btn" onclick="goToPage(12, event)">◀ 이전: 교육과정 (P.12)</button>
-                            <span class="desktop-nav-indicator">항공전자과 3 / 4 Page (P.13)</span>
-                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(14, event)">다음: 실습장비 (P.14) ▶</button>
-                        </div>
-                    <!-- Back: 항공전자과 소개 3 (실습실) -->
-                    <div class="page-side back paper-left" id="dept-electronics-facilities">
-                        <div class="dept-subtab-nav">
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(11, event)">1. 엠블럼</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(12, event)">2. 교육과정</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(13, event)">3. 배정특기</button>
-                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(14, event)">4. 실습장비</button>
-                        </div>
-                        <div class="dept-header">
-                            <div class="dept-header-info">
-                                <h3>항공전자과 <span
-                                        style="font-size: 0.8rem; color: var(--accent-gold); font-weight: normal; margin-left: 0.5rem;">[실습실
-                                        및 장비]</span></h3>
-                                <p>최신 비행전자기기를 다루는 고도로 장비화된 실무 공간</p>
-                            </div>
-                            <img src="images/electronics_emblem.jpg" alt="항공전자과 엠블럼" class="dept-emblem">
-                        </div>
-
-                        <div class="dept-card">
-                            <h3>🔬 실습실 및 특화 장비</h3>
-                            <div class="dept-fac-list">
-                                <div class="dept-fac-item" style="margin-bottom: 0.8rem;">
-                                    <div class="dept-fac-icon">🕹️</div>
-                                    <div class="dept-fac-text">
-                                        <h4>항공전자실습실</h4>
-                                        <p style="font-size: 0.7rem; line-height: 1.4; margin: 0; color: #4a5568;">
-                                            항공전자 Cockpit을 활용하여 항공기 전기·전자 계통의 운용 및 정비 절차를 실습하는 현장 중심 교육장
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="dept-fac-item">
-                                    <div class="dept-fac-icon">🔌</div>
-                                    <div class="dept-fac-text">
-                                        <h4>기초전자실습실</h4>
-                                        <p style="font-size: 0.7rem; line-height: 1.4; margin: 0; color: #4a5568;">
-                                            납땜 및 브레드보드를 활용한 전자회로 제작과 계측 실습을 통해 전공 기초역량을 함양하는 교육장
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- [Sheet 7] 🔒 정보통신과 간지 (Page 15) / 🔒 정보통신과 소개 1 (Page 16) -->
-                <div class="sheet" id="sheet-7">
-                    <!-- Front: 정보통신과 간지 -->
-                    <div class="page-side paper-right dark-page">
-                        <div class="dept-subtab-nav">
-                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(15, event)">1. 엠블럼</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(16, event)">2. 교육과정</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(17, event)">3. 배정특기</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(18, event)">4. 실습장비</button>
-                        </div>
-                        <div class="dept-divider-page telecom">
-                            <img src="images/telecom_emblem.png" alt="정보통신과 엠블럼" class="dept-divider-emblem">
-                            <h2 class="dept-divider-title">정보통신과</h2>
-                            <div class="dept-divider-deptname">Telecommunications</div>
-                            <div class="dept-divider-line"></div>
-                            <p class="dept-divider-desc">전술 정보망과 군 네트워크망을 수호하는 사이버 방패</p>
-                        </div>
-                    </div>
-                    <div class="desktop-page-nav">
-                            <button type="button" class="desktop-nav-btn" onclick="goToPage(14, event)">◀ 이전: 항공전자과 (P.14)</button>
-                            <span class="desktop-nav-indicator">정보통신과 1 / 4 Page (P.15)</span>
-                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(16, event)">다음: 교육과정 (P.16) ▶</button>
-                        </div>
-                    <!-- Back: 정보통신과 소개 1 (전공소개 & 교육과정 표) -->
-                    <div class="page-side back paper-left" id="dept-telecom">
-                        <div class="dept-subtab-nav">
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(15, event)">1. 엠블럼</button>
-                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(16, event)">2. 교육과정</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(17, event)">3. 배정특기</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(18, event)">4. 실습장비</button>
-                        </div>
-                        <div class="dept-header">
-                            <div class="dept-header-info">
-                                <h3>정보통신과</h3>
-                                <p>전술 정보망과 군 네트워크망을 수호하는 사이버 방패</p>
-                            </div>
-                            <img src="images/telecom_emblem.png" alt="정보통신과 엠블럼" class="dept-emblem">
-                        </div>
-
-                        <div class="dept-card">
-                            <h3>🌐 전공 소개</h3>
-                            <p style="font-size: 0.72rem; line-height: 1.45; color: #4a5568; margin: 0;">
-                                정보통신과는 초연결 네트워크 시대에 대응하여 공군의 정보통신체계 및 군 전술 네트워크망을 구축, 운용 및 보호하는 군사 IT 기술 부사관을 육성합니다.
-                                소프트웨어 개발, 컴퓨터 네트워크 설계, 사물인터넷(IoT) 기술 및 최신 사이버 보안 위협에 맞서는 방어 전술을 교육합니다.
-                            </p>
-                        </div>
-
-                        <div class="dept-card">
-                            <h3>📖 주요 교육과정 (Curriculum)</h3>
-                            <table class="curriculum-table">
-                                <thead>
-                                    <tr>
-                                        <th style="width: 25%">학년/학기</th>
-                                        <th style="width: 75%">교육 교과목</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="grade-badge">2학년 1학기</td>
-                                        <td>전기전자일반, 통신시스템, 사무행정, IT시스템관리, 응용SW Engineering <span class="cert-link">(NCS
-                                                및 사무자동화산업기사
-                                                연계)</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="grade-badge">2학년 2학기</td>
-                                        <td>정보통신, DB Engineering, 사무행정, 총무 <span class="cert-link">(NCS 및 사무자동화산업기사
-                                                연계)</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="grade-badge">3학년 1학기</td>
-                                        <td>컴퓨터네트워크, 프로그래밍, 사물인터넷과 센서제어, 컴퓨터보안, 무선통신시스템</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="grade-badge">3학년 2학기</td>
-                                        <td>컴퓨터시스템 일반, 무선통신 구축, 네트워크 구축, 정보보호 관리</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- [Sheet 8] 🔒 정보통신과 소개 2 (Page 17) / 🔒 정보통신과 소개 3 (Page 18) -->
-                <div class="sheet" id="sheet-8">
-                    <!-- Front: 정보통신과 소개 2 (배정특기) -->
-                    <div class="page-side paper-right" id="dept-telecom-specialty">
-                        <div class="dept-subtab-nav">
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(15, event)">1. 엠블럼</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(16, event)">2. 교육과정</button>
-                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(17, event)">3. 배정특기</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(18, event)">4. 실습장비</button>
-                        </div>
-                        <div class="dept-header">
-                            <div class="dept-header-info">
-                                <h3>정보통신과 <span
-                                        style="font-size: 0.8rem; color: var(--accent-gold); font-weight: normal; margin-left: 0.5rem;">[배정
-                                        특기]</span></h3>
-                                <p>임관 후 실무 현장에서의 임무 및 역할</p>
-                            </div>
-                            <img src="images/telecom_emblem.png" alt="정보통신과 엠블럼" class="dept-emblem">
-                        </div>
-
-                        <div class="dept-card">
-                            <h3>✈️ 졸업 후 배정 특기</h3>
-                            <ul class="specialty-list">
-                                <li>
-                                    <strong>기상장비정비 (252X)</strong>
-                                    <p>기상 장비 관련 정비 업무</p>
-                                </li>
-                                <li>
-                                    <strong>사이버체계운용 (301X)</strong>
-                                    <p>운영체제, 프로그래밍, 정보보호, 인공지능 관련 업무</p>
-                                </li>
-                                <li>
-                                    <strong>작전체계운용 (302X)</strong>
-                                    <p>Radio Wave, TACAN, Radar, 5G 관련 업무</p>
-                                </li>
-                                <li>
-                                    <strong>기반체계운용 (303X)</strong>
-                                    <p>네트워크, 정보보호, 광케이블, 서버관제 관련 업무</p>
-                                </li>
-                                <li>
-                                    <strong>항공정보운용 (801X)</strong>
-                                    <p>군사보안, 정보관리, 영상정보, 표적정보 관련 업무</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="desktop-page-nav">
-                            <button type="button" class="desktop-nav-btn" onclick="goToPage(16, event)">◀ 이전: 교육과정 (P.16)</button>
-                            <span class="desktop-nav-indicator">정보통신과 3 / 4 Page (P.17)</span>
-                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(18, event)">다음: 실습장비 (P.18) ▶</button>
-                        </div>
-                    <!-- Back: 정보통신과 소개 3 (실습실) -->
-                    <div class="page-side back paper-left" id="dept-telecom-facilities">
-                        <div class="dept-subtab-nav">
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(15, event)">1. 엠블럼</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(16, event)">2. 교육과정</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(17, event)">3. 배정특기</button>
-                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(18, event)">4. 실습장비</button>
-                        </div>
-                        <div class="dept-header">
-                            <div class="dept-header-info">
-                                <h3>정보통신과 <span
-                                        style="font-size: 0.8rem; color: var(--accent-gold); font-weight: normal; margin-left: 0.5rem;">[실습실
-                                        및 장비]</span></h3>
-                                <p>첨단 공군 IT 인프라와 동일한 실습 공간</p>
-                            </div>
-                            <img src="images/telecom_emblem.png" alt="정보통신과 엠블럼" class="dept-emblem">
-                        </div>
-
-                        <div class="dept-card">
-                            <h3>🔬 실습실 및 장비</h3>
-                            <div class="dept-fac-list">
-                                <div class="dept-fac-item" style="margin-bottom: 0.6rem;">
-                                    <div class="dept-fac-icon">💻</div>
-                                    <div class="dept-fac-text">
-                                        <h4>네트워크 학과장</h4>
-                                        <p style="font-size: 0.7rem; line-height: 1.4; margin: 0; color: #4a5568;">
-                                            실제 라우터/스위치로 VLAN을 설계하고 모의 침입 방지 테스트(IPS/Firewall)를 통제 실습합니다.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="dept-fac-item" style="margin-bottom: 0.6rem;">
-                                    <div class="dept-fac-icon">📡</div>
-                                    <div class="dept-fac-text">
-                                        <h4>정보화 학과장</h4>
-                                        <p style="font-size: 0.7rem; line-height: 1.4; margin: 0; color: #4a5568;">
-                                            공군에서 사용중인 DB와 SW 전반을 실습 및 학습합니다.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="dept-fac-item">
-                                    <div class="dept-fac-icon">🔌</div>
-                                    <div class="dept-fac-text">
-                                        <h4>정보통신 실습실</h4>
-                                        <p style="font-size: 0.7rem; line-height: 1.4; margin: 0; color: #4a5568;">
-                                            광섬유 융착 접속기 및 OTDR 계측 장비를 활용하여 군 지하 기반망 케이블 선로를 구축·정비합니다.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="dept-fac-item">
-                                    <div class="dept-fac-icon">🔌</div>
-                                    <div class="dept-fac-text">
-                                        <h4>전자 실습실</h4>
-                                        <p style="font-size: 0.7rem; line-height: 1.4; margin: 0; color: #4a5568;">
-                                            레이더, 안테나에 사용하는 전자 회로를 분석 실습합니다.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="desktop-page-nav">
-                            <button type="button" class="desktop-nav-btn" onclick="goToPage(17, event)">◀ 이전: 배정특기 (P.17)</button>
-                            <span class="desktop-nav-indicator">정보통신과 4 / 4 Page (P.18)</span>
-                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(19, event)">다음: 항공기계과 (P.19) ▶</button>
-                        </div>
-                <!-- [Sheet 9] ⚙️ 항공기계과 간지 (Page 19) / ⚙️ 항공기계과 소개 1 (Page 20) -->
-                <div class="sheet" id="sheet-9">
-                    <!-- Front: 항공기계과 간지 -->
-                    <div class="page-side paper-right dark-page">
-                        <div class="dept-subtab-nav">
-                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(19, event)">1. 엠블럼</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(20, event)">2. 교육과정</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(21, event)">3. 배정특기</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(22, event)">4. 실습장비</button>
-                        </div>
-                        <div class="dept-divider-page mechanic">
-                            <img src="images/mechanic_emblem.png" alt="항공기계과 엠블럼" class="dept-divider-emblem">
-                            <h2 class="dept-divider-title">항공기계과</h2>
-                            <div class="dept-divider-deptname">Aviation Mechanics</div>
-                            <div class="dept-divider-line"></div>
-                            <p class="dept-divider-desc">하늘을 나는 전투기의 강철 심장과 동체를 다루는 정비 명장</p>
-                        </div>
-                    </div>
-                    <div class="desktop-page-nav">
-                            <button type="button" class="desktop-nav-btn" onclick="goToPage(18, event)">◀ 이전: 정보통신과 (P.18)</button>
-                            <span class="desktop-nav-indicator">항공기계과 1 / 4 Page (P.19)</span>
-                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(20, event)">다음: 교육과정 (P.20) ▶</button>
-                        </div>
-                    <!-- Back: 항공기계과 소개 1 (전공소개 & 교육과정 표) -->
-                    <div class="page-side back paper-left" id="dept-mechanic">
-                        <div class="dept-subtab-nav">
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(19, event)">1. 엠블럼</button>
-                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(20, event)">2. 교육과정</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(21, event)">3. 배정특기</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(22, event)">4. 실습장비</button>
-                        </div>
-                        <div class="dept-header">
-                            <div class="dept-header-info">
-                                <h3>항공기계과</h3>
-                                <p>하늘을 나는 전투기의 강철 심장과 동체를 다루는 정비 명장</p>
-                            </div>
-                            <img src="images/mechanic_emblem.png" alt="항공기계과 엠블럼" class="dept-emblem">
-                        </div>
-
-                        <div class="dept-card">
-                            <h3>🌐 전공 소개</h3>
-                            <p style="font-size: 0.72rem; line-height: 1.45; color: #4a5568; margin: 0;">
-                                항공기계과는 대한민국 공군 영공 방위의 최일선 기체 정비 및 제트 엔진 정비 전문가를 육성합니다. 전투기 가스터빈 제트 엔진의 분해/조립 실무, 손상된 기체
-                                구조물을 수리하는 판금 및 용접 설계, 그리고 복잡한 제동/랜딩기어 시스템을 수리하는 항공 유공압 제어 기술을 교육합니다.
-                            </p>
-                        </div>
-
-                        <div class="dept-card">
-                            <h3>📖 주요 교육과정 (Curriculum)</h3>
-                            <table class="curriculum-table">
-                                <thead>
-                                    <tr>
-                                        <th style="width: 25%">학년/학기</th>
-                                        <th style="width: 75%">교육 교과목</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="grade-badge">1학년 2학기</td>
-                                        <td>항공기 측정작업, 항공기 용접작업</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="grade-badge">2학년 1학기</td>
-                                        <td>항공기 실무기초, 항공기 배관작업, 항공기 조명계통 점검, 항공 전기전자계통점검 <span class="cert-link">(NCS 과정평가형 항공산업기사 연계)</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="grade-badge">2학년 2학기</td>
-                                        <td>항공기기체 기본작업, 항공기왕복엔진 점화계통점검, 항공기 가스터빈엔진 계통 고장탐구, 항공 전기전자 기본작업 <span class="cert-link">(NCS 과정평가형 항공산업기사 연계)</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="grade-badge">3학년 1학기</td>
-                                        <td>항공기 전기계통 고장탐구, 항공기 가스터빈엔진 외부장착품 검사</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="grade-badge">3학년 2학기</td>
-                                        <td>항공 조종케이블 로드작업, 항공기 가스터빈엔진 분해 조립</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="desktop-page-nav">
-                            <button type="button" class="desktop-nav-btn" onclick="goToPage(19, event)">◀ 이전: 엠블럼 (P.19)</button>
-                            <span class="desktop-nav-indicator">항공기계과 2 / 4 Page (P.20)</span>
-                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(21, event)">다음: 배정특기 (P.21) ▶</button>
-                        </div>
-                <!-- [Sheet 10] ⚙️ 항공기계과 소개 2 (Page 21) / ⚙️ 항공기계과 소개 3 (Page 22) -->
-                <div class="sheet" id="sheet-10">
-                    <!-- Front: 항공기계과 소개 2 (배정특기) -->
-                    <div class="page-side paper-right" id="dept-mechanic-specialty">
-                        <div class="dept-subtab-nav">
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(19, event)">1. 엠블럼</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(20, event)">2. 교육과정</button>
-                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(21, event)">3. 배정특기</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(22, event)">4. 실습장비</button>
-                        </div>
-                        <div class="dept-header">
-                            <div class="dept-header-info">
-                                <h3>항공기계과 <span
-                                        style="font-size: 0.8rem; color: var(--accent-gold); font-weight: normal; margin-left: 0.5rem;">[배정
-                                        특기]</span></h3>
-                                <p>공군 임관 후 실무 현장에서의 핵심 임무 및 역할</p>
-                            </div>
-                            <img src="images/mechanic_emblem.png" alt="항공기계과 엠블럼" class="dept-emblem">
-                        </div>
-
-                        <div class="dept-card" style="max-height: 82%; overflow-y: auto;">
-                            <h3>✈️ 졸업 후 배정 특기 (Specialty)</h3>
-                            <ul class="specialty-list">
-                                <li style="margin-bottom: 0.4rem;">
-                                    <strong>항공기 공유압정비 (408X)</strong>
-                                    <p style="font-size: 0.65rem; color: #4a5568;">항공기 유압계통 계획 및 비계획 정비지원 업무 및 유압계통 수리부속 정비 업무를 수행</p>
-                                </li>
-                                <li style="margin-bottom: 0.4rem;">
-                                    <strong>항공기 전기정비 (410X)</strong>
-                                    <p style="font-size: 0.65rem; color: #4a5568;">항공기 전기계통 계획 및 비계획 정비지원 업무 및 전기계통 수리부속 과 배터리 정비 업무를 수행</p>
-                                </li>
-                                <li style="margin-bottom: 0.4rem;">
-                                    <strong>항공기 지상장비정비 (411X)</strong>
-                                    <p style="font-size: 0.65rem; color: #4a5568;">항공기 시동 및 정비를 위한 지상지원장비(공압,유압,전기,난냉,질소,산소)등을 정비 및 관리업무 수행</p>
-                                </li>
-                                <li style="margin-bottom: 0.4rem;">
-                                    <strong>항공기 기체정비 (413X)</strong>
-                                    <p style="font-size: 0.65rem; color: #4a5568;">항공기 직접 비행지원업무(비행전/후 검사, 연료보급, 항공기점검) 및 시간제 정비를 수행하며 연료/사출/난냉/타이어 등 계통 전문 업무 수행</p>
-                                </li>
-                                <li style="margin-bottom: 0.4rem;">
-                                    <strong>항공기 기관정비 (414X)</strong>
-                                    <p style="font-size: 0.65rem; color: #4a5568;">항공기 기관 일선 정비, 기관 분해 조립, 비디오스코프 검사, 오일분석 업무 및 기관 시운전 업무를 수행</p>
-                                </li>
-                                <li style="margin-bottom: 0.4rem;">
-                                    <strong>항공기 장구정비 (415X)</strong>
-                                    <p style="font-size: 0.65rem; color: #4a5568;">공군의 운영 중인 항공기 조종사 헬멧 및 낙하산 등 장구 정비를 담당하며 정비경력을 통해 정비행정, 장구 부속관리 운영 등 업무 수행</p>
-                                </li>
-                                <li style="margin-bottom: 0.4rem;">
-                                    <strong>항공기 제작정비 (418X)</strong>
-                                    <p style="font-size: 0.65rem; color: #4a5568;">항공기 기골수리, 기계공작, 용접 및 열처리, 방부관리 업무를 통해 항공기 기체구조수리 및 개조, 부분품제작, 부식방지를 위한 표면처리 및 도장 등 방부관리 업무 수행</p>
-                                </li>
-                                <li>
-                                    <strong>항공기 비파괴검사정비 (419X)</strong>
-                                    <p style="font-size: 0.65rem; color: #4a5568;">항공기 기체 및 엔진, 부품 등을 파괴하지 않고 내외부 결함 검사 업무를 담당하며 검사업무 경력을 통해 정비행정, 부속관리 운영 등 다분야에서 업무를 수행하는 특기</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="desktop-page-nav">
-                            <button type="button" class="desktop-nav-btn" onclick="goToPage(20, event)">◀ 이전: 교육과정 (P.20)</button>
-                            <span class="desktop-nav-indicator">항공기계과 3 / 4 Page (P.21)</span>
-                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(22, event)">다음: 실습장비 (P.22) ▶</button>
-                        </div>
-                    <!-- Back: 항공기계과 소개 3 (실습실) -->
-                    <div class="page-side back paper-left" id="dept-mechanic-facilities">
-                        <div class="dept-subtab-nav">
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(19, event)">1. 엠블럼</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(20, event)">2. 교육과정</button>
-                            <button type="button" class="dept-subtab-btn" onclick="goToPage(21, event)">3. 배정특기</button>
-                            <button type="button" class="dept-subtab-btn active" onclick="goToPage(22, event)">4. 실습장비</button>
-                        </div>
-                        <div class="dept-header">
-                            <div class="dept-header-info">
-                                <h3>항공기계과 <span
-                                        style="font-size: 0.8rem; color: var(--accent-gold); font-weight: normal; margin-left: 0.5rem;">[실습실
-                                        및 장비]</span></h3>
-                                <p>강철 기체를 가공하고 조립하는 정교한 기계 정비실</p>
-                            </div>
-                            <img src="images/mechanic_emblem.png" alt="항공기계과 엠블럼" class="dept-emblem">
-                        </div>
-
-                        <div class="dept-card">
-                            <h3>🔬 실습실 및 특화 장비</h3>
-                            <div class="dept-fac-list">
-                                <div class="dept-fac-item" style="margin-bottom: 0.45rem;">
-                                    <div class="dept-fac-icon">⚙️</div>
-                                    <div class="dept-fac-text">
-                                        <h4>가스터빈엔진 실습실</h4>
-                                        <p style="font-size: 0.68rem; line-height: 1.35; margin: 0; color: #4a5568;">
-                                            실제 전투기에 사용된 가스터빈 엔진을 활용한 구성품 장탈,착 및 각종 검사 작업을 기술도서와 공구를 이용하여 수행합니다.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="dept-fac-item" style="margin-bottom: 0.45rem;">
-                                    <div class="dept-fac-icon">🛩️</div>
-                                    <div class="dept-fac-text">
-                                        <h4>기체실습실</h4>
-                                        <p style="font-size: 0.68rem; line-height: 1.35; margin: 0; color: #4a5568;">
-                                            항공기 판금작업(판재 가공 및 리벳 작업) 및 항공기 배관작업 실습을 수행합니다.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="dept-fac-item" style="margin-bottom: 0.45rem;">
-                                    <div class="dept-fac-icon">🛠️</div>
-                                    <div class="dept-fac-text">
-                                        <h4>기초실습실</h4>
-                                        <p style="font-size: 0.68rem; line-height: 1.35; margin: 0; color: #4a5568;">
-                                            항공기 측정 작업 및 항공기 용접작업을 수행 할 수 있는 장비 및 시설을 활용할 수 있습니다.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="dept-fac-item">
-                                    <div class="dept-fac-icon">🔌</div>
-                                    <div class="dept-fac-text">
-                                        <h4>장비실습실</h4>
-                                        <p style="font-size: 0.68rem; line-height: 1.35; margin: 0; color: #4a5568;">
-                                            항공기 전기전자 기본작업(터미널, 스플라이스, 커넥터) 및 회로제작 작업과 공압 실습장비를 활용하여 항공기 시스템 제어를 실습 할 수 있습니다.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="desktop-page-nav">
-                            <button type="button" class="desktop-nav-btn" onclick="goToPage(21, event)">◀ 이전: 배정특기 (P.21)</button>
-                            <span class="desktop-nav-indicator">항공기계과 4 / 4 Page (P.22)</span>
-                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(23, event)">다음: 자주하는 질문 (P.23) ▶</button>
-                        </div>
-                <!-- [Sheet 11] 마. 자주하는 질문 (Page 23) / 바. 하고 싶은 이야기 (Page 24) -->
-                <div class="sheet" id="sheet-11">
-                                        <!-- Front: 마. 자주하는 질문 -->
-                    <div class="page-side paper-right" id="page-23">
-                        <h2>마. 자주하는 질문</h2>
-                        <p class="section-desc">학업, 전공, 군 생활 및 생활관 3개 세부 주제별 핵심 FAQ입니다. 아래 탭과 버튼을 통해 주제별 페이지를 넘겨보세요.</p>
-
-                        <div class="senior-topic-nav faq-topic-nav" style="margin-bottom: 0.8rem;">
-                            <button type="button" class="senior-topic-tab-btn faq-topic-tab-btn active" data-faq-target="1" onclick="switchFaqTopic(1, event)">1. 학업 (Q1~Q6)</button>
-                            <button type="button" class="senior-topic-tab-btn faq-topic-tab-btn" data-faq-target="2" onclick="switchFaqTopic(2, event)">2. 전공 (Q7~Q11)</button>
-                            <button type="button" class="senior-topic-tab-btn faq-topic-tab-btn" data-faq-target="3" onclick="switchFaqTopic(3, event)">3. 군 생활 및 생활관 (Q12~Q20)</button>
-                        </div>
-
-                        <div class="senior-page-controls faq-page-controls" style="margin-bottom: 0.6rem;">
-                            <button type="button" class="senior-page-btn" onclick="prevFaqTopic(event)">◀ 이전 주제</button>
-                            <span class="senior-page-indicator">주제 <span class="faq-current-page-num">1</span> / 3</span>
-                            <button type="button" class="senior-page-btn" onclick="nextFaqTopic(event)">다음 주제 ▶</button>
-                        </div>
-                        <div class="story-container faq-container" style="max-height: 72%; overflow-y: auto; padding-right: 0.3rem;">
-                            <!-- Category 1: 1. 학업 (Q1 ~ Q6) -->
-                            <div class="faq-topic-page-item active" data-faq-id="1" style="display: block;">
+                <div class="story-container faq-container" style="max-height: 600px; overflow-y: auto;">
+                    <div class="faq-topic-page-item active" data-faq-id="1" style="display: block;">
                                 <div class="story-category-card">
                                     <h3 class="story-category-title">📚 1. 학업 (Academic Life)</h3>
                                     <div class="faq-list">
@@ -1335,7 +419,7 @@
                             </div>
 
                             <!-- Category 2: 2. 전공 (Q7 ~ Q11) -->
-                            <div class="faq-topic-page-item" data-faq-id="2" style="display: none;">
+<div class="faq-topic-page-item" data-faq-id="2" style="display: none;">
                                 <div class="story-category-card">
                                     <h3 class="story-category-title">🛠️ 2. 전공 (Majors)</h3>
                                     <div class="faq-list">
@@ -1399,7 +483,7 @@
                             </div>
 
                             <!-- Category 3: 3. 군 생활 및 생활관 (Q12 ~ Q20) -->
-                            <div class="faq-topic-page-item" data-faq-id="3" style="display: none;">
+<div class="faq-topic-page-item" data-faq-id="3" style="display: none;">
                                 <div class="story-category-card">
                                     <h3 class="story-category-title">🏠 3. 군 생활 및 생활관 (Military & Boarding Life)</h3>
                                     <div class="faq-list">
@@ -1511,44 +595,41 @@
                             <button type="button" class="senior-page-btn" onclick="prevFaqTopic(event)">◀ 이전 주제</button>
                             <span class="senior-page-indicator">주제 <span class="faq-current-page-num">1</span> / 3</span>
                             <button type="button" class="senior-page-btn" onclick="nextFaqTopic(event)">다음 주제 ▶</button>
-                        </div>
-                    </div>
+                </div>
+            </section>
 
-                    <div class="desktop-page-nav">
-                            <button type="button" class="desktop-nav-btn" onclick="goToPage(22, event)">◀ 이전: 항공기계과 (P.22)</button>
-                            <span class="desktop-nav-indicator">자주하는 질문 (P.23)</span>
-                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(24, event)">다음: 하고 싶은 이야기 (P.24) ▶</button>
-                        </div>
-                    <!-- Back: 바. 하고 싶은 이야기 -->
-                    <div class="page-side back paper-left" id="page-24">
-                        <h2>💌 [부록] 하고 싶은 이야기</h2>
-                        <h3 style="font-size: 0.95rem; color: var(--accent-gold); margin-bottom: 0.4rem; font-weight: 700;">"조금 거만해져도 괜찮아"</h3>
-                        <p class="section-desc">항과고 학생들을 위해 전하는 진솔한 응원과 인생 가이드 글입니다. 상단 탭이나 이전/다음 버튼으로 13개 이야기를 읽어보세요.</p>
+            <!-- Section 10: 💌 [부록] 하고 싶은 이야기 -->
+            <section id="sec-letter" class="desktop-section">
+                <div class="d-section-header">
+                    <h2>💌 [부록] 하고 싶은 이야기</h2>
+                    <p class="m-letter-subtitle" style="font-size: 1.05rem; font-weight: 700; color: #d69e2e; margin-top: 0.2rem;">"조금 거만해져도 괜찮아"</p>
+                    <p style="margin-top: 0.4rem;">항과고 학생들을 위해 전하는 진솔한 응원과 인생 가이드 글입니다.</p>
+                </div>
 
-                        <div class="senior-topic-nav" style="flex-wrap: wrap;">
-                        <button type="button" class="senior-topic-tab-btn active" data-topic-target="1" onclick="switchSeniorTopic(1, event)">1. 거만해져도 괜찮아</button>
-                        <button type="button" class="senior-topic-tab-btn" data-topic-target="2" onclick="switchSeniorTopic(2, event)">2. 다름을 인정하라</button>
-                        <button type="button" class="senior-topic-tab-btn" data-topic-target="3" onclick="switchSeniorTopic(3, event)">3. 긴장할 필요는 없다</button>
-                        <button type="button" class="senior-topic-tab-btn" data-topic-target="4" onclick="switchSeniorTopic(4, event)">4. 첫 5분을 놓치지 마라</button>
-                        <button type="button" class="senior-topic-tab-btn" data-topic-target="5" onclick="switchSeniorTopic(5, event)">5. 보이는 것이 전부가 아님</button>
-                        <button type="button" class="senior-topic-tab-btn" data-topic-target="6" onclick="switchSeniorTopic(6, event)">6. 자신을 내던져 봐라</button>
-                        <button type="button" class="senior-topic-tab-btn" data-topic-target="7" onclick="switchSeniorTopic(7, event)">7. 자신을 부정하지 마라</button>
-                        <button type="button" class="senior-topic-tab-btn" data-topic-target="8" onclick="switchSeniorTopic(8, event)">8. 치밀하게 분석하라</button>
-                        <button type="button" class="senior-topic-tab-btn" data-topic-target="9" onclick="switchSeniorTopic(9, event)">9. 이벤트를 준비해라</button>
-                        <button type="button" class="senior-topic-tab-btn" data-topic-target="10" onclick="switchSeniorTopic(10, event)">10. 새로운 사냥터 경험</button>
-                        <button type="button" class="senior-topic-tab-btn" data-topic-target="11" onclick="switchSeniorTopic(11, event)">11. 상대를 빛나게 하라</button>
-                        <button type="button" class="senior-topic-tab-btn" data-topic-target="12" onclick="switchSeniorTopic(12, event)">12. 두 마음을 갖지 마라</button>
-                        <button type="button" class="senior-topic-tab-btn" data-topic-target="13" onclick="switchSeniorTopic(13, event)">13. 꿈이 직업일 필요 없음</button>
-                        </div>
+                <div class="senior-topic-nav" style="flex-wrap: wrap; margin-bottom: 1rem;">
+                    <button type="button" class="senior-topic-tab-btn active" data-topic-target="1" onclick="switchSeniorTopic(1, event)">1. 거만해져도 괜찮아</button>
+                    <button type="button" class="senior-topic-tab-btn" data-topic-target="2" onclick="switchSeniorTopic(2, event)">2. 다름을 인정하라</button>
+                    <button type="button" class="senior-topic-tab-btn" data-topic-target="3" onclick="switchSeniorTopic(3, event)">3. 긴장할 필요는 없다</button>
+                    <button type="button" class="senior-topic-tab-btn" data-topic-target="4" onclick="switchSeniorTopic(4, event)">4. 첫 5분을 놓치지 마라</button>
+                    <button type="button" class="senior-topic-tab-btn" data-topic-target="5" onclick="switchSeniorTopic(5, event)">5. 보이는 것이 전부가 아님</button>
+                    <button type="button" class="senior-topic-tab-btn" data-topic-target="6" onclick="switchSeniorTopic(6, event)">6. 자신을 내던져 봐라</button>
+                    <button type="button" class="senior-topic-tab-btn" data-topic-target="7" onclick="switchSeniorTopic(7, event)">7. 자신을 부정하지 마라</button>
+                    <button type="button" class="senior-topic-tab-btn" data-topic-target="8" onclick="switchSeniorTopic(8, event)">8. 치밀하게 분석하라</button>
+                    <button type="button" class="senior-topic-tab-btn" data-topic-target="9" onclick="switchSeniorTopic(9, event)">9. 이벤트를 준비해라</button>
+                    <button type="button" class="senior-topic-tab-btn" data-topic-target="10" onclick="switchSeniorTopic(10, event)">10. 새로운 사냥터 경험</button>
+                    <button type="button" class="senior-topic-tab-btn" data-topic-target="11" onclick="switchSeniorTopic(11, event)">11. 상대를 빛나게 하라</button>
+                    <button type="button" class="senior-topic-tab-btn" data-topic-target="12" onclick="switchSeniorTopic(12, event)">12. 두 마음을 갖지 마라</button>
+                    <button type="button" class="senior-topic-tab-btn" data-topic-target="13" onclick="switchSeniorTopic(13, event)">13. 꿈이 직업일 필요 없음</button>
+                </div>
 
-                        <div class="senior-page-controls">
-                            <button type="button" class="senior-page-btn" onclick="prevSeniorTopic(event)">◀ 이전 글</button>
-                            <span class="senior-page-indicator">글 <span class="senior-current-page-num">1</span> / 13</span>
-                            <button type="button" class="senior-page-btn" onclick="nextSeniorTopic(event)">다음 글 ▶</button>
-                        </div>
+                <div class="senior-page-controls" style="margin-bottom: 1rem;">
+                    <button type="button" class="senior-page-btn" onclick="prevSeniorTopic(event)">◀ 이전 글</button>
+                    <span class="senior-page-indicator">글 <span class="senior-current-page-num">1</span> / 13</span>
+                    <button type="button" class="senior-page-btn" onclick="nextSeniorTopic(event)">다음 글 ▶</button>
+                </div>
 
-                        <div class="story-container" style="max-height: 68%; overflow-y: auto; padding-right: 0.3rem;">
-                        <div class="senior-topic-page-item active" data-topic-id="1" style="display: block;">
+                <div class="story-container" style="max-height: 650px; overflow-y: auto;">
+                    <div class="senior-topic-page-item active" data-topic-id="1" style="display: block;">
                             <div class="story-category-card letter-card">
                                 <h3 class="story-category-title">✉️ 1. 조금 거만해져도 괜찮아.</h3>
                                 <div class="letter-content-box">
@@ -1564,7 +645,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="senior-topic-page-item" data-topic-id="2" style="display: none;">
+<div class="senior-topic-page-item" data-topic-id="2" style="display: none;">
                             <div class="story-category-card letter-card">
                                 <h3 class="story-category-title">✉️ 2. 틀림이 아니라 다름을 인정하라</h3>
                                 <div class="letter-content-box">
@@ -1579,7 +660,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="senior-topic-page-item" data-topic-id="3" style="display: none;">
+<div class="senior-topic-page-item" data-topic-id="3" style="display: none;">
                             <div class="story-category-card letter-card">
                                 <h3 class="story-category-title">✉️ 3. 기대하고 고민하되, 긴장할 필요는 없다</h3>
                                 <div class="letter-content-box">
@@ -1602,7 +683,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="senior-topic-page-item" data-topic-id="4" style="display: none;">
+<div class="senior-topic-page-item" data-topic-id="4" style="display: none;">
                             <div class="story-category-card letter-card">
                                 <h3 class="story-category-title">✉️ 4. 소개팅에서 첫 5분을 놓치지 마라</h3>
                                 <div class="letter-content-box">
@@ -1614,7 +695,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="senior-topic-page-item" data-topic-id="5" style="display: none;">
+<div class="senior-topic-page-item" data-topic-id="5" style="display: none;">
                             <div class="story-category-card letter-card">
                                 <h3 class="story-category-title">✉️ 5. 보이는 것이 전부가 아님을 기억하라</h3>
                                 <div class="letter-content-box">
@@ -1626,7 +707,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="senior-topic-page-item" data-topic-id="6" style="display: none;">
+<div class="senior-topic-page-item" data-topic-id="6" style="display: none;">
                             <div class="story-category-card letter-card">
                                 <h3 class="story-category-title">✉️ 6. 난 어떤 사람인지, 내던져 봐라</h3>
                                 <div class="letter-content-box">
@@ -1639,7 +720,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="senior-topic-page-item" data-topic-id="7" style="display: none;">
+<div class="senior-topic-page-item" data-topic-id="7" style="display: none;">
                             <div class="story-category-card letter-card">
                                 <h3 class="story-category-title">✉️ 7. 지금의 당신을 부정하지 마라</h3>
                                 <div class="letter-content-box">
@@ -1658,7 +739,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="senior-topic-page-item" data-topic-id="8" style="display: none;">
+<div class="senior-topic-page-item" data-topic-id="8" style="display: none;">
                             <div class="story-category-card letter-card">
                                 <h3 class="story-category-title">✉️ 8. 상대를 치밀하게 분석하라</h3>
                                 <div class="letter-content-box">
@@ -1675,7 +756,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="senior-topic-page-item" data-topic-id="9" style="display: none;">
+<div class="senior-topic-page-item" data-topic-id="9" style="display: none;">
                             <div class="story-category-card letter-card">
                                 <h3 class="story-category-title">✉️ 9. 호감이 생긴다면 이벤트를 준비해라!</h3>
                                 <div class="letter-content-box">
@@ -1689,7 +770,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="senior-topic-page-item" data-topic-id="10" style="display: none;">
+<div class="senior-topic-page-item" data-topic-id="10" style="display: none;">
                             <div class="story-category-card letter-card">
                                 <h3 class="story-category-title">✉️ 10. 새로운 사냥터를 신중히 경험하라</h3>
                                 <div class="letter-content-box">
@@ -1700,7 +781,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="senior-topic-page-item" data-topic-id="11" style="display: none;">
+<div class="senior-topic-page-item" data-topic-id="11" style="display: none;">
                             <div class="story-category-card letter-card">
                                 <h3 class="story-category-title">✉️ 11. 상대를 더욱 빛나게 할 방법을 찾아라</h3>
                                 <div class="letter-content-box">
@@ -1715,7 +796,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="senior-topic-page-item" data-topic-id="12" style="display: none;">
+<div class="senior-topic-page-item" data-topic-id="12" style="display: none;">
                             <div class="story-category-card letter-card">
                                 <h3 class="story-category-title">✉️ 12. 떠나기 전, 두 마음을 위한 시간을 보내지 마라</h3>
                                 <div class="letter-content-box">
@@ -1731,7 +812,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="senior-topic-page-item" data-topic-id="13" style="display: none;">
+<div class="senior-topic-page-item" data-topic-id="13" style="display: none;">
                             <div class="story-category-card letter-card">
                                 <h3 class="story-category-title">✉️ 13. 꿈이 직업일 필요는 없다</h3>
                                 <div class="letter-content-box">
@@ -1746,80 +827,34 @@
                                     <p class="letter-paragraph">꼭 꿈이 직업이어야 할 의무는 없기 때문이다.</p>
                                 </div>
                             </div>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="desktop-page-nav">
-                            <button type="button" class="desktop-nav-btn" onclick="goToPage(23, event)">◀ 이전: 자주하는 질문 (P.23)</button>
-                            <span class="desktop-nav-indicator">하고 싶은 이야기 (P.24)</span>
-                            <button type="button" class="desktop-nav-btn highlight" onclick="goToPage(25, event)">다음: 미래의 도약 (P.25) ▶</button>
-                        </div>
-                <!-- [Sheet 12] 미래의 도약 (Page 25) / 백커버 (Page 26) -->
-                <div class="sheet" id="sheet-12">
-                    <!-- Front: 미래의 도약 -->
-                    <div class="page-side paper-right dark-page" id="page-25"
-                        style="background: linear-gradient(135deg, #051622 0%, #0d2840 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; padding: 2rem; box-sizing: border-box; border-radius: 0 10px 10px 0;">
-                        <img src="images/logo.png" alt="공군 로고"
-                            style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 1.2rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));">
-                        <h2
-                            style="font-size: 1.4rem; font-weight: 800; color: var(--accent-gold); margin: 0 0 0.5rem 0; letter-spacing: 0.05rem;">
-                            미래 영공을 향한 끝없는 도전</h2>
-                        <p
-                            style="font-size: 0.8rem; color: #cbd5e1; max-width: 85%; line-height: 1.5; margin: 0 0 1.2rem 0; word-break: keep-all;">
-                            "하늘을 지키는 가장 높은 힘, 대한민국 공군의 주역이 될 마이스터들의 요람"
-                        </p>
-                        <div
-                            style="width: 30px; height: 2px; background: var(--accent-gold); margin-bottom: 1.2rem; box-shadow: 0 0 4px var(--accent-gold);">
-                        </div>
-                        <p
-                            style="font-size: 0.7rem; color: #cbd5e1; line-height: 1.5; margin: 0; max-width: 85%; word-break: keep-all;">
-                            공군항공과학고등학교는 항공통제, 항공전자, 정보통신, 항공기계 분야의 최정예 기술 부사관을 육성하여 국가 안보의 핵심 전력을 담당하고 있습니다.
-                        </p>
-                    </div>
-                    <!-- Back: Back Cover -->
-                    <div class="page-side back cover-back dark-page" id="page-26" style="border-radius: 10px 0 0 10px;">
-                        <div class="backcover-content">
-                            <img src="images/logo.png" alt="공군 마크" class="backcover-logo">
-                            <h2 class="backcover-title">공군항공과학고등학교</h2>
-                            <p class="backcover-subtitle">AIR FORCE AVIATION SCIENCE HIGH SCHOOL</p>
-
-                            <div class="backcover-info-box">
-                                <p><strong>주소</strong>: 경상남도 진주시 금산면 사서함 306-3호</p>
-                                <p><strong>행정실 대표전화</strong>: 055-750-2121</p>
-                                <p><strong>입학 안내처</strong>: 055-750-2122</p>
-                                <p><strong>공식 홈페이지</strong>: <a href="https://rokaf.airforce.mil.kr/kokyo/index.do"
-                                        target="_blank"
-                                        style="color: #64ffda; text-decoration: underline;">rokaf.airforce.mil.kr/kokyo</a>
-                                </p>
-                                <p><strong>유튜브</strong>: <a href="https://www.youtube.com/@afashs_official"
-                                        target="_blank"
-                                        style="color: #ff4d4d; text-decoration: underline;">youtube.com/@afashs_official</a>
-                                </p>
-                                <p><strong>인스타그램</strong>: <a href="https://www.instagram.com/afashs_official"
-                                        target="_blank"
-                                        style="color: #ff758c; text-decoration: underline;">instagram.com/afashs_official</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+</div>
                 </div>
-            </div>
-        </div>
-    </div>
+            </section>
+
+            <!-- Section 11: 📘 푸터 & 안내처 / SNS -->
+            <footer id="sec-footer" class="desktop-footer">
+                <div class="desktop-footer-content">
+                    <img src="images/logo.png" alt="공군 마크" class="d-footer-logo">
+                    <h2 class="d-footer-title">공군항공과학고등학교</h2>
+                    <p class="d-footer-subtitle">AIR FORCE AVIATION SCIENCE HIGH SCHOOL</p>
+
+                    <div class="d-footer-info-grid">
+                        <p><strong>📍 주소</strong>: 경상남도 진주시 금산면 사서함 306-3호</p>
+                        <p><strong>📞 행정실 대표전화</strong>: 055-750-2121</p>
+                        <p><strong>📞 입학 안내처</strong>: 055-750-2122</p>
+                        <p><strong>🌐 공식 홈페이지</strong>: <a href="https://rokaf.airforce.mil.kr/kokyo/index.do" target="_blank" style="color: #64ffda; text-decoration: underline;">rokaf.airforce.mil.kr/kokyo</a></p>
+                        <p><strong>▶️ 공식 유튜브</strong>: <a href="https://www.youtube.com/@afashs_official" target="_blank" style="color: #ff4d4d; text-decoration: underline;">youtube.com/@afashs_official</a></p>
+                        <p><strong>📸 공식 인스타그램</strong>: <a href="https://www.instagram.com/afashs_official" target="_blank" style="color: #ff758c; text-decoration: underline;">instagram.com/afashs_official</a></p>
+                    </div>
+
+                    <p class="d-copyright">© AIR FORCE AVIATION SCIENCE HIGH SCHOOL. ALL RIGHTS RESERVED.</p>
+                </div>
+            </footer>
+
+        </main>
     </div>
 
-    <!-- 책자 조작 패널 (Controls) -->
-    <div class="book-controls">
-        <button class="nav-btn" id="prev-btn" onclick="prevPage()">◀ 이전</button>
-        <div class="slider-container">
-            <input type="range" id="page-slider" min="0" max="13" value="0" oninput="handleSliderInput(this.value)">
-            <span id="page-indicator">표지 (Page 1)</span>
-        </div>
-        <button class="nav-btn" id="next-btn" onclick="nextPage()">다음 ▶</button>
-    </div>
-
-    <!-- 모바일 전용 프리미엄 웹 애플리케이션 뷰 (Mobile Dedicated Web App View) -->
-    <div id="mobile-app-view" class="mobile-app-view">
+<div id="mobile-app-view" class="mobile-app-view">
         <!-- 모바일 상단 미니 헤더 & 슬라이드 카운터 -->
         <header class="mobile-top-bar">
             <span class="m-bar-title">공군항공과학고 전공 소개</span>

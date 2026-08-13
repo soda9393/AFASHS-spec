@@ -887,7 +887,8 @@ function initMobileSlides() {
     updateUI();
 }
 
-window.goToMobileSlide = function (index) {
+function goToMobileSlide(index) {
+    window.goToMobileSlide = goToMobileSlide;
     const container = document.getElementById('mobile-slides-container');
     if (!container) return;
     const slides = container.querySelectorAll('.mobile-slide-page');
@@ -908,15 +909,18 @@ window.goToMobileSlide = function (index) {
     if (nextBtn) nextBtn.disabled = (currentMobileSlide === slides.length - 1);
 };
 
-window.nextMobileSlide = function () {
+function nextMobileSlide() {
+    window.nextMobileSlide = nextMobileSlide;
     goToMobileSlide(currentMobileSlide + 1);
 };
 
-window.prevMobileSlide = function () {
+function prevMobileSlide() {
+    window.prevMobileSlide = prevMobileSlide;
     goToMobileSlide(currentMobileSlide - 1);
 };
 
-window.startQuizOnMain = function () {
+function startQuizOnMain() {
+    window.startQuizOnMain = startQuizOnMain;
     startQuiz();
     const quizEl = document.getElementById('mobile-quiz-section') || document.getElementById('mobile-quiz-wrapper');
     if (quizEl) {
@@ -924,7 +928,8 @@ window.startQuizOnMain = function () {
     }
 };
 
-window.openMobileQuiz = function () {
+function openMobileQuiz() {
+    window.openMobileQuiz = openMobileQuiz;
     const container = document.getElementById('m-main-quiz-container');
     if (container) {
         container.style.display = 'block';
@@ -933,7 +938,8 @@ window.openMobileQuiz = function () {
     startQuiz();
 };
 
-window.toggleSpecialtyDetail = function (el) {
+function toggleSpecialtyDetail(el) {
+    window.toggleSpecialtyDetail = toggleSpecialtyDetail;
     const detail = el.querySelector('.m-spec-detail');
     const arrow = el.querySelector('.m-spec-arrow');
     if (!detail) return;
@@ -948,21 +954,24 @@ window.toggleSpecialtyDetail = function (el) {
     }
 };
 
-window.openMobileTocModal = function () {
+function openMobileTocModal() {
+    window.openMobileTocModal = openMobileTocModal;
     const modal = document.getElementById('mobile-toc-modal');
     if (modal) {
         modal.classList.add('active');
     }
 };
 
-window.closeMobileTocModal = function () {
+function closeMobileTocModal() {
+    window.closeMobileTocModal = closeMobileTocModal;
     const modal = document.getElementById('mobile-toc-modal');
     if (modal) {
         modal.classList.remove('active');
     }
 };
 
-window.selectMobileTocItem = function (slideIndex) {
+function selectMobileTocItem(slideIndex) {
+    window.selectMobileTocItem = selectMobileTocItem;
     closeMobileTocModal();
     goToMobileSlide(slideIndex);
 };
@@ -970,7 +979,8 @@ window.selectMobileTocItem = function (slideIndex) {
 // 선배들의 편지 주제별 페이지 전환 (1~6페이지)
 let currentSeniorTopicNum = 1;
 
-window.switchSeniorTopic = function (topicNum, e) {
+function switchSeniorTopic(topicNum, e) {
+    window.switchSeniorTopic = switchSeniorTopic;
     if (e) {
         if (typeof e.stopPropagation === 'function') e.stopPropagation();
         if (typeof e.preventDefault === 'function') e.preventDefault();
@@ -1013,7 +1023,8 @@ window.switchSeniorTopic = function (topicNum, e) {
     containers.forEach(c => { c.scrollTop = 0; });
 };
 
-window.prevSeniorTopic = function (e) {
+function prevSeniorTopic(e) {
+    window.prevSeniorTopic = prevSeniorTopic;
     if (e) {
         if (typeof e.stopPropagation === 'function') e.stopPropagation();
         if (typeof e.preventDefault === 'function') e.preventDefault();
@@ -1023,7 +1034,8 @@ window.prevSeniorTopic = function (e) {
     }
 };
 
-window.nextSeniorTopic = function (e) {
+function nextSeniorTopic(e) {
+    window.nextSeniorTopic = nextSeniorTopic;
     if (e) {
         if (typeof e.stopPropagation === 'function') e.stopPropagation();
         if (typeof e.preventDefault === 'function') e.preventDefault();
@@ -1038,7 +1050,8 @@ window.nextSeniorTopic = function (e) {
 // 학교 교육과정 주제별 페이지 전환 (1~5페이지)
 let currentEduTopicNum = 1;
 
-window.switchEduTopic = function (topicNum, e) {
+function switchEduTopic(topicNum, e) {
+    window.switchEduTopic = switchEduTopic;
     if (e) {
         if (typeof e.stopPropagation === 'function') e.stopPropagation();
         if (typeof e.preventDefault === 'function') e.preventDefault();
@@ -1080,7 +1093,8 @@ window.switchEduTopic = function (topicNum, e) {
     containers.forEach(c => { c.scrollTop = 0; });
 };
 
-window.prevEduTopic = function (e) {
+function prevEduTopic(e) {
+    window.prevEduTopic = prevEduTopic;
     if (e) {
         if (typeof e.stopPropagation === 'function') e.stopPropagation();
         if (typeof e.preventDefault === 'function') e.preventDefault();
@@ -1090,7 +1104,8 @@ window.prevEduTopic = function (e) {
     }
 };
 
-window.nextEduTopic = function (e) {
+function nextEduTopic(e) {
+    window.nextEduTopic = nextEduTopic;
     if (e) {
         if (typeof e.stopPropagation === 'function') e.stopPropagation();
         if (typeof e.preventDefault === 'function') e.preventDefault();
@@ -1103,7 +1118,8 @@ window.nextEduTopic = function (e) {
 // 자주하는 질문 (FAQ) 주제별 페이지 전환 (1~3페이지)
 let currentFaqTopicNum = 1;
 
-window.switchFaqTopic = function (topicNum, e) {
+function switchFaqTopic(topicNum, e) {
+    window.switchFaqTopic = switchFaqTopic;
     if (e) {
         if (typeof e.stopPropagation === 'function') e.stopPropagation();
         if (typeof e.preventDefault === 'function') e.preventDefault();
@@ -1150,7 +1166,8 @@ window.switchFaqTopic = function (topicNum, e) {
     }
 };
 
-window.prevFaqTopic = function (e) {
+function prevFaqTopic(e) {
+    window.prevFaqTopic = prevFaqTopic;
     if (e) {
         if (typeof e.stopPropagation === 'function') e.stopPropagation();
         if (typeof e.preventDefault === 'function') e.preventDefault();
@@ -1160,7 +1177,8 @@ window.prevFaqTopic = function (e) {
     }
 };
 
-window.nextFaqTopic = function (e) {
+function nextFaqTopic(e) {
+    window.nextFaqTopic = nextFaqTopic;
     if (e) {
         if (typeof e.stopPropagation === 'function') e.stopPropagation();
         if (typeof e.preventDefault === 'function') e.preventDefault();
@@ -1171,7 +1189,8 @@ window.nextFaqTopic = function (e) {
 };
 
 // 데스크탑 페이지 직접 이동 기능 (1~26 Page)
-window.goToPage = function (pageNumber, e) {
+function goToPage(pageNumber, e) {
+    window.goToPage = goToPage;
     if (e) {
         if (typeof e.stopPropagation === 'function') e.stopPropagation();
         if (typeof e.preventDefault === 'function') e.preventDefault();
@@ -1186,3 +1205,33 @@ window.goToPage = function (pageNumber, e) {
         goToSheet(sheetIdx);
     }
 };
+
+
+// 데스크탑 섹션 이동 (scrollToDesktopSection)
+function scrollToDesktopSection(sectionId, e) {
+    if (e) {
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+    }
+    const sectionMap = {
+        'sec-cover': 0,
+        'sec-edu': 1,
+        'sec-fac': 1,
+        'sec-depts': 2,
+        'sec-quiz': 2,
+        'sec-faq': 11,
+        'sec-letter': 11,
+        'sec-footer': 12,
+        'dept-control': 3,
+        'dept-electronics': 5,
+        'dept-telecom': 7,
+        'dept-mechanic': 9
+    };
+    if (sectionId in sectionMap) {
+        jumpToChapter(sectionMap[sectionId]);
+    } else {
+        const el = document.getElementById(sectionId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+window.scrollToDesktopSection = scrollToDesktopSection;
